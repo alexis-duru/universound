@@ -6,15 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class UniversoundController extends AbstractController
+class StreamController extends AbstractController
 {
     /**
-     * @Route("/", name="app_homepage")
+     * @Route("/stream", name="app_stream")
      */
     public function index(): Response
     {
-        return $this->render('homepage/index.html.twig', [
-            'controller_name' => 'UniversoundController',
+        return $this->render('stream/index.html.twig', [
+            'controller_name' => 'StreamController',
         ]);
     }
 }

@@ -1,0 +1,81 @@
+#header-top {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    justify-content: space-around;
+    #header-elements {
+        height: 5vh;
+        width: 100%;
+        perspective: 0px;	
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        padding-top: 5px;
+        #logo {
+            display: flex;
+            align-items: center;
+            #logo-universound {
+                width: 50px;
+                // height: 50px;
+                border: 0px;
+                transform: rotateY(45deg);  
+                animation: rotateAnimation 3s linear infinite;
+                border-radius: 100px;
+                @keyframes rotateAnimation {
+                    from {transform: rotateY(0deg);}
+                    to {transform: rotateY(360deg);}
+                }
+            }
+            #typo-universound {
+            height: 2vh;
+            }
+        }
+        
+        .social-media {
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            :first-child {
+                transform: scale(1);
+                transition: 0.8s;
+                color: black;
+                &:hover {
+                opacity: 0.8;
+                transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+nav {
+    width: 100vw;
+    height: 5vh;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    color: black;
+    /* border-bottom: 1px solid white; */
+    ul {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        li {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            a {
+                width: auto;
+                text-align: center;
+                padding: 2px;
+                font-weight: 500;
+                &:hover {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.372);
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}

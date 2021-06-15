@@ -17,6 +17,107 @@ a {
     color: black;
 }
 
+h3 {
+    color: white;
+    font-family: 'avenir';
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+
+.other-section {
+    height: auto;
+    width: 100%;
+    background-image: url('/assets/images/background/universound.jpg');
+    box-sizing: cover;
+    background-repeat: no-repeat;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.639);
+    transition: 1s;
+    .container {
+        width: 50%;
+        height: auto;
+        background-color: white;
+        padding: 50px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        :nth-child(7) {
+            >div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 33%;
+                height: 60px;
+                margin: auto;
+                border: 1px solid rgba(0, 0, 0, 0.413);
+                margin-top: 40px;
+                text-align: center;
+                input {
+                    padding: 20px;
+                }
+                label {
+                    font-size: 13px;
+                }
+
+            }
+        }
+        label,input,button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'avenir';
+            font-size: 1rem;
+            text-align: center;
+            margin: auto;
+        }
+
+        label {
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+        input {
+            border: 0px;
+            border-bottom: 1.4px solid black;
+            &:hover {
+                background-color: rgba(128, 128, 128, 0.057);
+            }
+        }
+
+        .btn-save {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 170px;
+            height: 50px;
+            color: white;
+            text-transform: uppercase;
+            font-family: 'avenir';
+            font-size: 1rem;
+            padding: 5px;
+            background-color: black;
+            border-radius: 30px;
+            margin-top: 50px;
+            transition: 1s;
+            transform: scale(0.95);
+            &:hover {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+
+
+
 
 
 

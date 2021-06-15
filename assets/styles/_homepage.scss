@@ -5,8 +5,9 @@ section {
     box-sizing: cover;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     background-attachment: fixed;
     background-blend-mode: overlay;
     background-color: rgba(0, 0, 0, 0.639);

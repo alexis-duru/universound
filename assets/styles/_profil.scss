@@ -1,0 +1,29 @@
+#edit-btn {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    a {
+        width: 10%;
+        height: 30px;
+        border: 1px solid white;
+        background-color: transparent;
+        font-size: 1rem;
+        padding: 10px;
+        color: white;
+        margin: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(1);
+        transition: 1s;
+        &:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.358);
+        }
+
+    }
+}

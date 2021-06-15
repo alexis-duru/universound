@@ -2,8 +2,8 @@
         <div id="header-top">
             <div id="header-elements">
                 <div id="logo">
-                    <img src="./images/logo/universound.jpg" id="typo-universound"></img>
-                    <img src="./images/logo/logo.jpg" id="logo-universound">
+                    <img src="{{asset('images/logo/universound.jpg')}}" id="typo-universound"></img>
+                    <img src="{{asset('images/logo/logo.jpg')}}" id="logo-universound">
                 </div>
                     
                 <div class="social-media">
@@ -25,11 +25,9 @@
                     <li>
                         <a href="#">UPLOAD</a>
                     </li>
+                    <span></span>
                     <li>
-                        <a href="{{path('app_login')}}">LOGIN <i class="fas fa-power-off"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_register')}}">REGISTER</a>
+                        <a href="{{path('app_login')}}">LOGIN</a><a href="{{path('app_register')}}">REGISTER</a>
                     </li>
                 </ul>
             </nav>
@@ -46,10 +44,7 @@
                         <a href="#">UPLOAD</a>
                     </li>
                     <li>
-                        <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}</span> <i class="fas fa-user-circle"></i></a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_logout')}}">DISCONNECT <i class="fas fa-power-off"></i></a>
+                        <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}</span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
                     </li>
                 </ul>
             </nav>

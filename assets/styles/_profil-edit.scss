@@ -1,0 +1,21 @@
+#registration_form {
+    >div {
+        &:nth-child(7) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 33%;
+            height: 60px;
+            margin: auto;
+            border: 1px solid rgba(0, 0, 0, 0.413);
+            margin-top: 40px;
+            text-align: center;
+            input {
+                padding: 20px;
+            }
+            label {
+                font-size: 13px;
+            }
+        }
+    }
+}

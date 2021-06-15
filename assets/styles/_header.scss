@@ -62,10 +62,24 @@ nav {
         display: flex;
         width: 100%;
         align-items: center;
+        :last-child {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
         li {
             display: flex;
             justify-content: space-around;
             width: 100%;
+            
+            :nth-child(2) {
+                background-color: rgba(0, 0, 0, 0.756);
+                color: white;
+                margin-left: 10px;
+                padding: 3px;
+                border-radius: 5px;
+
+            }
             a {
                 width: auto;
                 text-align: center;
@@ -80,5 +94,11 @@ nav {
                 }
             }
         }
+        // span {
+        //     border: 1px solid black;
+        //     width: 100px;
+        //     background-color: black;
+        //     transform: rotate(90deg);
+        // }
     }
 }

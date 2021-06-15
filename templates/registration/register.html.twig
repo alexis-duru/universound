@@ -6,10 +6,7 @@
     <section class="other-section"> 
         <h3>Register</h3>  
             <div class="container">
-                {% for flashError in app.flashes('verify_email_error') %}
-                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-                {% endfor %}
-
+                
                 {{ form_start(registrationForm) }}
                     {{ form_row(registrationForm.firstname) }}
                     {{ form_row(registrationForm.lastname) }}
@@ -21,6 +18,9 @@
                     <div class"agree-terms">
                     {{ form_row(registrationForm.agreeTerms) }}
                     </div>
+                    {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert" role="alert">{{ flashError }}</div>
+                    {% endfor %}
                     <button type="submit" class="btn-save">Register</button>
                     {{ form_end(registrationForm) }}
             </div>

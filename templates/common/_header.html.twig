@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>
+            {% if not app.user %}
             <nav>
                 <ul>
                     <li>
@@ -25,11 +26,32 @@
                         <a href="#">UPLOAD</a>
                     </li>
                     <li>
-                        <a href="#">LOGIN</a>
+                        <a href="{{path('app_login')}}">LOGIN <i class="fas fa-power-off"></i></a>
                     </li>
                     <li>
                         <a href="{{path('app_register')}}">REGISTER</a>
                     </li>
                 </ul>
             </nav>
+            {% else %}
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{path('app_homepage')}}">HOME</a>
+                    </li>
+                    <li>
+                        <a href="{{path('app_stream')}}">STREAM</a>
+                    </li>
+                    <li>
+                        <a href="#">UPLOAD</a>
+                    </li>
+                    <li>
+                        <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}</span> <i class="fas fa-user-circle"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{path('app_logout')}}">DISCONNECT <i class="fas fa-power-off"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            {% endif %}
     </header>

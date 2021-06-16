@@ -22,9 +22,9 @@
                     <li>
                         <a href="{{path('app_stream')}}">STREAM</a>
                     </li>
-                    <li>
+                    {# <li>
                         <a href="#">UPLOAD</a>
-                    </li>
+                    </li> #}
                     <span></span>
                     <li>
                         <a href="{{path('app_login')}}">LOGIN</a><a href="{{path('app_register')}}">REGISTER</a>
@@ -41,7 +41,7 @@
                         <a href="{{path('app_stream')}}">STREAM</a>
                     </li>
                     <li>
-                        <a href="#">UPLOAD</a>
+                        <a href="{{path('app_upload')}}">UPLOAD</a>
                     </li>
                     <li>
                         <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}</span></a><a href="{{path('app_logout')}}">DISCONNECT</a>

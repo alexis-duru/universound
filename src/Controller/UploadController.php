@@ -2,19 +2,41 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Track;
+use App\Form\UploadType;
+use App\Form\TrackUploadFormType;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UploadController extends AbstractController
 {
     /**
-     * @Route("/upload", name="upload")
+     * @Route("/upload", name="app_upload", methods={"GET","POST"})
      */
-    public function index(): Response
+    public function new(Request $request, Security $security): Response
     {
+        $track = new Track();
+        $form = $this->createForm(TrackUploadFormType::class, $track);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->security->getUser();
+            $track->setAuthor($user);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($post);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_stream');
+        }
+
         return $this->render('upload/index.html.twig', [
-            'controller_name' => 'UploadController',
+            'track' => $track,
+            'form' => $form->createView(),
         ]);
     }
+    
 }

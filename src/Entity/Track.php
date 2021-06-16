@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\TrackRepository;
+use App\Entity\User;
+use App\Entity\Track;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TrackRepository;
 
 /**
  * @ORM\Entity(repositoryClass=TrackRepository::class)
@@ -23,7 +25,7 @@ class Track
     private $title;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="tracks")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tracks")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user_id;
@@ -70,12 +72,12 @@ class Track
         return $this;
     }
 
-    public function getUserId(): ?user
+    public function getUserId(): User
     {
         return $this->user_id;
     }
 
-    public function setUserId(?user $user_id): self
+    public function setUserId(User $user_id): self
     {
         $this->user_id = $user_id;
 

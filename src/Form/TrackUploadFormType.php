@@ -3,21 +3,21 @@
 namespace App\Form;
 
 use App\Entity\Track;
+use App\Form\TrackUploadFormType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UploadType extends AbstractType
+class TrackUploadFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('artwork')
-            ->add('user_id')
             ->add('title')
+            ->add('artwork')
             ->add('createdAt')
-            ->add('genre')
             ->add('label')
+            ->add('genre')
             ->add('details')
         ;
     }

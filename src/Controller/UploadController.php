@@ -14,6 +14,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UploadController extends AbstractController
 {
+
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
     /**
      * @Route("/upload", name="app_upload", methods={"GET","POST"})
      */
@@ -25,9 +33,9 @@ class UploadController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $this->security->getUser();
-            $track->setAuthor($user);
+            $track->setUserId($user);
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($post);
+            $entityManager->persist($track);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_stream');

@@ -1,20 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello StreamController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="other-section"> 
+        <h3>STREAM</h3>  
+            <div id="container-track">
+                <div id="artwork">
+                </div>
+                <div id="infos-track">
+                    <h4>Artiste - Title</h4>
+                    <p>Player</p>
+                    <div id="container-btn-track">
+                        <div id="details-track"><a href="#">details</a>
+                            {# <ul "details-track-dropdown">
+                                <li>Release date</li>
+                                <li>Label</li>
+                                <li>Genre</li>
+                                <li>Description</li>
+                                <li>Time</li>
+                            </ul> #}
+                        </div>
+                        <button type="submit" id="btn-like"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <div id="container-track">
+                <div id="artwork">
+                </div>
+                <div id="infos-track">
+                </div>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/alexisduru/Documents/Developpeur web/TALIS BUSINESS SCHOOL/EPCF/UNIVERSOUND/website/universound/src/Controller/StreamController.php'|file_link(0) }}">src/Controller/StreamController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/alexisduru/Documents/Developpeur web/TALIS BUSINESS SCHOOL/EPCF/UNIVERSOUND/website/universound/templates/stream/index.html.twig'|file_link(0) }}">templates/stream/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <div id="container-track">
+                <div id="artwork">
+                </div>
+                <div id="infos-track">
+                </div>
+            </div>
+    </section>
 {% endblock %}

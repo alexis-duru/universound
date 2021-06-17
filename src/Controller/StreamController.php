@@ -2,19 +2,20 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\TrackRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class StreamController extends AbstractController
 {
     /**
-     * @Route("/stream", name="app_stream")
+     * @Route("/stream", name="app_stream", methods={"GET"})
      */
-    public function index(): Response
+    public function index(TrackRepository $trackRepository): Response
     {
         return $this->render('stream/index.html.twig', [
-            'controller_name' => 'StreamController',
+            'tracks' => $trackRepository->findAll(),
         ]);
     }
 }

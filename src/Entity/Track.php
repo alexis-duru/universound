@@ -9,7 +9,6 @@ use App\Repository\TrackRepository;
 use DateTimeInterface;
 
 /**
- * @ORM\Entity(repositoryClass=PostRepository::class)
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass=TrackRepository::class)
  */
@@ -154,6 +153,7 @@ class Track
     {
         $this->createdAt = new \Datetime();
     }
+
 
 
 }

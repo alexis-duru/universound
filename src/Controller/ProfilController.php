@@ -42,4 +42,14 @@ class ProfilController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/profil/music", name="app_profil_music")
+     */
+    public function musicEdit(): Response
+    {
+        return $this->render('profil/music.html.twig', [
+            'controller_name' => 'ProfilController',
+        ]);
+    }
 }

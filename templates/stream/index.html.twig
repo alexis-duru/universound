@@ -11,16 +11,8 @@
                 </div>
                 <div id="infos-track">
                     <h4>{{ track.artist }} - {{ track.title }}</h4>
-                    <p>Player</p>
                     <div id="container-btn-track">
                         <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                            {# <ul "details-track-dropdown">
-                                <li>Release date</li>
-                                <li>Label</li>
-                                <li>Genre</li>
-                                <li>Description</li>
-                                <li>Time</li>
-                            </ul> #}
                         </div>
                         <button type="button" id="btn-like"><i class="fas fa-heart"></i></button>
                     </div>

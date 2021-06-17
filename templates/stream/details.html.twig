@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <section class="other-section"> 
+        <h3>STREAM</h3>
+            <div id="container-track">
+                <div id="artwork">
+                </div>
+                <div id="infos-track">
+                    <h4>{{ track.artist }} - {{ track.title }}</h4>
+                    <p>Player</p>
+                    <div id="container-btn-track">
+                        <div id="details-track"><a href="{{path('app_stream')}}">back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

@@ -10,10 +10,10 @@
                 <div id="artwork">
                 </div>
                 <div id="infos-track">
-                    <h4>{{ track.title }} - {{ track.artist }}</h4>
+                    <h4>{{ track.artist }} - {{ track.title }}</h4>
                     <p>Player</p>
                     <div id="container-btn-track">
-                        <div id="details-track"><a href="#">details</a>
+                        <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
                             {# <ul "details-track-dropdown">
                                 <li>Release date</li>
                                 <li>Label</li>

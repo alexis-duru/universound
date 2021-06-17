@@ -6,8 +6,11 @@ use App\Entity\User;
 use App\Entity\Track;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TrackRepository;
+use DateTimeInterface;
 
 /**
+ * @ORM\Entity(repositoryClass=PostRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass=TrackRepository::class)
  */
 class Track
@@ -50,6 +53,10 @@ class Track
      */
     private $artist;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $CreatedAt;
 
     public function getId(): ?int
     {
@@ -127,4 +134,26 @@ class Track
 
         return $this;
     }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->CreatedAt;
+    }
+
+    public function setCreatedAt(?\DateTimeInterface $CreatedAt): self
+    {
+        $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \Datetime();
+    }
+
+
 }

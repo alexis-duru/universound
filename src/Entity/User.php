@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\User;
+use App\Entity\Track;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\Collection;
@@ -56,12 +57,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $photo;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Track::class, mappedBy="user_id")
+     * @ORM\OneToMany(targetEntity=Track::class, mappedBy="artist")
      */
     private $tracks;
 
@@ -187,17 +183,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getPhoto(): ?string
-    {
-        return $this->photo;
-    }
-
-    public function setPhoto(?string $photo): self
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Track[]
@@ -211,7 +196,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->tracks->contains($track)) {
             $this->tracks[] = $track;
-            $track->setUserId($this);
+            $track->setArtist($this);
         }
 
         return $this;
@@ -221,8 +206,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->tracks->removeElement($track)) {
             // set the owning side to null (unless already changed)
-            if ($track->getUserId() === $this) {
-                $track->setUserId(null);
+            if ($track->getArtist() === $this) {
+                $track->setArtist(null);
             }
         }
 

@@ -33,7 +33,7 @@ class UploadController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $this->security->getUser();
-            $track->setUserId($user);
+            $track->setArtist($user);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($track);
             $entityManager->flush();

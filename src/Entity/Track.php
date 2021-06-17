@@ -12,6 +12,7 @@ use App\Repository\TrackRepository;
  */
 class Track
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -25,20 +26,9 @@ class Track
     private $title;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tracks")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user_id;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $artwork;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $createdAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -54,6 +44,12 @@ class Track
      * @ORM\Column(type="string", length=255)
      */
     private $details;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="tracks")
+     */
+    private $artist;
+
 
     public function getId(): ?int
     {
@@ -72,18 +68,6 @@ class Track
         return $this;
     }
 
-    public function getUserId(): User
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(User $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
-
     public function getArtwork(): ?string
     {
         return $this->artwork;
@@ -92,18 +76,6 @@ class Track
     public function setArtwork(string $artwork): self
     {
         $this->artwork = $artwork;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
 
         return $this;
     }
@@ -140,6 +112,18 @@ class Track
     public function setDetails(string $details): self
     {
         $this->details = $details;
+
+        return $this;
+    }
+
+    public function getArtist(): ?user
+    {
+        return $this->artist;
+    }
+
+    public function setArtist(?user $artist): self
+    {
+        $this->artist = $artist;
 
         return $this;
     }

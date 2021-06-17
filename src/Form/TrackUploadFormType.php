@@ -15,7 +15,6 @@ class TrackUploadFormType extends AbstractType
         $builder
             ->add('title')
             ->add('artwork')
-            ->add('createdAt')
             ->add('label')
             ->add('genre')
             ->add('details')

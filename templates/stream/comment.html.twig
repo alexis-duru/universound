@@ -4,26 +4,29 @@
 
 {% block body %}
     <section class="other-section"> 
-        <h3>STREAM</h3>
-        {% for track in tracks %}  
+        <h3>COMMENTS</h3>
             <div id="container-track">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
                     <h4>{{ track.artist }} - {{ track.title }}</h4>
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        {{ form_end(form) }}
                     <div id="container-btn-track">
-                        <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
+                        <div id="details-track"><a href="{{path('app_stream')}}">back</a>
                         </div>
-                        <div id="details-track"><a href="{{path('app_stream_comment', {'id': track.id})}}">commentaires</a>
-                        </div>
-                        <button type="button" id="btn-like"><i class="fas fa-heart"></i></button>
                     </div>
                 </div>
             </div>
-        {% else %}
-        <div id="container-track">
-            <div id="infos-track">
-                <p>No Records found</p>
-        {% endfor %}
+            <div id="container-track">
+                <div id="infos-track">
+                <p>{{track.comments|length}}</p>
+                    <div id="container-btn-track">
+                        <div id="details-track"><a href="{{path('app_stream')}}">back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
 {% endblock %}

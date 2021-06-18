@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\RegistrationFormType;
+use App\Repository\TrackRepository;
 use App\Controller\SecurityController;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,14 +43,13 @@ class ProfilController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/profil/music", name="app_profil_music")
      */
-    public function musicEdit(): Response
+    public function Show(TrackRepository $trackRepository): Response
     {
         return $this->render('profil/music.html.twig', [
-            'controller_name' => 'ProfilController',
+            'tracks' => $trackRepository->findAll(),
         ]);
     }
 }

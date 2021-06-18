@@ -9,7 +9,23 @@
             <a href="{{path('app_profil')}}">PROFIL</a>
             <a href="{{path('app_stream')}}">STREAM</a>
         </div>  
-            <div class="container">
+            {% for track in tracks %}  
+            <div id="container-track">
+                <div id="artwork">
+                </div>
+                <div id="infos-track">
+                    <h4>{{ track.artist }} - {{ track.title }}</h4>
+                    <div id="container-btn-track">
+                        <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
+                        </div>
+                        <button type="button" id="btn-like"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
             </div>
+        {% else %}
+        <div id="container-track">
+            <div id="infos-track">
+                <p>No Records found</p>
+        {% endfor %}
 </section>
 {% endblock %}

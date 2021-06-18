@@ -43,13 +43,17 @@ class ProfilController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
     /**
-     * @Route("/profil/music", name="app_profil_music")
-     */
-    public function Show(TrackRepository $trackRepository): Response
-    {
-        return $this->render('profil/music.html.twig', [
-            'tracks' => $trackRepository->findAll(),
-        ]);
-    }
+    * @Route("/profil/music", name="app_profil_music")
+    */
+    public function show(TrackRepository $repository): Response
+   {
+       $tracks = $repository->findAll();
+
+       return $this->render('profil/music.html.twig', [
+           'tracks' => $tracks,
+       ]);
+   }
+   
 }

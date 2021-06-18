@@ -7,7 +7,7 @@
         <h3>STREAM</h3>
         {% for track in tracks %}  
             <div id="container-track">
-                <div id="artwork">
+                <div id="artwork"><img src="{{asset('images/media/' ~ track.media )}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
                     <h4>{{ track.artist }} - {{ track.title }}</h4>

@@ -4,13 +4,17 @@ namespace App\Entity;
 
 use App\Entity\User;
 use App\Entity\Track;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TrackRepository;
-use DateTimeInterface;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass=TrackRepository::class)
+ * @Vich\Uploadable
  */
 class Track
 {
@@ -26,11 +30,6 @@ class Track
      * @ORM\Column(type="string", length=255)
      */
     private $title;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $artwork;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -57,6 +56,20 @@ class Track
      */
     private $CreatedAt;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $media;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="media", fileNameProperty="media")
+     *
+     * @var null|File
+     */
+    private $mediaFile;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,18 +83,6 @@ class Track
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getArtwork(): ?string
-    {
-        return $this->artwork;
-    }
-
-    public function setArtwork(string $artwork): self
-    {
-        $this->artwork = $artwork;
 
         return $this;
     }
@@ -146,6 +147,18 @@ class Track
         return $this;
     }
 
+    public function getMedia(): ?string
+    {
+        return $this->media;
+    }
+
+    public function setMedia(string $media): self
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
     /**
      * @ORM\PrePersist
      */
@@ -154,6 +167,28 @@ class Track
         $this->createdAt = new \Datetime();
     }
 
+    /**
+     * Get nOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @return null|File
+     */
+    public function getMediaFile()
+    {
+        return $this->mediaFile;
+    }
 
+    /**
+     * @param null|File|\Symfony\Component\HttpFoundation\File\UploadedFile $mediaFile
+     */
+    public function setMediaFile(?File $mediaFile = null): void
+    {
+        $this->mediaFile = $mediaFile;
+
+        if (null !== $mediaFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
 
 }

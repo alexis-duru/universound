@@ -59,6 +59,12 @@ h4 {
         border-radius: 30px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+        }
         :nth-child(7) {
             >div {
                 display: flex;

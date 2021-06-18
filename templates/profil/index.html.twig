@@ -10,6 +10,7 @@
             <a href="{{path('app_profil_music')}}">EDIT MUSIC</a>
         </div>
             <div class="container">
+                <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
                 <label>Firstname</label>
                 <span>{{ app.user.firstname }}</span>
                 <label>Lastname</label>
@@ -18,7 +19,6 @@
                 <span>{{ app.user.username }}</span>
                 <label for="inputEmail">Email</label>
                 <span>{{ app.user.email }}</span>
-        </div>
-    </div>
+            </div>
 </section>
 {% endblock %}

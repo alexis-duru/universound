@@ -8,6 +8,7 @@
             <div class="container">
                 
                 {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.mediaFile) }}
                     {{ form_row(registrationForm.firstname) }}
                     {{ form_row(registrationForm.lastname) }}
                     {{ form_row(registrationForm.username) }}

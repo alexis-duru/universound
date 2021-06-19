@@ -9,13 +9,13 @@ section {
     align-items: center;
     flex-direction: column;
     background-attachment: fixed;
-    background-blend-mode: overlay;
-    background-color: rgba(0, 0, 0, 0.639);
+    // background-blend-mode: overlay;
+    // background-color: rgba(0, 0, 0, 0.639);
     transition: 1s;
-    &:hover {
-        background-blend-mode: overlay;
-        background-color: rgba(0, 0, 0, 0);
-    }
+    // &:hover {
+    //     background-blend-mode: overlay;
+    //     background-color: rgba(0, 0, 0, 0);
+    // }
 
     h2 {
         font-size: 2rem;

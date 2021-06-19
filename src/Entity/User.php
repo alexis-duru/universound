@@ -2,8 +2,7 @@
 
 namespace App\Entity;
 
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Serializable;
 use App\Entity\User;
 use App\Entity\Track;
 use App\Entity\Comment;
@@ -12,6 +11,8 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -21,7 +22,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  * @Vich\Uploadable
  */
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -85,6 +86,34 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $mediaFile;
 
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->firstname,
+            $this->lastname,
+            $this->username,
+            $this->media,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->firstname,
+            $this->lastname,
+            $this->username,
+            $this->media,
+
+
+
+        ) = unserialize($serialized);
+    }
 
     public function __construct()
     {

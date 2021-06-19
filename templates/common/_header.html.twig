@@ -44,7 +44,7 @@
                         <a href="{{path('app_upload')}}">UPLOAD</a>
                     </li>
                     <li>
-                        <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}</span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
+                        <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
                     </li>
                 </ul>
             </nav>

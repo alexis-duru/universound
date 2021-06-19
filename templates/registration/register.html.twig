@@ -8,7 +8,8 @@
             <div class="container">
                 
                 {{ form_start(registrationForm) }}
-                    {{ form_row(registrationForm.mediaFile) }}
+                    <label>CHOOSE YOUR PROFIL PICTURE</label>
+                    {{ form_widget(registrationForm.mediaFile) }}
                     {{ form_row(registrationForm.firstname) }}
                     {{ form_row(registrationForm.lastname) }}
                     {{ form_row(registrationForm.username) }}

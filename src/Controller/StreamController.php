@@ -63,7 +63,7 @@ class StreamController extends AbstractController
 
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_stream_details', ['id' => $track->getId()]);
+            return $this->redirectToRoute('app_stream_comment', ['id' => $track->getId()]);
         }
 
         return $this->render('stream/comment.html.twig', [

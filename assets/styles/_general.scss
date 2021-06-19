@@ -32,13 +32,18 @@ h4 {
     text-transform: uppercase;
 }
 
+#photoprofil {
+    border-radius: 100px;
+}
+
 
 
 .other-section {
     height: auto;
     width: 100%;
     background-image: url('/assets/images/background/universound.jpg');
-    box-sizing: cover;
+    box-sizing: border-box;
+    background-size: cover;
     background-repeat: no-repeat;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -47,8 +52,8 @@ h4 {
     align-items: center;
     flex-direction: column;
     background-attachment: fixed;
-    background-blend-mode: overlay;
-    background-color: rgba(0, 0, 0, 0.639);
+    // background-blend-mode: overlay;
+    // background-color: rgba(0, 0, 0, 0.639);
     transition: 1s;
     padding-top: 130px;
     .container {
@@ -60,29 +65,23 @@ h4 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        img {
-            width: auto;
-            height: auto;
-            border-radius: 100px;
-        }
         .vich-file {
             display: flex;
             flex-direction: column;
-            label {
-                color: white;
-            }
             input {
                 font-size: 0.6rem;
+                border: 0px;
+                padding: 0px;
             }
             
         }
-        :nth-child(8) {
+        :nth-child(9) {
             >div {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: auto;
-                height: 60px;
+                height: 50px;
                 margin: auto;
                 border: 1px solid rgba(0, 0, 0, 0.413);
                 margin-top: 40px;
@@ -91,7 +90,7 @@ h4 {
                     padding: 20px;
                 }
                 label {
-                    font-size: 13px;
+                    font-size: 0.7rem;
                 }
 
             }
@@ -128,8 +127,8 @@ h4 {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 170px;
-            height: 50px;
+            width: 140px;
+            height: 40px;
             color: white;
             text-transform: uppercase;
             font-family: 'avenir';

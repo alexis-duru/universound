@@ -5,28 +5,33 @@
 {% block body %}
     <section class="other-section"> 
         <h3>COMMENTS</h3>
-            <div id="container-track">
+            <div id="container-track" id="container-track-comment">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
                     <h4>{{ track.artist }} - {{ track.title }}</h4>
+                        <span>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
+                        </span>
                     <div id="container-btn-track">
-                        <div id="details-track"><a href="{{path('app_stream')}}">back</a>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div id="container-track">
-                <div id="infos-track">
-                <p>{{track.comments|length}}</p>
-                    <div id="container-btn-track">
-                        <div id="details-track"><a href="{{path('app_stream')}}">back</a>
-                        </div>
+            <div id="container-comment">
+                {% for comment in comments %}
+                <div id="comment">
+                {# <p>{{track.comments|length}}</p> #}
+                    <div id="comment-author">
+                        <h4>{{comment.author}}</h4>
+                        <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}">
                     </div>
-                </div>
+                    <p>{{comment.content}}</p>
+                    <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
+                    <span></span>
+                <div>
+            {% endfor %}
             </div>
     </section>
 {% endblock %}

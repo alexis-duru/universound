@@ -10,9 +10,10 @@
                 </div>
                 <div id="infos-track">
                     <h4>{{ track.artist }} - {{ track.title }}</h4>
-                        <p>Label : {{ track.label }} </p>
-                        <p>Genre : {{ track.genre }} </p>
-                        <p>Details : {{ track.details }} </p>
+                        <div id="infos-track-details"><p>Label :</p><span>{{ track.label }}</span></div>
+                        <div id="infos-track-details"><p>Genre :</p> <span>{{ track.genre }}</span></div>
+                        <div id="infos-track-details"><p>Details :</p> <span>{{ track.details }}</span></div>
+                        <div id="infos-track-details"><p>Release date :</p> <span>{{ track.createdAt|date('Y-m-d H:i:s') }}</span></div>
                     <div id="container-btn-track">
                         <div id="details-track"><a href="{{path('app_stream')}}">back</a>
                         </div>

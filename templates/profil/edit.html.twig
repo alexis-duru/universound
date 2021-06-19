@@ -10,6 +10,7 @@
             <a href="{{path('app_stream')}}">STREAM</a>
         </div>  
             <div class="container">
+                <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
                 {{ form_start(form) }}
                 <div class"agree-terms">
                 {{ form_widget(form)}}

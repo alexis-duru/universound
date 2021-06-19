@@ -4,17 +4,21 @@
 
 {% block body %}
 <section> 
-        {% if not app.user %}
-                <h2><a href="{{path('app_login')}}">LOGIN</a></h2>
+        <h3>UPLOAD</h3>
+                {% if not app.user %}
+                        <h2>
+                                <a href="{{path('app_login')}}">LOGIN</a>
+                        </h2>
 </section>
         {% else %}
 <section class="other-section"> 
-        <div class="container">
-                {{ form_start(form)}}
-                {{ form_widget(form) }}
-                <input type="submit" value="Envoyer">
-                {{ form_end (form) }}  
-        </div>
+        <h3>UPLOAD</h3>
+                <div class="container">
+                        {{ form_start(form)}}
+                        {{ form_widget(form) }}
+                        <input class="btn-save" type="submit" value="UPLOAD">
+                        {{ form_end (form) }}  
+                </div>
         {% endif %}
 </section>
 {% endblock %}

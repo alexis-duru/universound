@@ -8,6 +8,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
+    background-image: url('/assets/images/background/texture-container7.jpg');
+    background-size: cover;
+    // box-sizing: border-box;
+    background-color: rgba(100, 89, 135, 0.66);
+    background-blend-mode: darken;
+    // background-attachment: fixed;
     span {
         label {
             font-family: 'avenir';
@@ -82,9 +88,9 @@
             a {
                 color: white;
                 font-size: 0.8rem;
-            }
-            &:hover {
-                opacity: 0.8;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
             // ul {
             //     color: black;

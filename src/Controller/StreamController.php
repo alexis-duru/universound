@@ -72,6 +72,28 @@ class StreamController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("stream/delete/{id}", name="app_stream_delete", methods={"POST"})
+     */
+    public function delete(Request $request, Track $track): Response
+    {
+        $user = $this->security->getUser();
+        if ($user === $track->getArtist()) {
+            if ($this->isCsrfTokenValid('delete'.$track->getId(), $request->request->get('_token'))) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->remove($track);
+                $entityManager->flush();
+            }
+
+            return $this->redirectToRoute('app_stream');
+        }
+
+        return $this->render('common/error.html.twig', [
+            'error' => 401,
+            'message' => 'Unauthorized acces',
+        ]);
+    }
+
 
 
     /**

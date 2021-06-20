@@ -1,9 +1,17 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Edit Post{% endblock %}
-
+{% block title %}{% endblock %}
 {% block body %}
-    <h1>Edit Post</h1>
-
-    {{ include('upload/index.html.twig', {'button_label': 'Update'}) }}
+    <section class="other-section"> 
+        <h3>UPLOAD</h3>
+        <div class="container">
+                {{ form_start(form)}}
+                {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
+                {{ form_widget(form) }}
+                <div id="btn-form-edit">
+                    <input class="btn-save" type="submit" value="UPDATE">
+                    <a id="btn-big" href="{{ path('app_stream')}}">HOME</a>
+                <div>
+                {{ form_end (form) }}  
+        </div>
+    </section>
 {% endblock %}

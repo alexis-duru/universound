@@ -17,6 +17,22 @@ a {
     color: black;
 }
 
+#btn-big {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 5px;
+    text-align: center;
+    height: 30px;
+    margin-top: 50px;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
 h3 {
     color: white;
     font-family: 'avenir';
@@ -38,7 +54,7 @@ h4 {
 h5 {
     color: black;
     font-family: 'avenir';
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -47,8 +63,6 @@ h5 {
 #photoprofil {
     border-radius: 100px;
 }
-
-
 
 .other-section {
     height: auto;
@@ -67,7 +81,7 @@ h5 {
     // background-blend-mode: overlay;
     // background-color: rgba(0, 0, 0, 0.639);
     transition: 1s;
-    padding-top: 130px;
+    // padding-top: 130px;
     .container {
         width: 50%;
         height: auto;
@@ -79,6 +93,7 @@ h5 {
         align-items: center;
         background-image: url('/assets/images/background/texture-container7bis.jpg');
         background-size: cover;
+    
         
         
         .vich-file {
@@ -150,12 +165,8 @@ h5 {
             padding: 5px;
             background-color: black;
             border-radius: 30px;
+            letter-spacing: 3px;
             margin-top: 50px;
-            transition: 1s;
-            transform: scale(0.95);
-            &:hover {
-                transform: scale(1);
-            }
         }
         .alert {
             font-family: 'avenir';

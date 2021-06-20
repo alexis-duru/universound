@@ -14,7 +14,7 @@
                     <div id="container-btn-track">
                         <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
                         </div>
-                        <div id="details-track"><a href="{{path('app_stream_comment', {'id': track.id})}}">Comments {{track.comments|length}}</a>
+                        <div id="details-track"><a href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                         </div>
                         <button type="button" id="btn-like"><i class="fas fa-heart"></i></button>
                     </div>

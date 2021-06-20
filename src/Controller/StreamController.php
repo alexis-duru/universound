@@ -73,7 +73,7 @@ class StreamController extends AbstractController
     }
 
     /**
-     * @Route("stream/delete/{id}", name="app_stream_delete", methods={"POST"})
+     * @Route("/{id}", name="app_stream_delete", methods={"GET", "POST"})
      */
     public function delete(Request $request, Track $track): Response
     {

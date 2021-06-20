@@ -15,6 +15,7 @@
         <h3>UPLOAD</h3>
                 <div class="container">
                         {{ form_start(form)}}
+                        {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
                         {{ form_widget(form) }}
                         <input class="btn-save" type="submit" value="UPLOAD">
                         {{ form_end (form) }}  

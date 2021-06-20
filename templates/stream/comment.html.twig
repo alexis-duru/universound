@@ -12,6 +12,7 @@
                     <h4>{{ track.artist }} - {{ track.title }}</h4>
                         <span>
                         {{ form_start(form) }}
+                        {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
                         </span>
@@ -24,8 +25,8 @@
                 <div id="comment">
                 {# <p>{{track.comments|length}}</p> #}
                     <div id="comment-author">
-                        <h4>{{comment.author}}</h4>
-                        <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}">
+                        <h5>{{comment.author}}</h5>
+                        <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
                     </div>
                     <p>{{comment.content}}</p>
                     <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>

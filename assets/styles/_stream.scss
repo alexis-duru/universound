@@ -47,12 +47,13 @@
     }
     #infos-track {
         // border: 1px solid black;
-        height: 200px;
+        height: auto;
         width: 70%;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
         align-items: center;
+        // background-color: white;
         h4 {
             margin-bottom: 30px;
         }
@@ -60,11 +61,13 @@
             display: flex;
             p {
                 font-weight: 500;
+                color: white;
             }
             span {
                 font-style: italic;
                 font-family: 'avenir';
                 margin-bottom: 10px;
+                color: white;
             }
         }
         #container-btn-track {
@@ -131,6 +134,8 @@
     align-items: center;
     margin-bottom: 100px;
     flex-direction: column;
+    background-image: url('/assets/images/background/texture-container7bis.jpg');
+    background-size: cover;
     #comment {
         width: auto;
         height: auto;
@@ -138,7 +143,7 @@
             display: flex;
             justify-content: center;
         }
-        h4 {
+        h5 {
             font-weight: bold;
             display: flex;
             align-items: center;

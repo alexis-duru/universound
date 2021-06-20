@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Track;
 use App\Entity\Comment;
 use App\Form\CommentFormType;
+use App\Form\TrackUploadFormType;
 use App\Repository\TrackRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
@@ -41,6 +42,37 @@ class StreamController extends AbstractController
             'track' => $track,
         ]);
     }
+
+    /**
+     * @Route("/edit/{id}", name="app_stream_edit", methods={"GET", "POST"})
+     */
+    public function edit(Request $request, Track $track): Response
+    {
+        $user = $this->security->getUser();
+
+        if ($user === $track->getArtist()) {
+            $form = $this->createForm(TrackUploadFormType::class, $track);
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->getDoctrine()->getManager()->flush();
+
+                return $this->redirectToRoute('app_stream');
+            }
+
+            return $this->render('stream/edit.html.twig', [
+                'track' => $track,
+                'form' => $form->createView(),
+            ]);
+        }
+
+        return $this->render('common/error.html.twig', [
+            'error' => 401,
+            'message' => 'Unauthorized acces',
+        ]);
+    }
+
+
 
     /**
      * @Route("/stream/comment/{id}", name="app_stream_comment", methods={"GET", "POST"})

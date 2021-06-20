@@ -23,7 +23,6 @@
             <div id="container-comment">
                 {% for comment in comments %}
                 <div id="comment">
-                {# <p>{{track.comments|length}}</p> #}
                     <div id="comment-author">
                         <h5>{{comment.author}}</h5>
                         <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">

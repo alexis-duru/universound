@@ -2,12 +2,14 @@
 
 namespace App\Form;
 
+use App\Entity\Genre;
 use App\Entity\Track;
 use App\Form\TrackUploadFormType;
 use Symfony\Component\Form\AbstractType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class TrackUploadFormType extends AbstractType
 {
@@ -17,6 +19,13 @@ class TrackUploadFormType extends AbstractType
             ->add('title')
             ->add('label')
             ->add('genre')
+            // ->add('genre', ChoiceType::class, [
+            //     'choices' => [
+            //         new Genre('Name'),
+            //         new Genre('Name'),
+            //         new Genre('Name'),
+            //         new Genre('Name'),
+            //     ]])
             ->add('details')
             ->add('mediaFile', VichFileType::class, [
                 'required' => false,

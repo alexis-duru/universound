@@ -35,6 +35,7 @@ class TrackUploadFormType extends AbstractType
                 'download_label' => 'Download Photo',
                 'asset_helper' => true,
             ])
+            // ->add('likes')
         ;
     }
 

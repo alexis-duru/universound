@@ -4,22 +4,22 @@
 
 {% block body %}
     <section class="other-section"> 
-        <h3>ABOUT</h3>
+        <h3>DETAILS</h3>
             <div id="container-track">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
-                    <h4>{{ track.artist }} - {{ track.title }}</h4>
-                        <div id="infos-track-details"><p>Label :</p><span>{{ track.label }}</span></div>
-                        <div id="infos-track-details"><p>Genre :</p> <span>{{ track.genre }}</span></div>
-                        <div id="infos-track-details"><p>Details :</p> <span>{{ track.details }}</span></div>
-                        <div id="infos-track-details"><p>Release date :</p> <span>{{ track.createdAt|date('Y-m-d H:i:s') }}</span></div>
-                        <div id="container-btn-track">
-                            <div id="details-track"><a href="{{path('app_stream')}}">back</a>
-                            </div>
-                            <div id="details-track"><a href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
-                            </div>
-                            <div id="details-track"><a href="{{ path('app_stream_delete', {'id': track.id}) }}">delete</a>
+                    <div id="artistandtitle">
+                        <h4>{{ track.artist }}</h4>
+                        <p>{{ track.title }}</p>
+                    </div>
+                        <div class="infos-track-details"><p>Label :</p><span>{{ track.label }}</span></div>
+                        <div class="infos-track-details"><p>Genre :</p> <span>{{ track.genre }}</span></div>
+                        <div class="infos-track-details"><p>Details :</p> <span>{{ track.details }}</span></div>
+                        <div class="infos-track-details"><p>Release date : </p> <span>{{ track.createdAt|date('Y-m') }}</span></div>
+                            <div class="infos-track-details">
+                                <a class="middle-btn" href="{{path('app_stream')}}">back</a>
+                                <a class="middle-btn" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
                             </div>
                         </div>
                 </div>

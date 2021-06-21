@@ -63,12 +63,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private $username;
 
     /**
-     * @ORM\OneToMany(targetEntity=Track::class, mappedBy="artist")
+     * @ORM\OneToMany(targetEntity=Track::class, mappedBy="artist", orphanRemoval=true)
      */
     private $tracks;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="author")
+     * @ORM\ManyToMany(targetEntity=Track::class, mappedBy="likes")
+     */
+    private $likes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="author", orphanRemoval=true)
      */
     private $comments;
 
@@ -118,6 +123,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     public function __construct()
     {
         $this->tracks = new ArrayCollection();
+        $this->likes = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
 
@@ -269,6 +275,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             if ($track->getArtist() === $this) {
                 $track->setArtist(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Track[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(Track $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->addLike($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Track $like): self
+    {
+        if ($this->likes->removeElement($like)) {
+            $like->removeLike($this);
         }
 
         return $this;

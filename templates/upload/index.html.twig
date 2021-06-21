@@ -3,23 +3,20 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-{% if not app.user %}
-<section> 
-        <h3>UPLOAD</h3>
-                <h2>
-                        <a href="{{path('app_login')}}">LOGIN</a>
-                </h2>
-</section>
-        {% else %}
 <section class="other-section"> 
         <h3>UPLOAD</h3>
         <div class="container">
+{% if not app.user %}
+                <h2>
+                        <a href="{{path('app_login')}}">ONLY ACCESS FOR USER</a>
+                </h2>
+        {% else %}
                 {{ form_start(form)}}
                 {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
                 {{ form_widget(form) }}
-                <input class="btn-save" type="submit" value="UPLOAD">
+                <input class="big-btn" type="submit" value="UPLOAD">
                 {{ form_end (form) }}  
+        {% endif %}
         </div>
 </section>
-        {% endif %}
 {% endblock %}

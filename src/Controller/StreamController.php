@@ -73,7 +73,7 @@ class StreamController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_stream_delete", methods={"GET", "POST"})
+     * @Route("/edit/{id}", name="app_stream_delete", methods={"POST"})
      */
     public function delete(Request $request, Track $track): Response
     {
@@ -125,6 +125,27 @@ class StreamController extends AbstractController
             'comments' => $comments,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/like/{id}", name="track_like")
+     */
+    public function like(Track $track): Response
+    {
+        //* Si je n'ai pas encore liké le post, alors je rajoute un like
+        //* Sinon j'enlève le like.
+        //* Sachant que liker n'est pas une entité, il suffira de modifier l'array like du post pour rajouter l'user.
+        if ($track->getLikes()->contains($this->getUser())) {
+            $track->removeLike($this->getUser());
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
+        }
+
+        $track->addLike($this->getUser());
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
     }
     
 }

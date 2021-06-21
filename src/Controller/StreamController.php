@@ -68,7 +68,7 @@ class StreamController extends AbstractController
 
         return $this->render('common/error.html.twig', [
             'error' => 401,
-            'message' => 'Unauthorized acces',
+            'message' => 'Unauthorized access',
         ]);
     }
 

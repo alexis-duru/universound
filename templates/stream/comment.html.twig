@@ -3,6 +3,24 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+{% if not app.user %}
+ <section class="other-section"> 
+        <h3>COMMENTS</h3>
+        <div id="container-comment">
+                {% for comment in comments %}
+                <div id="comment">
+                    <div id="comment-author">
+                        <h5>{{comment.author}}</h5>
+                        <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                    </div>
+                    <p>{{comment.content}}</p>
+                    <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
+                    <span></span>
+                <div>
+            {% endfor %}
+        </div>
+</section>
+    {% else %}
     <section class="other-section"> 
         <h3>COMMENTS</h3>
             <div id="container-track" id="container-track-comment">
@@ -33,5 +51,6 @@
                 <div>
             {% endfor %}
             </div>
+            {% endif %}
     </section>
 {% endblock %}

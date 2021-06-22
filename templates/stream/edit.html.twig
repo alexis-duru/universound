@@ -8,11 +8,11 @@
                 {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
                 {{ form_widget(form) }}
                 <div id="btn-form-edit">
-                    <a id="btn-big" href="{{ path('app_stream')}}">BACK</a>
-                    <input class="btn-save" type="submit" value="UPDATE">
+                    <a class="big-btn" href="{{ path('app_stream')}}">BACK</a>
+                    <input class="big-btn" type="submit" value="UPDATE">
                 <div>
+                {{ include('stream/delete.html.twig') }}
                 {{ form_end (form) }}  
         </div>
-        {{ include('stream/delete.html.twig') }}
     </section>
 {% endblock %}

@@ -6,6 +6,16 @@
 {% if not app.user %}
  <section class="other-section"> 
         <h3>COMMENTS</h3>
+        <div id="container-track" id="container-track-comment">
+                <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+                </div>
+                <div id="infos-track">
+                    <h4>{{ track.artist }} - {{ track.title }}</h4>
+                        <span class="info-message"> 
+                        <a href="{{path('app_login')}}">login</a>
+                        </span>
+                </div>
+            </div>
         <div id="container-comment">
                 {% for comment in comments %}
                 <div id="comment">

@@ -5,9 +5,9 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    // flex-direction: column;
     background-attachment: fixed;
     // background-blend-mode: overlay;
     // background-color: rgba(0, 0, 0, 0.639);
@@ -16,4 +16,125 @@ section {
     //     background-blend-mode: overlay;
     //     background-color: rgba(0, 0, 0, 0);
     // }
+    h4 {
+        padding-bottom: 15px;
+    }
+
+    #container-lastnews {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // CAROUSSEL D'IMAGES //
+        .caroussel {
+            width: 175px;
+            height: 175px;
+            overflow: hidden;
+            border: 3px solid black;
+            margin: auto;
+            .images {
+                display: flex;
+                animation-duration: 13s;
+                animation-name: mesImages;
+                animation-iteration-count: infinite;
+                height: 175px;
+                width: 175px;
+            }
+            @keyframes mesImages {
+                0% {
+                    transform: translateX(0);
+                    background-color: white;
+                }
+            
+                25% {
+                    transform: translateX(-175px);
+                    background-color: white;
+                }
+            
+                50% {
+                    transform: translateX(-350px);
+                    background-color: white;
+                }
+            
+                75% {
+                    transform: translateX(-525px);
+                    background-color: white;
+                }
+            
+                100%{
+                    transform: translateX(0);
+                    background-color: white;
+                }
+            }
+
+        }
+
+        // CAROUSSEL DE TEXTE //
+
+        .caroussel-texte {
+            width: 175px;
+            height: auto;
+            overflow: hidden;
+            border: 3px solid black;
+            margin: auto;
+            margin-top: 20px;
+            >div {
+                display: flex;
+                height: 50px;
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    p {
+                        font-size: 10px;
+                        font-style: italic;
+                        
+                    }
+                    H5 {
+                        text-transform: uppercase;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    p, H5 {
+                        color: black;
+                        background-color: white;
+                        height: auto;
+                        width: 175px;
+                        animation-duration: 13s;
+                        animation-name: monTexte;
+                        animation-iteration-count: infinite;
+                        text-align: center;
+                        height: 100%;
+                        @keyframes monTexte {
+                            0% {
+                                transform: translateX(0);
+                                background-color: white;
+                            }
+                        
+                            25% {
+                                transform: translateX(-175px);
+                                background-color: white;
+                            }
+                        
+                            50% {
+                                transform: translateX(-350px);
+                                background-color: white;
+                            }
+                        
+                            75% {
+                                transform: translateX(-525px);
+                                background-color: white;
+                            }
+                        
+                            100%{
+                                transform: translateX(0);
+                                background-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }   
 }

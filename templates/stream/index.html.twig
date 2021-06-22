@@ -6,7 +6,7 @@
     <section class="other-section"> 
         <h3>STREAM</h3>
         {% for track in tracks %}  
-            <div id="container-track">
+            <div id="container-track" class="hover-fx">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">

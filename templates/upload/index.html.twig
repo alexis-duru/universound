@@ -7,15 +7,15 @@
         <h3>UPLOAD</h3>
         <div class="container">
 {% if not app.user %}
-                <h2>
-                        <a href="{{path('app_login')}}">ONLY ACCESS FOR USER</a>
-                </h2>
+                <span class="info-message"> 
+                        <a href="{{path('app_login')}}">login</a>
+                </span>
         {% else %}
                 {{ form_start(form)}}
                 {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
                 {{ form_widget(form) }}
                 <input class="big-btn" type="submit" value="UPLOAD">
-                {{ form_end (form) }}  
+                {{ form_end (form) }} 
         {% endif %}
         </div>
 </section>

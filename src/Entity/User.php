@@ -78,7 +78,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private $comments;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $media;
 
@@ -90,6 +90,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
      * @var null|File
      */
     private $mediaFile;
+    
 
     public function serialize()
     {
@@ -119,6 +120,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
 
         ) = unserialize($serialized);
     }
+    
 
     public function __construct()
     {
@@ -276,7 +278,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
                 $track->setArtist(null);
             }
         }
-
         return $this;
     }
 
@@ -342,7 +343,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         return $this->media;
     }
 
-    public function setMedia(string $media): self
+    public function setMedia(?string $media): self
     {
         $this->media = $media;
 

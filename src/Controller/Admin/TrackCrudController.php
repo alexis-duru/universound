@@ -25,6 +25,7 @@ class TrackCrudController extends AbstractCrudController
             TextField::new('label'),
             TextField::new('genre'),
             TextField::new('details', 'infos'),
+            TextField::new('media'),
         ];
     }
 }

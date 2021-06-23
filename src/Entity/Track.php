@@ -87,6 +87,12 @@ class Track
         $this->likes = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->media;
+    }
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -169,7 +175,7 @@ class Track
         return $this->media;
     }
 
-    public function setMedia(string $media): self
+    public function setMedia(?string $media): self 
     {
         $this->media = $media;
 

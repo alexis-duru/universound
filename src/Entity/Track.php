@@ -35,12 +35,12 @@ class Track
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $label;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $genre;
 
@@ -50,14 +50,15 @@ class Track
     private $details;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="tracks")
+     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="Tracks")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $artist;
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
+     /**
+     * @ORM\Column(type="datetime")
      */
-    private $CreatedAt;
+    private $createdAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -160,12 +161,12 @@ class Track
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->CreatedAt;
+        return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeInterface $CreatedAt): self
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->CreatedAt = $CreatedAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }

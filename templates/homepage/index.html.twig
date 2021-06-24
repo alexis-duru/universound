@@ -4,65 +4,82 @@
 
 {% block body %}
    <section>
-      <div id="container-lastnews">
-         <h4>OUR LAST RELEASES</h4>
-            <div class="caroussel">
-               <div class="images">
-                  <img src="{{asset('images/slider/lastrelease/cover1.jpg')}}" alt"cover-1"></img>
-                  <img src="{{asset('images/slider/lastrelease/cover2.jpg')}}" alt"cover-2"></img>
-                  <img src="{{asset('images/slider/lastrelease/cover3.jpg')}}" alt"cover-3"></img>
-                  <img src="{{asset('images/slider/lastrelease/cover4.jpg')}}" alt"cover-4"></img>
-               </div>
-            </div>
-            <div class="caroussel-texte">
-               <div>
-                  <div class="text">
-                     <H5>Slugabed</H5>
-                     <p>We Have The Window Open At Night</p>
-                   </div>
-                   <div class="text">
-                     <H5>Squidgenini</H5>
-                     <p>Squid</p>
-                   </div>
-                    <div class="text">
-                     <H5>Overmono</H5>
-                     <p>BMW Track</p>
-                     <p>So U Kno</p>
-                   </div>
-                    <div class="text">
-                     <H5>DJ Seinfeld</H5>
-                     <p>U Already Kno</p>
-                   </div>
-               </div>
-            </div>
+      <div id="container-1-homepage">
+         <img src="{{asset('images/logo/sphere-vide.png')}}" class="logo-universound">
+         <h1>WELCOME ON UNIVERSOUND</h1>
+         <p>"sounds good to you"</p>
       </div>
+      <div id="container-2-homepage">
+         <div id="container-lastnews">
+            <h2>OUR LAST RELEASES</h2>
+               <div class="caroussel">
+                  <div class="images">
+                        <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastrelease/cover1.jpg')}}" alt"cover-1"></img></a>
+                        <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastrelease/cover2.jpg')}}" alt"cover-2"></img></a>
+                        <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastrelease/cover3.jpg')}}" alt"cover-3"></img></a>
+                        <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastrelease/cover4.jpg')}}" alt"cover-4"></img></a>
+                  </div>
+               </div>
+               <div class="caroussel-texte">
+                  <div>
+                     <div class="text">
+                        <p class="home-artist-name">Slugabed</p>
+                        <p>We Have The Window Open At Night</p>
+                     </div>
+                     <div class="text">
+                        <p class="home-artist-name">Squidgenini</p>
+                        <p>Squid</p>
+                     </div>
+                     <div class="text">
+                        <p class="home-artist-name">Overmono</p>
+                        <p>BMW Track</p>
+                     </div>
+                     <div class="text">
+                        <p class="home-artist-name">Dj seinfield</p>
+                        <p>U Already Kno</p>
+                     </div>
+                  </div>
+               </div>
+         </div>
 
-      <div id="container-lastnews">
-         <h4>OUR LAST ARTISTS</h4>
-            <div class="caroussel">
-               <div class="images">
-                  <img src="{{asset('images/slider/lastartist/tsha.jpg')}}" alt"artist-1"></img>
-                  <img src="{{asset('images/slider/lastartist/bonobo.jpg')}}" alt"artist-2"></img>
-                  <img src="{{asset('images/slider/lastartist/fredagain.jpg')}}" alt"artist-3"></img>
-                  <img src="{{asset('images/slider/lastartist/caribou.jpg')}}" alt"artist-4"></img>
+         <div id="container-lastnews">
+            <h2>OUR LAST ARTISTS</h2>
+               <div class="caroussel">
+                  <div class="images">
+                     <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastartist/tsha.jpg')}}" alt"artist-1"></img></a>
+                     <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastartist/bonobo.jpg')}}" alt"artist-2"></img></a>
+                     <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastartist/fredagain.jpg')}}" alt"artist-3"><a href="{{path('app_stream')}}"></img></a>
+                     <a href="{{path('app_stream')}}"><img src="{{asset('images/slider/lastartist/caribou.jpg')}}" alt"artist-4"><a href="{{path('app_stream')}}"></img></a>
+                  </div>
                </div>
-            </div>
-            <div class="caroussel-texte">
-               <div>
-                  <div class="text">
-                     <H5>Tsha</H5>
-                   </div>
-                   <div class="text">
-                     <H5>Bonobo</H5>
-                   </div>
-                    <div class="text">
-                     <H5>FredAgain.</H5>
-                   </div>
-                    <div class="text">
-                     <H5>Caribou</H5>
-                   </div>
+               <div class="caroussel-texte">
+                  <div>
+                     <div class="text">
+                        <p class="home-artist-name">TSHA</p>
+                        <p>Ninja Tune</p>
+                     </div>
+                     <div class="text">
+                        <p class="home-artist-name">BONOBO</p>
+                        <p>Ninja Tune / Tru Thoughts</p>
+
+                     </div>
+                     <div class="text">
+                        <p class="home-artist-name">FRED AGAIN...</p>
+                        <p>E1</p>
+                     </div>
+                     <div class="text">
+                        <p class="home-artist-name">CARIBOU</p>
+                        <p>City Slang</p>
+                     </div>
+                  </div>
                </div>
-            </div>
+         </div>
+      </div>
+      <div id="container-3-homepage">
+            <p>ABOUT US</p>
+            <p><span>Universound</span> is an audio platform that gives users unprecedented access to the world's largest community of music and audio creators. We provide tools that allow anybody to post audio content for their friends, followers, or the whole world to listen to.</p>
+            <p>Alexis Duru - CEO</p>
+            <a class="middle-btn" href="{{path('app_stream')}}">START STREAM</a> 
       </div>
    </section>
 {% endblock %}

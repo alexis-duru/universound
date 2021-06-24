@@ -27,6 +27,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
+     * 
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -63,16 +64,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private $username;
 
     /**
-     * @ORM\OneToMany(targetEntity=Track::class, mappedBy="artist", orphanRemoval=true)
-     */
-    private $tracks;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Track::class, mappedBy="likes")
-     */
-    private $likes;
-
-    /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="author", orphanRemoval=true)
      */
     private $comments;
@@ -90,6 +81,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
      * @var null|File
      */
     private $mediaFile;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Track::class, mappedBy="artist", orphanRemoval=true)
+     */
+    private $Tracks;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Track::class, mappedBy="likes")
+     */
+    private $likes;
+
+
+    public function __construct()
+    {
+        $this->Tracks = new ArrayCollection();
+        $this->likes = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+    }
     
 
     public function serialize()
@@ -121,14 +130,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         ) = unserialize($serialized);
     }
     
-
-    public function __construct()
-    {
-        $this->tracks = new ArrayCollection();
-        $this->likes = new ArrayCollection();
-        $this->comments = new ArrayCollection();
-    }
-
     public function __toString()
     {
         return $this->username;
@@ -251,63 +252,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
         return $this;
     }
 
-
-    /**
-     * @return Collection|Track[]
-     */
-    public function getTracks(): Collection
-    {
-        return $this->tracks;
-    }
-
-    public function addTrack(Track $track): self
-    {
-        if (!$this->tracks->contains($track)) {
-            $this->tracks[] = $track;
-            $track->setArtist($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTrack(Track $track): self
-    {
-        if ($this->tracks->removeElement($track)) {
-            // set the owning side to null (unless already changed)
-            if ($track->getArtist() === $this) {
-                $track->setArtist(null);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * @return Collection|Track[]
-     */
-    public function getLikes(): Collection
-    {
-        return $this->likes;
-    }
-
-    public function addLike(Track $like): self
-    {
-        if (!$this->likes->contains($like)) {
-            $this->likes[] = $like;
-            $like->addLike($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLike(Track $like): self
-    {
-        if ($this->likes->removeElement($like)) {
-            $like->removeLike($this);
-        }
-
-        return $this;
-    }
-
     /**
      * @return Collection|Comment[]
      */
@@ -377,4 +321,62 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
+
+    /**
+     * @return Collection|Track[]
+     */
+    public function getTracks(): Collection
+    {
+        return $this->Tracks;
+    }
+
+    public function addTrack(Track $track): self
+    {
+        if (!$this->Tracks->contains($track)) {
+            $this->Tracks[] = $track;
+            $track->setArtist($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTrack(Track $track): self
+    {
+        if ($this->Tracks->removeElement($track)) {
+            // set the owning side to null (unless already changed)
+            if ($track->getArtist() === $this) {
+                $track->setArtist(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Track[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(Track $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->addLike($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Track $like): self
+    {
+        if ($this->likes->removeElement($like)) {
+            $like->removeLike($this);
+        }
+
+        return $this;
+    }
+
 }

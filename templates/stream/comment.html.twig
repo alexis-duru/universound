@@ -5,12 +5,12 @@
 {% block body %}
 {% if not app.user %}
  <section class="other-section"> 
-        <h3>COMMENTS</h3>
+        <h1>COMMENTS</h1>
         <div id="container-track" id="container-track-comment">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
-                    <h4>{{ track.artist }} - {{ track.title }}</h4>
+                    <h2>{{ track.artist }} - {{ track.title }}</h2>
                         <span class="info-message"> 
                         <a href="{{path('app_login')}}">login</a>
                         </span>
@@ -20,7 +20,7 @@
                 {% for comment in comments %}
                 <div id="comment">
                     <div id="comment-author">
-                        <h5>{{comment.author}}</h5>
+                        <h2>{{comment.author}}</h2>
                         <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
                     </div>
                     <p>{{comment.content}}</p>
@@ -32,12 +32,12 @@
 </section>
     {% else %}
     <section class="other-section"> 
-        <h3>COMMENTS</h3>
+        <h1>COMMENTS</h1>
             <div id="container-track" id="container-track-comment">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
-                    <h4>{{ track.artist }} - {{ track.title }}</h4>
+                    <h2>{{ track.artist }} - {{ track.title }}</h2>
                         <span>
                         {{ form_start(form) }}
                         {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
@@ -52,7 +52,7 @@
                 {% for comment in comments %}
                 <div id="comment">
                     <div id="comment-author">
-                        <h5>{{comment.author}}</h5>
+                        <h2>{{comment.author}}</h2>
                         <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
                     </div>
                     <p>{{comment.content}}</p>

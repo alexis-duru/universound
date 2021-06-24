@@ -1,5 +1,5 @@
 #container-track {
-    width: auto;
+    width: 50%;
     height: auto;
     background-color: white;
     padding: 50px;
@@ -45,14 +45,11 @@
         margin-right: 50px;
     }
     #infos-track {
-        // border: 1px solid black;
         height: auto;
         width: 70%;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
-        // align-items: center;
-        // background-color: white;
         #artistandtitle {
             display: flex;
             flex-direction: column;
@@ -89,17 +86,6 @@
             align-items: center;
         }
         .middle-btn {
-            width: 130px;
-            height: 30px;
-            background-color: black;
-            border-radius: 30px;
-            color: white;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Avenir';
-            margin-right: 15px;
             &:last-child {
                 background-color: white;
                 color: black;
@@ -129,56 +115,33 @@
     }
 }
 
-#container-comment {
-    width: 40%;
-    height: auto;
-    background-color: white;
-    padding: 50px;
-    border-radius: 20px;
+#empty-container {
+    height: 60vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 100px;
-    flex-direction: column;
-    background-image: url('/assets/images/background/texture-container7bis.jpg');
-    background-size: cover;
-    #comment {
-        width: auto;
-        height: auto;
-        #comment-author {
-            display: flex;
+        #empty-container-in {
+        height: 30vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid white;
+        flex-direction: column;
+        background-image: url('/assets/images/background/texture-container7.jpg');
+        background-size: cover;
+        box-sizing: border-box;
+        background-color: rgba(100, 89, 135, 0.66);
+        background-blend-mode: darken;
+        padding: 50px 50px 50px 50px;
+        h3 {
             justify-content: center;
-            height: 30px;
-        }
-        h5 {
-            font-weight: bold;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 5px;
+            padding: 20px;
         }
         p {
+            color: white;
             font-style: italic;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            letter-spacing: 0px;
-        }
-        #comment-date {
-            font-style: italic;
-            font-size: 12px;
-            margin-top: 10px;
-            opacity: 0.5;
-        }
-        span {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 1px;
-            background-color: black;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            opacity: 0.3;
+
         }
     }
+
 }

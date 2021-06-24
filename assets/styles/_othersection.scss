@@ -1,0 +1,98 @@
+.other-section {
+    height: auto;
+    width: 100%;
+    background-image: url('/assets/images/background/universound.jpg');
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    transition: 1s;
+    .container {
+        width: 50%;
+        height: auto;
+        background-color: white;
+        padding: 50px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/assets/images/background/texture-container7bis.jpg');
+        background-size: cover;
+        .vich-file {
+            display: flex;
+            flex-direction: column;
+            input {
+                font-size: 0.6rem;
+                border: 0px;
+                padding: 0px;
+            }
+            
+        }
+        :nth-child(9) {
+            >div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: 50px;
+                margin: auto;
+                border: 1px solid rgba(0, 0, 0, 0.413);
+                margin-top: 40px;
+                text-align: center;
+                input {
+                    padding: 20px;
+                }
+                label {
+                    font-size: 0.7rem;
+                }
+
+            }
+        }
+        label,input,button,span {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'avenir';
+            font-size: 1rem;
+            text-align: center;
+            margin: auto;
+        }
+
+        label {
+            padding-bottom: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        input {
+            border: 0px;
+            border: 1.4px solid black;
+            border-radius: 50px;
+        }
+        span {
+            font-style: italic;
+            width: 400px;
+        }
+        .alert {
+            font-family: 'avenir';
+            color: brown;
+            background-color: rgba(225, 202, 173, 0.81);
+            border-radius: 20px;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+        }
+    }
+}

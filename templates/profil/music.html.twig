@@ -4,7 +4,7 @@
 
 {% block body %}
 <section class="other-section"> 
-        <h3>EDIT YOUR MUSIC</h3>
+        <h1>EDIT YOUR MUSIC</h1>
         <div id="edit-btn">
             <a href="{{path('app_profil')}}">PROFIL</a>
             <a href="{{path('app_stream')}}">STREAM</a>
@@ -14,7 +14,7 @@
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
-                    <h4>{{ track.artist }} - {{ track.title }}</h4>
+                    <h3>{{ track.artist }} - {{ track.title }}</h3>
                     <div id="container-btn-track">
                         <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
                         </div>

@@ -16,14 +16,14 @@ header {
             align-items: center;
             padding: 20px;
             padding-top: 5px;
-            #logo {
+            .logo {
                 display: flex;
                 align-items: center;
                 a {
                     display: flex;
                 }
-                #logo-universound {
-                    width: 50px;
+                .logo-universound {
+                    width: 40px;
                     // height: 50px;
                     border: 0px;
                     transform: rotateY(45deg);  
@@ -34,8 +34,8 @@ header {
                         to {transform: rotateY(360deg);}
                     }
                 }
-                #typo-universound {
-                height: 2vh;
+                .typo-universound {
+                height: 3vh;
                 }
             }
             
@@ -99,14 +99,12 @@ header {
                     #id-user {
                         text-transform: uppercase;
                     }
+                    #photoprofil {
+                        border-radius: 100px;
+                        margin-left: 7px;
+                    }
                 }
             }
-            // span {
-            //     border: 1px solid black;
-            //     width: 100px;
-            //     background-color: black;
-            //     transform: rotate(90deg);
-            // }
         }
     }
 }   

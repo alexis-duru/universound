@@ -3,29 +3,45 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<section class="other-section"> 
-        <h1>EDIT YOUR MUSIC</h1>
-        <div id="edit-btn">
-            <a href="{{path('app_profil')}}">PROFIL</a>
-            <a href="{{path('app_stream')}}">STREAM</a>
-        </div>  
-            {% for track in tracks %}  
-            <div id="container-track">
+{% for track in tracks %}  
+    <section class="other-section"> 
+        <h1>STREAM</h1>
+            <div id="container-track" class="hover-fx">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
-                    <h3>{{ track.artist }} - {{ track.title }}</h3>
+                    <div id="artistandtitle">
+                        <h2>{{ track.artist }}</h2>
+                        <p>{{ track.title }}</p>
+                    </div>
                     <div id="container-btn-track">
-                        <div id="details-track"><a href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                        </div>
-                        <button type="button" id="btn-like"><i class="fas fa-heart"></i></button>
+                        <a class="middle-btn" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
+                        <a class="middle-btn" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
+                        <p>
+                        </p>
+                        {% if app.user in track.likes %}
+                            <a href="{{path("track_like", {'id':track.id})}}">
+                                <button class="middle-btn"><i class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
+                            </a>
+                            {% else %}
+                            <a href="{{path("track_like", {'id':track.id})}}">
+                               <button class="middle-btn"><i class="fas fa-heart"></i>{{ track.likes|length }}</button>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-        {% else %}
-        <div id="container-track">
-            <div id="infos-track">
-                <p>No Records found</p>
-        {% endfor %}
-</section>
+    </section>
+    {% else %} 
+    <section class="empty"> 
+        <div id="empty-container">
+        <h1>STREAM</h1>
+            <div id="empty-container-in">
+                <h2>No Records found</h2>
+                <p>It's time to share your first track with us</p>
+                <a class="small-btn" href="{{ path('app_upload') }}">Click Here</a>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
 {% endblock %}

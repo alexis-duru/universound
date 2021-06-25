@@ -1,3 +1,6 @@
+// SECTION DE LA PAGE D'ACCUEIL //
+// HOMEPAGE SECTION //
+
 section {
     height: auto;
     width: 100%;
@@ -10,6 +13,10 @@ section {
     background-attachment: fixed;
     transition: 1s;
     flex-direction: column;
+
+    // CONTAINER NUMERO 1 //
+    // FIRST CONTAINER //
+
     #container-1-homepage {
         width: 100%;
         height: 70vh;
@@ -32,12 +39,13 @@ section {
             }
         }
         p {
-            background-color: white;
-            padding: 15px;
-            border: 3px solid black;
             font-style: italic;
+            color: white;
         }
     }
+
+    // CONTAINER NUMERO 2 //
+    // SECOND CONTAINER //
 
     #container-2-homepage {
         display: flex;
@@ -51,6 +59,7 @@ section {
             flex-direction: column;
             
             // CAROUSSEL D'IMAGES //
+            // IMAGE CAROUSEL //
             
             .caroussel {
                 width: 350px;
@@ -105,6 +114,7 @@ section {
             }
 
             // CAROUSSEL DE TEXTE //
+           // TEXT CAROUSEL //
 
             .caroussel-texte {
                 width: 350px;
@@ -184,27 +194,51 @@ section {
             }
         }
     } 
+
+    // CONTAINER NUMERO 3 //
+    // THIRST CONTAINER //
+    
     #container-3-homepage {  
-        width: 50%;
         height: 300px;
+        width: 50%;
         padding: 50px;
         border-radius: 20px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         text-align: center;
         flex-direction: column;
         margin-top: 100px;
         margin-bottom: 100px;
+        background-blend-mode: overlay;
         background-image: url('/assets/images/background/texture-container7bis.jpg');
+        transition: background-color 0.8s;
         background-size: cover;
+        border: 1px solid white;
+        text-align: center;
+        a {
+            opacity: 0.0;
+        }
         p {
+            opacity: 0.0;
+        }
+        &:hover {
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            p {
+                opacity: 1;
+                &:nth-child(2) {
+                    font-style: italic;
+                    font-size: 0.8rem;
+                    margin-top: 20px;
+                }
+            }
+            a {
+                opacity: 1;
+                margin-top: 20px;
+            }
             span {
                 font-weight: 800;
-            }
-            &:nth-child(3) {
-                font-style: italic;
-                font-size: 0.8rem;
             }
         }
     }

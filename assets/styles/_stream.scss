@@ -1,3 +1,6 @@
+// CONTAINER QUI ENGLOBE LES DIFFERENTS MORCEAU DE MUSIQUE //
+// CONTAINER THAT ENGLOBS THE VARIOUS PIECES OF MUSIC //
+
 #container-track {
     width: 50%;
     height: auto;
@@ -78,6 +81,7 @@
                 color: white;
             }
         }
+
         #container-btn-track {
             width: 100%;
             height: 30px;
@@ -115,33 +119,41 @@
     }
 }
 
-#empty-container {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-        #empty-container-in {
-        height: 30vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border: 1px solid white;
-        flex-direction: column;
-        background-image: url('/assets/images/background/texture-container7.jpg');
-        background-size: cover;
-        box-sizing: border-box;
-        background-color: rgba(100, 89, 135, 0.66);
-        background-blend-mode: darken;
-        padding: 50px 50px 50px 50px;
-        h3 {
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        p {
-            color: white;
-            font-style: italic;
 
+// QUAND IL N'Y A AUCUN MORCEAU DE MUSIQUE PRESENT DANS LA SECTION STREAM //
+// WHEN THERE IS NO MUSIC IN THE STREAM SECTION //
+
+.empty {
+    height: 85vh;
+    #empty-container {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+            #empty-container-in {
+            height: 40vh;
+            width: 650px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid white;
+            flex-direction: column;
+            background-image: url('/assets/images/background/texture-container7bis.jpg');
+            background-size: cover;
+            box-sizing: border-box;
+            border-radius: 30px;
+            padding: 50px 50px 50px 50px;
+            h2 {
+                color: black;
+                justify-content: center;
+                align-items: center;
+            }
+            p {
+                font-style: italic;
+
+            }
         }
-    }
+    }   
 
 }

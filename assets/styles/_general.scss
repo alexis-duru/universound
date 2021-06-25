@@ -1,3 +1,7 @@
+
+// ELEMENTS GLOBAUX DU SITE //
+// GLOBAL ELEMENTS //
+
 * {
     margin: 0px;
     padding: 0px;
@@ -21,6 +25,44 @@ button, input {
     cursor: pointer;
 }
 
+label,input,button,span {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'avenir';
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+}
+
+label {
+    padding-bottom: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input {
+    border: 0px;
+    border: 1.4px solid black;
+    border-radius: 50px;
+}
+
+.alert {
+    font-family: 'avenir';
+    color: brown;
+    background-color: rgba(225, 202, 173, 0.81);
+    border-radius: 20px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+}
+
 .hover-fx {
     transition: 0.7s;
     transform: scale(0.98);
@@ -38,17 +80,20 @@ button, input {
     align-items: center;
     justify-content: center;
     color: white;
+    width: 50%;
     a {
         color: white;
-        border-bottom: 1px solid white;
         margin-right: 5px;
+    }
+    &:hover {
+        opacity: 0.7;
     }
 }
 
 h1 {
     color: white;
     font-family: 'avenir';
-    font-size: 3rem;
+    font-size: 2.6rem;
     letter-spacing: 5px;
     text-transform: uppercase;
     padding-bottom: 40px;
@@ -76,7 +121,7 @@ h3 {
 .big-btn {
     font-size: 1rem;
     width: 140px;
-    height: 40px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,13 +131,18 @@ h3 {
     color: white;
     background-color: black;
     border-radius: 30px;
-    margin-top: 50px;  
+    margin-top: 50px;
+    transition: 0.8s;
+    transform: scale(1);
+    &:hover {
+        transform: scale(1.04);
+    }  
 }
 
 .middle-btn {
     font-size: 0.8rem;
     width: 120px;
-    height: 30px;
+    height: 35px;
     padding: 2px;
     align-items: center;
     display: flex;
@@ -100,12 +150,13 @@ h3 {
     align-items: center;
     font-family: 'Avenir';
     color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     background-color: black;
     border-radius: 30px;
-    transition: 0.8s;
-    transform: scale(1);
+    transition: 0.6s;
     &:hover {
-        transform: scale(1.04);
+        opacity: 0.7;
     }
 }
 
@@ -121,12 +172,44 @@ justify-content: center;
 align-items: center;
 font-family: 'Avenir';
 color: white;
+letter-spacing: 3px;
+text-transform: uppercase;
 background-color: black;
  border-radius: 30px;
-transition: 0.8s;
-transform: scale(1);
-    &:hover {
-    transform: scale(1.04);
+ transition: 0.6s;
+ &:hover {
+     opacity: 0.7;
+ }
+}
+
+.edit-btn {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    a {
+        width: auto;
+        height: 30px;
+        border: 1px solid white;
+        background-color: transparent;
+        font-size: 1rem;
+        padding: 10px 30px;
+        color: white;
+        margin: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(1);
+        transition: 1s;
+        &:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.358);
+        }
+
     }
 }
 

@@ -3,9 +3,9 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+{% for track in tracks %}  
     <section class="other-section"> 
         <h1>STREAM</h1>
-        {% for track in tracks %}  
             <div id="container-track" class="hover-fx">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
@@ -43,14 +43,17 @@
                     </div>
                 </div>
             </div>
-        {% else %}
+    </section>
+    {% else %} 
+    <section class="empty"> 
         <div id="empty-container">
+        <h1>STREAM</h1>
             <div id="empty-container-in">
                 <h2>No Records found</h2>
                 <p>It's time to share your first track with us</p>
-                <a class="small-btn" href="{{ path('app_upload') }}">Click Here</a>
+                <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
             </div>
         </div>
-        {% endfor %}
     </section>
+    {% endfor %}
 {% endblock %}

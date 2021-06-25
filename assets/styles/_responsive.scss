@@ -1,0 +1,11 @@
+@media screen and (max-width:768px) {
+
+    // HOMEPAGE //
+    h1 {
+        font-size: 30px;
+    }
+    #container-2-homepage {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

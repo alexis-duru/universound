@@ -1,21 +1,8 @@
+// MODIFICATION DU STYLE DU FORMULAIRE D'EDITION UTILISATEUR //
+// MODIFICATION OF THE STYLE OF THE USER EDITING FORM //
+
 #registration_form {
-    a {
-        border: 1px solid rgba(0, 0, 0, 0.413);
-        text-align: center;
-        border-radius: 50px;
-        background-color: rgba(176, 176, 176, 0.44);
-    }
     >div {
-        &:nth-child(5) {
-            display: flex;
-            flex-direction: column;
-        }
-
-        &:nth-child(6) {
-            display: flex;
-            flex-direction: column;
-        }
-
         &:nth-child(7) {
             display: flex;
             align-items: center;

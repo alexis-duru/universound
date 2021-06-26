@@ -6,7 +6,7 @@
                     <img src="{{asset('images/logo/sphere-vide.png')}}" class="logo-universound">
                 </div>
                     
-                <div class="social-media">
+                <div id="social-media">
                     <a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
                     <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
                     <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
@@ -15,7 +15,7 @@
         </div>
             {% if not app.user %}
             <nav>
-                <ul>
+                <ul class="liens">
                     <li>
                         <a href="{{path('app_homepage')}}">HOME</a>
                     </li>
@@ -29,10 +29,35 @@
                         <a href="{{path('app_login')}}">LOGIN</a><a href="{{path('app_register')}}">REGISTER</a>
                     </li>
                 </ul>
+                <ul class="menu-burger">
+                    <li class="menu-1">
+                    <i id="burger" class="fas fa-bars"></i>
+                        <ul class="sous-menu-burger">
+                            <li class="menu-2">
+                                <a href="{{path('app_homepage')}}">HOME</a>
+                            </li>
+                            <li class="menu-2">
+                                <a href="{{path('app_stream')}}">STREAM</a>
+                            </li>
+                            <li class="menu-2">
+                                <a href="{{path('app_upload')}}">UPLOAD</a>
+                            </li>
+                            <li class="menu-2">
+                                <a href="{{path('app_login')}}">LOGIN</a><a href="{{path('app_register')}}">REGISTER</a>
+                            </li>
+                            <li class="menu-2">
+                                <a id="reseaux-sociaux-mobile" href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                                <a id="reseaux-sociaux-mobile" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a id="reseaux-sociaux-mobile" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </i>
             </nav>
             {% else %}
             <nav>
-                <ul>
+                <ul class="liens">
                     <li>
                         <a href="{{path('app_homepage')}}">HOME</a>
                     </li>

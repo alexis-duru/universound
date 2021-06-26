@@ -3,9 +3,11 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+<section class="other-section"> 
+    <h1>STREAM</h1>
+</section>
 {% for track in tracks %}  
     <section class="other-section"> 
-        <h1>STREAM</h1>
             <div id="container-track" class="hover-fx">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
@@ -15,29 +17,15 @@
                         <p>{{ track.title }}</p>
                     </div>
                     <div id="container-btn-track">
-                        <a class="middle-btn" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                        <a class="middle-btn" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
-                        <p>
-                        {# {% set break = false %}
-                        {% for like in track.likes %}
-                            {% if not break %}
-                                {% if track.likes|length == 1 %}
-                                    {{like}} liked this post.
-                                {% else %}
-                                    {{like}} and {{track.likes|length - 1}} liked this post
-                                    {% set break = true %}
-                                {% endif %}
-                            {% endif %}
-                        {% else %}
-                        {% endfor %} #}
-                        </p>
+                        <a class="small-btn" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
+                        <a class="small-btn" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                         {% if app.user in track.likes %}
-                            <a href="{{path("track_like", {'id':track.id})}}">
-                                <button class="middle-btn"><i class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
+                            <a class="small-btn-white" id="heart" href="{{path("track_like", {'id':track.id})}}">
+                                <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
                             </a>
                             {% else %}
-                            <a href="{{path("track_like", {'id':track.id})}}">
-                               <button class="middle-btn"><i class="fas fa-heart"></i>{{ track.likes|length }}</button>
+                            <a class="small-btn-white" id="heart" href="{{path("track_like", {'id':track.id})}}">
+                               <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
                             </a>
                         {% endif %}
                     </div>
@@ -46,11 +34,11 @@
     </section>
     {% else %} 
     <section class="empty"> 
+    <h1>STREAM</h1>
         <div id="empty-container">
-        <h1>STREAM</h1>
             <div id="empty-container-in">
                 <h2>No Records found</h2>
-                <p>It's time to share your first track with us</p>
+                <p>It's time to share your first track</p>
                 <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
             </div>
         </div>

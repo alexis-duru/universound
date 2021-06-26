@@ -5,25 +5,27 @@
 {% block body %}
 {% if not app.user %}
  <section class="empty"> 
+ <h1>UPLOAD</h1>
         <div id="empty-container">
-        <h1>UPLOAD</h1>
                 <div id="empty-container-in">
-                        <span class="info-message"> 
-                                <a href="{{path('app_login')}}">LOGIN</a>
-                        </span>
+                        <h2>LOGIN PLEASE</h2>
+                        <p>You need to be logged on the app for access in the upload section</p>
+                        <a class="middle-btn" href="{{path('app_login')}}">LOGIN</a>
+                        </a>
                 </div>
         </div>
 </section>
 {% else %}
-        <section class="other-section"> 
-                <h1>UPLOAD</h1>
-                <div class="container">
-                        {{ form_start(form)}}
-                        {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
-                        {{ form_widget(form) }}
-                        <input class="big-btn" type="submit" value="UPLOAD">
-                        {{ form_end (form) }} 
-                </div>
-        </section>
+<section class="other-section">  
+        <h1>UPLOAD</h1>
+        <div class="container">
+                {{ form_start(form)}}
+                {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
+                {{ form_widget(form) }}
+                <input class="middle-btn" type="submit" value="UPLOAD">
+                {{ form_end (form) }} 
+                       
+        </div>
+</section>
 {% endif %}
 {% endblock %}

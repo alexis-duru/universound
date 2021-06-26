@@ -1,5 +1,5 @@
 #container-comment {
-    width: 40%;
+    width: auto;
     height: auto;
     background-color: white;
     padding: 50px;
@@ -19,12 +19,13 @@
             justify-content: center;
             height: 30px;
         }
-        h5 {
+        h2 {
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 5px;
+            color: black;
         }
         p {
             font-style: italic;

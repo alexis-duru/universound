@@ -18,10 +18,10 @@
                         <div class="infos-track-details"><p>Details :</p> <span>{{ track.details }}</span></div>
                         <div class="infos-track-details"><p>Release date : </p> <span>{{ track.createdAt|date('Y-m') }}</span></div>
                             <div class="infos-track-details">
-                                <a class="middle-btn" href="{{path('app_stream')}}">back</a>
+                                <a class="small-btn" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
                                 {% if not app.user %}
                                 {% else %}
-                                <a class="middle-btn" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
+                                <a class="small-btn" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
                             </div>
                         </div>
                     {% endif %}

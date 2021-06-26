@@ -15,6 +15,22 @@ p {
     letter-spacing: 3px;
 }
 
+#i-1 {
+    color: black;
+    font-size: 15px;
+}
+#i-2 {
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+#heart {
+    background-color: white;
+    color: black;
+    font-size: 15px;
+}
+
 a {
     font-family: 'avenir';
     color: black;
@@ -65,7 +81,7 @@ input {
 
 .hover-fx {
     transition: 0.7s;
-    transform: scale(0.98);
+    transform: scale(0.99);
     &:hover {
         transform: scale(1);
     }
@@ -97,6 +113,7 @@ h1 {
     letter-spacing: 5px;
     text-transform: uppercase;
     padding-bottom: 40px;
+    padding-top: 50px;
 }
 
 h2 {
@@ -129,14 +146,13 @@ h3 {
     letter-spacing: 3px;
     text-transform: uppercase;
     color: white;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.865);
     border-radius: 30px;
     margin-top: 50px;
-    transition: 0.8s;
-    transform: scale(1);
+    transition: 0.6s;
     &:hover {
-        transform: scale(1.04);
-    }  
+        opacity: 0.7;
+    }
 }
 
 .middle-btn {
@@ -152,20 +168,20 @@ h3 {
     color: white;
     letter-spacing: 3px;
     text-transform: uppercase;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.886);
     border-radius: 30px;
     transition: 0.6s;
+    margin-top: 50px;
     &:hover {
         opacity: 0.7;
     }
 }
 
 .small-btn {
-font-size: 0.9rem;
-width: 100px;
-height: 20px;
-padding: 3px;
-// margin-top: 20px;
+font-size: 0.7rem;
+width: 120px;
+height: 25px;
+padding: 5px;
 align-items: center;
 display: flex;
 justify-content: center;
@@ -174,13 +190,37 @@ font-family: 'Avenir';
 color: white;
 letter-spacing: 3px;
 text-transform: uppercase;
-background-color: black;
- border-radius: 30px;
- transition: 0.6s;
+background-color: rgba(0, 0, 0, 0.886);
+ border-radius: 6px;
+transition: 0.6s;
+margin-left: 15px;
  &:hover {
      opacity: 0.7;
  }
 }
+
+.small-btn-white {
+    font-size: 0.7rem;
+    width: 120px;
+    height: 25px;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Avenir';
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: 0.6s;
+    margin-left: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.482);
+    background-color: white;
+     &:hover {
+         opacity: 0.7;
+     }
+    }
 
 .edit-btn {
     width: auto;

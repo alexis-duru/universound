@@ -123,6 +123,7 @@ section {
                 border: 3px solid black;
                 margin: auto;
                 margin-top: 40px;
+                border-radius: 10px;
                 >div {
                     display: flex;
                     height: 100px;
@@ -204,42 +205,36 @@ section {
         padding: 50px;
         border-radius: 20px;
         display: flex;
-        align-items: center;
-        text-align: center;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin-top: 100px;
         margin-bottom: 100px;
         background-blend-mode: overlay;
+        background-color: rgba(0, 0, 0, 0.81);
         background-image: url('/assets/images/background/texture-container7bis.jpg');
         transition: background-color 0.8s;
         background-size: cover;
         border: 1px solid white;
         text-align: center;
-        a {
-            opacity: 0.0;
-        }
         p {
-            opacity: 0.0;
-        }
-        &:hover {
-            background-color: white;
-            align-items: center;
-            justify-content: center;
-            p {
-                opacity: 1;
-                &:nth-child(2) {
-                    font-style: italic;
-                    font-size: 0.8rem;
-                    margin-top: 20px;
-                }
-            }
-            a {
-                opacity: 1;
+            opacity: 1;
+            &:nth-child(2) {
+                font-style: italic;
+                font-size: 0.8rem;
                 margin-top: 20px;
             }
-            span {
-                font-weight: 800;
+        }
+        a {
+            margin-top: 20px;
+            opacity: 0.5;
+        }
+        &:hover {
+            background-color: rgba(0, 0, 0, 0);
+            a {
+                opacity: 1;
             }
+            
         }
     }
 }

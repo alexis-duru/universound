@@ -2,14 +2,14 @@
 {% block title %}{% endblock %}
 {% block body %}
     <section class="other-section"> 
-        <h1>UPLOAD</h1>
+        <h1>EDIT YOUR TRACK</h1>
         <div class="container">
                 {{ form_start(form)}}
                 {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
                 {{ form_widget(form) }}
                 <div id="btn-form-edit">
-                    <a class="big-btn" href="{{ path('app_stream')}}">BACK</a>
-                    <input class="big-btn" type="submit" value="UPDATE">
+                    <a class="middle-btn" href="{{ path('app_stream')}}">BACK</a>
+                    <input class="middle-btn" type="submit" value="UPDATE">
                 <div>
                 {{ include('stream/delete.html.twig') }}
                 {{ form_end (form) }}  

@@ -53,7 +53,6 @@
                         </ul>
                     </li>
                 </ul>
-                </i>
             </nav>
             {% else %}
             <nav>
@@ -69,6 +68,30 @@
                     </li>
                     <li>
                         <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
+                    </li>
+                </ul>
+                <ul class="menu-burger">
+                    <li class="menu-1">
+                    <i id="burger" class="fas fa-bars"></i>
+                        <ul class="sous-menu-burger">
+                            <li class="menu-2">
+                                <a href="{{path('app_homepage')}}">HOME</a>
+                            </li>
+                            <li class="menu-2">
+                                <a href="{{path('app_stream')}}">STREAM</a>
+                            </li>
+                            <li class="menu-2">
+                                <a href="{{path('app_upload')}}">UPLOAD</a>
+                            </li>
+                            <li class="menu-2">
+                                <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
+                            </li>
+                            <li class="menu-2">
+                                <a id="reseaux-sociaux-mobile" href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                                <a id="reseaux-sociaux-mobile" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a id="reseaux-sociaux-mobile" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>

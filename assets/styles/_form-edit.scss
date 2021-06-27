@@ -1,8 +1,12 @@
 #btn-form-edit {
     display: flex;
     height: auto;
+    width: auto;
     justify-content: center;
     align-items: center;
     padding: 0px;
     margin: 0px;
+    .middle-btn {
+        margin-right: 10px;
+    }
 }

@@ -8,16 +8,14 @@
             #header-elements {
                 width: auto;
                 height: 100px;
-                // flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 .logo {
                     .logo-universound {
-                        width: 40px;
+                        width: 60px;
                     }
                 .typo-universound {
-                    height: 4vh;
-                    // margin-left:15px;
+                    height: 7vh;
                     }
                 }
             }
@@ -25,6 +23,8 @@
                 display: none;
             }
         }
+
+        // MENU BURGER //
 
         nav {
             position: relative;
@@ -54,7 +54,7 @@
                 &:hover .menu-1 {
                     color: black;
                     &:hover .sous-menu-burger {
-                        animation: fadeIn 0.7s;
+                        animation: fadeIn 0.4s;
                         @keyframes fadeIn {
                             0% {opacity:0;}
                             100% {opacity:1;}
@@ -62,7 +62,7 @@
                         display: flex;
                         flex-direction: column;
                         position: absolute;
-                        top: 70px;
+                        top: 46px;
                         left: 0px;
                         background-color: black;
                         margin: auto;
@@ -73,11 +73,11 @@
                         padding: 0px;
                         margin: 0px;
                         .menu-2 {
-                            height: 50px;
+                            height: 100px;
                             justify-content: center;
                             align-items: center;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.132);
                             a {
-                            transition: 1s;
                             color: white;
                             }
                             #reseaux-sociaux-mobile {
@@ -99,19 +99,6 @@
     #container-2-homepage {
         display: flex;
         flex-wrap: wrap;
-    }
-    .empty #empty-container #empty-container-in {
-        width: 300px;
-        height: 200px;
-        h2 {
-            font-size: 0.8rem;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 0.7rem;
-            text-align: center;
-        }
     }
 
     // STREAM PAGE //
@@ -144,6 +131,120 @@
         }
 
     }
+}
+@media screen and (max-width:580px) {
+    section {
+        text-align: center;
+    }
+}
 
+@media screen and (max-width:425px) {
+
+    // HEADER // 
+
+    header>#header-top>#header-elements>.logo>a>.typo-universound {
+        height: 3vh;
+    }
+    header>#header-top>#header-elements>.logo>.logo-universound {
+        width: 40px;
+    }
+
+    // HOMEPAGE //
+
+    section {
+        text-align: center;
+        #container-3-homepage {
+            height: auto;
+        }
+    }
+
+    // STREAM // 
+
+    #container-track {
+        width: auto;
+        #infos-track {
+            width: auto;
+            height: auto;
+            .infos-track-details {
+                width: auto;
+                margin-bottom: 15px;
+                span {
+                    margin: inherit;
+                }
+                p {
+                    letter-spacing: 0px;
+                }
+            }
+        }
+    }
+    .other-section>.container {
+        width: auto;
+    }
+    
+}
+
+@media screen and (max-width:375px) {
+    .middle-btn {
+        height: 30px;
+        width: 100px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    section>#container-2-homepage>#container-lastnews>.caroussel {
+        width: 175px;
+        height: 175px;
+        .images {
+        width: 175px;
+        height: 175px;
+                img {
+                    width: 175px;
+                    height: 175px;
+                    @keyframes mesImages {
+                        0% {
+                            transform: translateX(0);
+                            background-color: white;
+                        }
+                    
+                        25% {
+                            transform: translateX(-175px);
+                            background-color: white;
+                        }
+                    
+                        50% {
+                            transform: translateX(-350px);
+                            background-color: white;
+                        }
+                    
+                        75% {
+                            transform: translateX(-700);
+                            background-color: white;
+                        }
+                    
+                        100%{
+                            transform: translateX(0);
+                            background-color: white;
+                        }
+                    }
+                }
+        }
+    }
+    section>#container-3-homepage {
+        width: auto;
+        margin: 20px;
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .middle-btn {
+        height: 25px;
+        width: 90px;
+    }
 }
 

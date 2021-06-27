@@ -60,8 +60,9 @@
                     <p>{{comment.content}}</p>
                     <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
                     <span></span>
-                <div>
+                </div>
             {% endfor %}
+            <a class="middle-btn" id="btn-comment" href="{{ path('app_stream')}}">BACK</a>
             </div>
             {% endif %}
     </section>

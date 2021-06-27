@@ -14,15 +14,15 @@
                     <label for="inputPassword">Password</label>
                     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <button class="middle-btn" type="submit">LOGIN</button>
+                    <p>No account? <a id="linktoregister" href="{{ path('app_register') }}">Create one</a></p>
+
                     {% if error %}
                     <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
                     {% if app.user %}
-                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                    </div>
+                    You are logged in as {{ app.user.username }}, <a class="middle-btn" href="{{ path('app_logout') }}">Logout</a>
                     {% endif %}
-                    <button class="middle-btn" type="submit">LOGIN</button>
-                    <p>If you do not yet have an account, you may : <a id="linktoregister" href="{{ path('app_register') }}">register here</a></p>
                 </div>
             </div>
         </div>

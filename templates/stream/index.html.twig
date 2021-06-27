@@ -28,13 +28,13 @@
                                <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
                             </a>
                         {% endif %}
+                        {# {{ include('stream/delete.html.twig') }} #}
                     </div>
                 </div>
             </div>
     </section>
     {% else %} 
     <section class="empty"> 
-    <h1>STREAM</h1>
         <div id="empty-container">
             <div id="empty-container-in">
                 <h2>No Records found</h2>

@@ -3,8 +3,13 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<section>
-    <h2>{{ error }} - {{ message }}</h2>
-    <a class="big-btn" href="{{path('app_stream')}}"><button class="big-btn" >Back to posts</button>
+ <section class="empty"> 
+    <h1>UPLOAD</h1>
+        <div id="empty-container">
+                <div id="empty-container-in">
+                    <h2>{{ error }} - {{ message }}</h2>
+                    <a class="middle-btn" href="{{path('app_stream')}}">Back to posts</a>
+                </div>     
+        </div>
 </section>
 {% endblock %}

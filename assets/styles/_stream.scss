@@ -14,6 +14,10 @@
     background-size: cover;
     box-sizing: border-box;
     background-image: url('/assets/images/background/texture-container7bis.jpg');
+    color: black;
+    h2 {
+        color: black;
+    }
     span {
         label {
             font-family: 'avenir';
@@ -60,6 +64,11 @@
         display: flex;
         justify-content: space-around;
         flex-direction: column;
+        #btn-comment {
+            display: flex;
+            display: flex;
+            justify-content: space-around;
+        }
         #artistandtitle {
             display: flex;
             flex-direction: column;
@@ -102,9 +111,9 @@
         }
         .middle-btn {
             &:last-child {
-                background-color: white;
-                color: black;
-                font-size: 15px;
+                // background-color: white;
+                // color: black;
+                // font-size: 15px;
                 i {
                     margin-right: 7px;
                 }

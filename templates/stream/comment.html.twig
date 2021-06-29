@@ -9,11 +9,12 @@
         <div id="container-track" id="container-track-comment">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
-                <div id="infos-track">
+                <div id="infos-track" id="infos-comment">
                     <h2>{{ track.artist }} - {{ track.title }}</h2>
-                        <span class="info-message"> 
-                        <a href="{{path('app_login')}}">login</a>
-                        </span>
+                        <div id="btn-comment">
+                            <a class="middle-btn" href="{{path('app_login')}}">login</a>
+                            <a class="middle-btn" href="{{path('app_stream_details', {'id': track.id})}}">back <i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                        </div>
                 </div>
             </div>
         <div id="container-comment">

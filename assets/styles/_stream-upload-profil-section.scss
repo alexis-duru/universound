@@ -2,9 +2,9 @@
 // SECTION OF PAGES OTHER THAN THE "STREAM" PAGE //
 
 .other-section {
-    min-height: 85vh;
+    height: auto;
     width: 100%;
-    background-image: url('/assets/images/background/universound.jpg');
+    background-image: url('../images/background/universound.jpg');
     box-sizing: border-box;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: url('/assets/images/background/texture-container7bis.jpg');
+        background-image: url('../images/background/texture-container7bis.jpg');
         background-size: cover;
         .vich-file {
             display: flex;
@@ -60,6 +60,3 @@
         }
     }
 }
-
-// SI IL N'Y A PAS DE MUSIQUE DANS LA PARTIE STREAM //
-// STREAM IF THERE IS NO MUSIC IN THE PART //

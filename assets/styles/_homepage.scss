@@ -4,7 +4,7 @@
 section {
     height: auto;
     width: 100%;
-    background-image: url('/assets/images/background/universound.jpg');
+    background-image: url('../images/background/universound.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -145,7 +145,6 @@ section {
                             justify-content: center;
                             align-items: center;
                             color: rgb(255, 255, 255);
-                            font-family: 'avenir';
                             font-size: 1rem;
                             font-weight: 400;
                             letter-spacing: 5px;
@@ -212,7 +211,7 @@ section {
         margin-bottom: 100px;
         background-blend-mode: overlay;
         background-color: rgba(0, 0, 0, 0.81);
-        background-image: url('/assets/images/background/texture-container7bis.jpg');
+        background-image: url('../images/background/texture-container7bis.jpg');
         transition: background-color 0.8s;
         background-size: cover;
         border: 1px solid white;

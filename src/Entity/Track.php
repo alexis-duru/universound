@@ -2,17 +2,13 @@
 
 namespace App\Entity;
 
-use App\Entity\User;
-use App\Entity\Track;
-use DateTimeInterface;
-use App\Entity\Comment;
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TrackRepository;
-use Doctrine\Common\Collections\Collection;
-use Symfony\Component\HttpFoundation\File\File;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\HasLifecycleCallbacks()
@@ -21,7 +17,6 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  */
 class Track
 {
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -50,12 +45,12 @@ class Track
     private $details;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="Tracks")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="Tracks")
      * @ORM\JoinColumn(nullable=false)
      */
     private $artist;
 
-     /**
+    /**
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -92,7 +87,6 @@ class Track
     {
         return $this->media;
     }
-    
 
     public function getId(): ?int
     {
@@ -159,12 +153,12 @@ class Track
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    public function setCreatedAt(DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
 
@@ -176,7 +170,7 @@ class Track
         return $this->media;
     }
 
-    public function setMedia(?string $media): self 
+    public function setMedia(?string $media): self
     {
         $this->media = $media;
 
@@ -268,5 +262,4 @@ class Track
 
         return $this;
     }
-
 }

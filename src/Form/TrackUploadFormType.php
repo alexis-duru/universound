@@ -4,12 +4,11 @@ namespace App\Form;
 
 use App\Entity\Genre;
 use App\Entity\Track;
-use App\Form\TrackUploadFormType;
 use Symfony\Component\Form\AbstractType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class TrackUploadFormType extends AbstractType
 {

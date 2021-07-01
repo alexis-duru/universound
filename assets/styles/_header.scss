@@ -50,6 +50,9 @@ header {
                 display: flex;
                 justify-content: space-between;
                 text-decoration: none;
+                a {
+                    font-size: 18px;
+                }
                 :first-child {
                     transform: scale(1);
                     transition: 0.5s;
@@ -102,7 +105,7 @@ header {
                     width: auto;
                     text-align: center;
                     padding: 2px;
-                    font-weight: 400;
+                    font-weight: 600;
                     letter-spacing: 4px;
 
                     &:hover {

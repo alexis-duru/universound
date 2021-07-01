@@ -2,10 +2,12 @@
 
 {% block title %}{% endblock %}
 
-{% block body %}
-<section class="other-section"> 
-    <h1>STREAM</h1>
+{% block body %} 
+<section class="other-section">
+<h1>STREAM</h1>
+</section>
 {% for track in tracks %}  
+<section class="other-section">
             <div id="container-track" class="hover-fx">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
@@ -30,7 +32,7 @@
                     </div>
                 </div>
             </div>
-    </section>
+</section>
     {% else %} 
     <section class="empty"> 
         <div id="empty-container">

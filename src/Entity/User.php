@@ -2,20 +2,15 @@
 
 namespace App\Entity;
 
-use Serializable;
-use App\Entity\User;
-use App\Entity\Track;
-use App\Entity\Comment;
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\Collection;
-use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -27,7 +22,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * 
+     *
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -92,18 +87,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
      */
     private $likes;
 
-
     public function __construct()
     {
         $this->Tracks = new ArrayCollection();
         $this->likes = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
-    
+
+    public function __toString()
+    {
+        return $this->username;
+    }
 
     public function serialize()
     {
-        return serialize(array(
+        return serialize([
             $this->id,
             $this->email,
             $this->password,
@@ -111,7 +109,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->lastname,
             $this->username,
             $this->media,
-        ));
+        ]);
     }
 
     public function unserialize($serialized)
@@ -123,16 +121,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->firstname,
             $this->lastname,
             $this->username,
-            $this->media,
-
-
-
-        ) = unserialize($serialized);
-    }
-    
-    public function __toString()
-    {
-        return $this->username;
+            $this->media) = unserialize($serialized);
     }
 
     public function getId(): ?int
@@ -378,5 +367,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
 
         return $this;
     }
-
 }

@@ -3,12 +3,11 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<form method="post">
-    <section class="empty"> 
+    <section class="other-section"> 
     <h1>Login</h1>  
-        <div id="empty-container">
             <div class="container">
                 <div id="empty-container-in">
+                    <form method="post">
                     <label for="inputEmail">Email</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
                     <label for="inputPassword">Password</label>
@@ -17,17 +16,17 @@
                     <button class="middle-btn" type="submit">LOGIN</button>
                     <p>No account? <a id="linktoregister" href="{{ path('app_register') }}">Create one</a></p>
 
+
                     {% if error %}
                     <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
                     {% if app.user %}
                     You are logged in as {{ app.user.username }}, <a class="middle-btn" href="{{ path('app_logout') }}">Logout</a>
                     {% endif %}
+                    </form>
                 </div>
             </div>
-        </div>
     </section>
-</form>
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.

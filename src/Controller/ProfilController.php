@@ -4,12 +4,11 @@ namespace App\Controller;
 
 use App\Form\RegistrationFormType;
 use App\Repository\TrackRepository;
-use App\Controller\SecurityController;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProfilController extends AbstractController
 {
@@ -45,15 +44,14 @@ class ProfilController extends AbstractController
     }
 
     /**
-    * @Route("/profil/music", name="app_profil_music")
-    */
+     * @Route("/profil/music", name="app_profil_music")
+     */
     public function show(TrackRepository $repository): Response
-   {
-       $tracks = $repository->findAll();
+    {
+        $tracks = $repository->findAll();
 
-       return $this->render('profil/music.html.twig', [
-           'tracks' => $tracks,
-       ]);
-   }
-   
+        return $this->render('profil/music.html.twig', [
+            'tracks' => $tracks,
+        ]);
+    }
 }

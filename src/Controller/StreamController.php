@@ -2,27 +2,27 @@
 
 namespace App\Controller;
 
-use App\Entity\Track;
 use App\Entity\Comment;
+use App\Entity\Track;
 use App\Form\CommentFormType;
 use App\Form\TrackUploadFormType;
 use App\Repository\TrackRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Security;
 
 class StreamController extends AbstractController
 {
-
     private $security;
 
     public function __construct(Security $security)
     {
         $this->security = $security;
     }
-    
+
     /**
      * @Route("/stream", name="app_stream", methods={"GET"})
      */
@@ -33,7 +33,7 @@ class StreamController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/stream/{id}", name="app_stream_details", methods={"GET", "POST"})
      */
     public function show(Track $track, Request $request): Response
@@ -44,6 +44,7 @@ class StreamController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
      * @Route("/edit/{id}", name="app_stream_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Track $track): Response
@@ -73,6 +74,7 @@ class StreamController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
      * @Route("/delete/{id}", name="app_stream_delete", methods={"POST"})
      */
     public function delete(Request $request, Track $track): Response
@@ -94,12 +96,9 @@ class StreamController extends AbstractController
         ]);
     }
 
-
-
     /**
      * @Route("/stream/comment/{id}", name="app_stream_comment", methods={"GET", "POST"})
      */
-
     public function findAll(Track $track, Request $request): Response
     {
         $comments = $track->getComments();
@@ -147,5 +146,4 @@ class StreamController extends AbstractController
 
         return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
     }
-    
 }

@@ -3,18 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Track;
-use App\Form\UploadType;
 use App\Form\TrackUploadFormType;
-use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Security;
 
 class UploadController extends AbstractController
 {
-
     private $security;
 
     public function __construct(Security $security)
@@ -23,6 +21,7 @@ class UploadController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
      * @Route("/upload", name="app_upload", methods={"GET","POST"})
      */
     public function new(Request $request, Security $security): Response
@@ -46,5 +45,4 @@ class UploadController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    
 }

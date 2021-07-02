@@ -12,6 +12,8 @@
                     <div id="artistandtitle">
                         <h2>{{ track.artist }}</h2>
                         <p>{{ track.title }}</p>
+                        <div id="artwork"><audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}"></audio>
+                        </div>
                     </div>
                         <div class="infos-track-details"><p>Label :</p><span>{{ track.label }}</span></div>
                         <div class="infos-track-details"><p>Genre :</p> <span>{{ track.genre }}</span></div>

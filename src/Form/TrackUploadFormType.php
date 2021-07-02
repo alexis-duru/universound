@@ -34,7 +34,14 @@ class TrackUploadFormType extends AbstractType
                 'download_label' => 'Download Photo',
                 'asset_helper' => true,
             ])
-            // ->add('likes')
+            ->add('audioFile', VichFileType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'delete_label' => 'Remove Audio',
+                'download_uri' => true,
+                'download_label' => 'Download Audio',
+                'asset_helper' => true,
+            ])
         ;
     }
 

@@ -7,6 +7,7 @@ use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+// use PhpParser\Comment;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -76,6 +77,18 @@ class Track
      * @ORM\ManyToMany(targetEntity=User::class, inversedBy="likes")
      */
     private $likes;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $audio;
+
+    /**
+     * @Vich\UploadableField(mapping="audio", fileNameProperty="audio")
+     *
+     * @var null|File
+     */
+    private $audioFile;
 
     public function __construct()
     {
@@ -177,6 +190,18 @@ class Track
         return $this;
     }
 
+    public function getAudio(): ?string
+    {
+        return $this->audio;
+    }
+
+    public function setAudio(?string $audio): self
+    {
+        $this->audio = $audio;
+
+        return $this;
+    }
+
     /**
      * @ORM\PrePersist
      */
@@ -207,6 +232,24 @@ class Track
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
         }
+    }
+
+    /**
+     * Get nOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @return null|File
+     */
+    public function getAudioFile()
+    {
+        return $this->audioFile;
+    }
+
+    /**
+     * @param null|File|\Symfony\Component\HttpFoundation\File\UploadedFile $audioFile
+     */
+    public function setAudioFile(?File $audioFile): void
+    {
+        $this->audioFile = $audioFile;
     }
 
     /**

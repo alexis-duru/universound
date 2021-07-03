@@ -1,8 +1,13 @@
 // HEADER //
 
 header {
-    background-color: rgb(254, 251, 241);
-    height: auto;
+    // background-color: rgb(254, 251, 241);
+    background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
+    background-size: cover;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     // position: fixed;
 
     // HAUT DE LA BARRE DE NAVIGATION //

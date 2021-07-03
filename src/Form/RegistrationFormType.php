@@ -25,10 +25,10 @@ class RegistrationFormType extends AbstractType
             ->add('username')
             ->add('mediaFile', VichFileType::class, [
                 'required' => false,
-                'allow_delete' => true,
-                'delete_label' => 'Remove Photo',
-                'download_uri' => true,
-                'download_label' => 'Download Photo',
+                'allow_delete' => false,
+                'delete_label' => '',
+                'download_uri' => '',
+                'download_label' => '',
                 'asset_helper' => true,
             ])
             ->add('plainPassword', RepeatedType::class, [
@@ -52,14 +52,14 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
-            ])
+            // ->add('agreeTerms', CheckboxType::class, [
+            //     'mapped' => false,
+            //     'constraints' => [
+            //         new IsTrue([
+            //             'message' => 'You should agree to our terms.',
+            //         ]),
+            //     ],
+            // ])
         ;
     }
 

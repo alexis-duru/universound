@@ -52,8 +52,8 @@
               .menu-btn{
                 position: absolute;
                 z-index: 2;
-                right: 20px;
-                top: -28px;
+                right: 9%;
+                top: -61px;
                 height: 50px;
                 width: 50px;
                 text-align: center;
@@ -251,7 +251,7 @@
     // HEADER // 
 
     header>nav>.menu-btn{
-        top: -29px;
+        top: -60px;
       }
 
     header>#header-top>#header-elements>.logo>a>.typo-universound {
@@ -300,12 +300,12 @@
 @media screen and (max-width:375px) {
 
     header>nav>.menu-btn{
-        top: -30px;
+        top: -60px;
       }
-    .middle-btn {
-        height: 30px;
-        width: 100px;
-    }
+    // .middle-btn {
+    //     height: 30px;
+    //     width: 100px;
+    // }
 
     h2 {
         font-size: 12px;
@@ -325,7 +325,7 @@
     }
 
     header>nav>.menu-btn{
-        top: -29px;
+        top: -62px;
       }
     section>#container-2-homepage>#container-lastnews>.caroussel {
         width: 175px;
@@ -373,10 +373,10 @@
         }
     }
 
-    .middle-btn {
-        height: 25px;
-        width: 90px;
-    }
+    // .middle-btn {
+    //     height: 25px;
+    //     width: 90px;
+    // }
 
     #container-track {
         width: 293px;

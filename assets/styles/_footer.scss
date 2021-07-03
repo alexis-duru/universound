@@ -1,8 +1,11 @@
 footer {
-    height: 5vh;
+    height: 9vh;
     width: 100%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    // background-color: #fefbf1;
+    background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
+    background-size: cover;
 }

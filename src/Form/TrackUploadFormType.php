@@ -28,17 +28,18 @@ class TrackUploadFormType extends AbstractType
             ->add('details')
             ->add('mediaFile', VichFileType::class, [
                 'required' => false,
-                'allow_delete' => true,
-                'delete_label' => 'Remove Photo',
-                'download_uri' => true,
-                'download_label' => 'Download Photo',
+                'allow_delete' => false,
+                'delete_label' => '',
+                'download_uri' => false,
+                'download_label' => '',
                 'asset_helper' => true,
+
             ])
             ->add('audioFile', VichFileType::class, [
                 'required' => false,
-                'allow_delete' => true,
+                'allow_delete' => false,
                 'delete_label' => 'Remove Audio',
-                'download_uri' => true,
+                'download_uri' => false,
                 'download_label' => 'Download Audio',
                 'asset_helper' => true,
             ])

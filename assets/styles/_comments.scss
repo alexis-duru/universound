@@ -40,6 +40,14 @@
             margin-top: 10px;
             opacity: 0.5;
         }
+
+        .update-delete-comment {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+            margin-top: 10px;
+        }
         span {
             display: flex;
             flex-direction: column;

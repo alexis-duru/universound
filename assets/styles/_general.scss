@@ -38,7 +38,15 @@ a {
     color: black;
 }
 
-button, input {
+input {
+    height: 30px;
+    outline: none;
+    width: 220px;
+    font-size: 13px;
+
+}
+
+button {
     border: 0px;
     cursor: pointer;
 }
@@ -64,8 +72,12 @@ label {
 input {
     border: 0px;
     border: 1.4px solid black;
-    border-radius: 50px;
-}
+    border-radius: 5px;
+    transition: 0.5s;
+    &:hover {
+        background-color: (#10315535);
+    }
+} 
 
 .alert {
     color: brown;
@@ -152,7 +164,7 @@ h3 {
     }
 }
 
-.middle-btn {
+.middle-btn, .middle-btn-delete {
     font-size: 0.8rem;
     width: 120px;
     height: 35px;
@@ -172,6 +184,11 @@ h3 {
     &:hover {
         opacity: 0.7;
     }
+}
+
+.middle-btn-delete {
+    background-color: rgba(255, 0, 0, 0.81);
+    color: black;
 }
 
 .small-btn {
@@ -251,6 +268,17 @@ transition: 0.6s;
 
     }
 }
+
+#photoprofil {
+    border-radius: 100px;
+}
+
+
+
+
+
+
+
 
 
 

@@ -23,6 +23,8 @@ class StreamController extends AbstractController
         $this->security = $security;
     }
 
+    // GLOBAL STREAM //
+
     /**
      * @Route("/stream", name="app_stream", methods={"GET"})
      */
@@ -33,6 +35,8 @@ class StreamController extends AbstractController
         ]);
     }
 
+    // DETAILS TRACK //
+
     /**
      * @Route("/stream/{id}", name="app_stream_details", methods={"GET", "POST"})
      */
@@ -42,6 +46,8 @@ class StreamController extends AbstractController
             'track' => $track,
         ]);
     }
+
+    // EDIT TRACK //
 
     /**
      * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
@@ -73,6 +79,8 @@ class StreamController extends AbstractController
         ]);
     }
 
+    // DELETE TRACK //
+
     /**
      * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
      * @Route("/delete/{id}", name="app_stream_delete", methods={"POST"})
@@ -95,6 +103,8 @@ class StreamController extends AbstractController
             'message' => 'Unauthorized acces',
         ]);
     }
+
+    // COMMENT //
 
     /**
      * @Route("/stream/comment/{id}", name="app_stream_comment", methods={"GET", "POST"})
@@ -125,6 +135,78 @@ class StreamController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    // /**
+    //  * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
+    //  * @Route("/commentedit/{id}", name="app_stream_commentedit", methods={"GET", "POST"})
+    //  */
+    // public function editComment(Request $request, Comment $comment): Response
+    // {
+    //     $user = $this->security->getUser();
+
+    //     if ($user === $comment->getAuthor()) {
+    //         $form = $this->createForm(CommentFormFormType::class, $comment);
+    //         $form->handleRequest($request);
+
+    //         if ($form->isSubmitted() && $form->isValid()) {
+    //             $this->getDoctrine()->getManager()->flush();
+
+    //             return $this->redirectToRoute('app_stream_comment');
+    //         }
+
+    //         return $this->render('stream/comment.html.twig', [
+    //             'comment' => $comment,
+    //             'form' => $form->createView(),
+    //         ]);
+    //     }
+
+    //     return $this->render('common/error.html.twig', [
+    //         'error' => 401,
+    //         'message' => 'Unauthorized access',
+    //     ]);
+    // }
+
+    // DELETE COMMENT // 
+
+    /**
+     * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
+     * @Route("/deletecomment/{id<\d+>}", name="app_stream_deletecomment", methods={"POST"})
+     */
+    public function deletecomment(Request $request, Comment $comment): Response
+    {
+        $user = $this->security->getUser();
+        if ($user === $comment->getAuthor()) {
+            if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->remove($comment);
+                $entityManager->flush();
+            }
+
+            return $this->redirectToRoute('app_stream');
+        }
+
+        return $this->render('common/error.html.twig', [
+            'error' => 401,
+            'message' => 'Unauthorized acces',
+        ]);
+    }
+
+    
+   
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
 
     /**
      * @Route("/like/{id}", name="track_like")

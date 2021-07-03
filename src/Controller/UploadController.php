@@ -21,7 +21,6 @@ class UploadController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
      * @Route("/upload", name="app_upload", methods={"GET","POST"})
      */
     public function new(Request $request, Security $security): Response

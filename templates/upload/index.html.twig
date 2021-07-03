@@ -20,7 +20,8 @@
         <h1>UPLOAD</h1>
         <div class="container">
                 {{ form_start(form)}}
-                {{ form_row(form.mediaFile, { 'label': 'Artwork' }) }}
+                {{ form_row(form.mediaFile, { 'label': 'Artwork' })  }}
+                {{ form_row(form.audioFile, { 'label': 'Audio' })  }}
                 {{ form_widget(form) }}
                 <input class="middle-btn" type="submit" value="UPLOAD">
                 {{ form_end (form) }} 

@@ -16,9 +16,7 @@
                     {{ form_row(registrationForm.plainPassword, {
                         label: 'Password'
                     }) }}
-                    <div class"agree-terms">
-                    {{ form_row(registrationForm.agreeTerms) }}
-                    </div>
+                    {# {{ form_row(registrationForm.agreeTerms) }} #}
                     {% for flashError in app.flashes('verify_email_error') %}
                     <div class="alert" role="alert">{{ flashError }}</div>
                     {% endfor %}

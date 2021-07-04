@@ -64,9 +64,10 @@ class ProfilController extends AbstractController
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->remove($user);
                 $entityManager->flush();
+                session_destroy();
             }
 
-            return $this->redirectToRoute('app_profil');
+            return $this->redirectToRoute('app_stream');
 
         return $this->render('common/error.html.twig', [
             'error' => 401,

@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\GenreRepository;
+use App\Entity\Genre;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\GenreRepository;
 
 /**
  * @ORM\Entity(repositoryClass=GenreRepository::class)

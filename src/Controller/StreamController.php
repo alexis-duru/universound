@@ -136,35 +136,36 @@ class StreamController extends AbstractController
         ]);
     }
 
-    // /**
-    //  * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
-    //  * @Route("/comment/{id}/editcomment", name="app_stream_editcomment", methods={"GET", "POST"})
-    //  */
-    // public function editComment(Request $request, Comment $comment): Response
-    // {
-    //     $user = $this->security->getUser();
+    /**
+     * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
+     * @Route("comment/{id}/editcomment", name="app_stream_editcomment", methods={"GET", "POST"})
+     */
+    public function editComment(Request $request, Comment $comment): Response
+    {
+        
+        $user = $this->security->getUser();
 
-    //     if ($user === $comment->getAuthor()) {
-    //         $form = $this->createForm(CommentFormFormType::class, $comment);
-    //         $form->handleRequest($request);
+        if ($user === $comment->getAuthor()) {
+            $form = $this->createForm(CommentFormType::class, $comment);
+            $form->handleRequest($request);
 
-    //         if ($form->isSubmitted() && $form->isValid()) {
-    //             $this->getDoctrine()->getManager()->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->getDoctrine()->getManager()->flush();
 
-    //             return $this->redirectToRoute('app_stream_comment');
-    //         }
+                return $this->redirectToRoute('app_stream');
+            }
 
-    //         return $this->render('stream/comment.html.twig', [
-    //             'comment' => $comment,
-    //             'form' => $form->createView(),
-    //         ]);
-    //     }
+            return $this->render('stream/editcomment.html.twig', [
+                'comment' => $comment,
+                'form' => $form->createView(),
+            ]);
+        }
 
-    //     return $this->render('common/error.html.twig', [
-    //         'error' => 401,
-    //         'message' => 'Unauthorized access',
-    //     ]);
-    // }
+        return $this->render('common/error.html.twig', [
+            'error' => 401,
+            'message' => 'Unauthorized access',
+        ]);
+    }
 
     // DELETE COMMENT // 
 

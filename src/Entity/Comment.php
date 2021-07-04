@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\CommentRepository;
 use DateTime;
+use App\Entity\Track;
 use DateTimeInterface;
+use App\Entity\Comment;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CommentRepository;
 
 /**
  * @ORM\Entity(repositoryClass=CommentRepository::class)
@@ -71,12 +73,12 @@ class Comment
         return $this;
     }
 
-    public function getTrack(): ?track
+    public function getTrack(): ?Track
     {
         return $this->track;
     }
 
-    public function setTrack(?track $track): self
+    public function setTrack(?Track $track): self
     {
         $this->track = $track;
 

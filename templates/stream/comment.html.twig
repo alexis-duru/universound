@@ -57,7 +57,13 @@
                     <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
                     <div class="update-delete-comment">
                             {# <a href="{{path('app_stream_commentedit', {'id': track.id}) }}"><i class="fas fa-edit"></i></a> #}
-                            {{ include('stream/deletecomment.html.twig') }}
+                            {% if app.user.id %}
+                            {% if app.user.id is same as comment.author.id  %}
+                                {{ include('stream/deletecomment.html.twig') }}
+                            {% else %}
+                            {% endif %}
+                            {% endif %}
+
                     </div>
                     <span></span>
                 </div>

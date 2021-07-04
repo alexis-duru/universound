@@ -138,7 +138,7 @@ class StreamController extends AbstractController
 
     // /**
     //  * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
-    //  * @Route("/commentedit/{id}", name="app_stream_commentedit", methods={"GET", "POST"})
+    //  * @Route("/comment/{id}/editcomment", name="app_stream_editcomment", methods={"GET", "POST"})
     //  */
     // public function editComment(Request $request, Comment $comment): Response
     // {

@@ -12,7 +12,8 @@
     align-items: center;
     margin-bottom: 100px;
     background-size: cover;
-    box-sizing: border-box;
+    opacity: 0.85;
+    // box-sizing: border-box;
     background-image: url('../images/background/texture-container7bis.jpg');
     color: black;
     h2 {
@@ -136,6 +137,7 @@
         margin-bottom: 30px;
         justify-content: center;
         align-items: center;
+        opacity: 0.75;
         // border: 2px solid black;
         // border-radius: 20px;
         // height: 40px;

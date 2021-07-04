@@ -152,48 +152,48 @@
 // QUAND IL N'Y A AUCUN MORCEAU DE MUSIQUE PRESENT DANS LA SECTION STREAM //
 // WHEN THERE IS NO MUSIC IN THE STREAM SECTION //
 
-.empty {
-    height: 85vh;
-    #empty-container {
-        height: 60vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space;
-            #empty-container-in {
-            height: autos;
-            width: auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border: 1px solid white;
-            flex-direction: column;
-            background-image: url('../images/background/texture-container7bis.jpg');
-            background-size: cover;
-            box-sizing: border-box;
-            border-radius: 30px;
-            padding: 50px 50px 50px 50px;
-            h2 {
-                color: black;
-                justify-content: center;
-                align-items: center;
-                border-bottom: 1px solid black;
-                padding: 5px;
-            }
-            p {
-                font-style: italic;
-                text-align: center;
-                // width: 70%;
-                margin-top: 40px;
-            }
-            #linktoregister {
-                font-weight: bold;
-                border-bottom: 1px solid black;
-                &:hover {
-                    opacity: 0.5;
-                }
-            }
-        }
-    }   
+// .empty {
+//     height: 85vh;
+//     #empty-container {
+//         height: 60vh;
+//         display: flex;
+//         align-items: center;
+//         flex-direction: column;
+//         justify-content: space;
+//             #empty-container-in {
+//             height: autos;
+//             width: auto;
+//             display: flex;
+//             justify-content: space-around;
+//             align-items: center;
+//             border: 1px solid white;
+//             flex-direction: column;
+//             background-image: url('../images/background/texture-container7bis.jpg');
+//             background-size: cover;
+//             box-sizing: border-box;
+//             border-radius: 30px;
+//             padding: 50px 50px 50px 50px;
+//             h2 {
+//                 color: black;
+//                 justify-content: center;
+//                 align-items: center;
+//                 border-bottom: 1px solid black;
+//                 padding: 5px;
+//             }
+//             p {
+//                 font-style: italic;
+//                 text-align: center;
+//                 // width: 70%;
+//                 margin-top: 40px;
+//             }
+//             #linktoregister {
+//                 font-weight: bold;
+//                 border-bottom: 1px solid black;
+//                 &:hover {
+//                     opacity: 0.5;
+//                 }
+//             }
+//         }
+//     }   
 
-}
+// }

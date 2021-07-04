@@ -26,6 +26,17 @@
         align-items: center;
         background-image: url('../images/background/texture-container7bis.jpg');
         background-size: cover;
+        p {
+            margin-top: 9px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-align: center;
+            a {
+                color: rgba(0, 0, 0, 0.591);
+                font-style: italic;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.591);
+            }
+        }
         .vich-file {
             display: flex;
             flex-direction: column;

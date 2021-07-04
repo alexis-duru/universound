@@ -22,7 +22,8 @@
                     <span></span>
                 </div>
                 {% endfor %}
-                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                    <div class="infos-track-details">
+                                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
             </div>
 </section>
     {% else %}
@@ -68,7 +69,8 @@
                     <span></span>
                 </div>
             {% endfor %}
-            <a class="middle-btn" id="btn-comment" href="{{ path('app_stream')}}">BACK</a>
+            <div class="infos-track-details">
+                                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
             </div>
             {% endif %}
     </section>

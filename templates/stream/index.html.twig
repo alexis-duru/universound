@@ -39,13 +39,10 @@
             </div>
 </section>
     {% else %} 
-    <section class="empty"> 
-        <div id="empty-container">
-            <div id="empty-container-in">
-                <h2>No Records found</h2>
-                <p>It's time to share your first track</p>
-                <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
-            </div>
+ <section class="other-section"> 
+        <div class="container">
+                <p>No Records found</p>
+                <a class="middle-btn" href="{{ path('app_upload') }}">UPLOAD</a>
         </div>
     </section>
     {% endfor %}

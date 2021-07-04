@@ -4,16 +4,13 @@
 
 {% block body %}
 {% if not app.user %}
- <section class="empty"> 
+ <section class="other-section"> 
  <h1>UPLOAD</h1>
-        <div id="empty-container">
-                <div id="empty-container-in">
-                        <h2>LOGIN PLEASE</h2>
+                <div class="container">
                         <p>You need to be logged on the app for access in the upload section</p>
                         <a class="middle-btn" href="{{path('app_login')}}">LOGIN</a>
-                        </a>
+                        <p>No account? <a id="linktoregister" href="{{ path('app_register') }}">Create one</a></p>
                 </div>
-        </div>
 </section>
 {% else %}
 <section class="other-section">  

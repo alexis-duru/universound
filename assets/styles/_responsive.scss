@@ -267,6 +267,9 @@
         text-align: center;
         #container-3-homepage {
             height: auto;
+            p {
+            font-size: 10px;
+            }
         }
     }
 
@@ -294,6 +297,14 @@
     #container-comment {
         width: 200px;
     }
+
+    .other-section>.container {
+        width: 70%;
+    }
+
+    .middle-btn, .middle-btn-delete {
+        width: 110px;
+    }
     
 }
 
@@ -310,7 +321,6 @@
     h2 {
         font-size: 12px;
     }
-    
 
 }
 
@@ -380,6 +390,10 @@
 
     #container-track {
         width: 200px;
+    }
+
+    .middle-btn, .middle-btn-delete {
+        width: 94px;
     }
 }
 

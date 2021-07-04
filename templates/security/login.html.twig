@@ -3,10 +3,9 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <section class="empty">  
+    <section class="other-section">  
     <h1>LOGIN</h1>  
-            <div id="empty-container">
-                <div id="empty-container-in">
+            <div class="container">
                     <form method="post">
                     <label for="inputEmail">Email</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -24,7 +23,6 @@
                     You are logged in as {{ app.user.username }}, <a class="middle-btn" href="{{ path('app_logout') }}">Logout</a>
                     {% endif %}
                     </form>
-                </div>
             </div>
     </section>
 

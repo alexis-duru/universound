@@ -7,21 +7,20 @@
         <h1>Register</h1>  
             <div class="container">
                 {{ form_start(registrationForm) }}
-                    <label>CHOOSE YOUR PROFIL PICTURE</label>
-                    {{ form_widget(registrationForm.mediaFile) }}
-                    {{ form_row(registrationForm.firstname) }}
-                    {{ form_row(registrationForm.lastname) }}
-                    {{ form_row(registrationForm.username) }}
-                    {{ form_row(registrationForm.email) }}
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
-                    }) }}
-                    {# {{ form_row(registrationForm.agreeTerms) }} #}
-                    {% for flashError in app.flashes('verify_email_error') %}
-                    <div class="alert" role="alert">{{ flashError }}</div>
-                    {% endfor %}
-                    <button type="submit" class="middle-btn">Register</button>
-                    {{ form_end(registrationForm) }}
+                <label>CHOOSE YOUR PROFIL PICTURE</label>
+                {{ form_widget(registrationForm.mediaFile) }}
+                {{ form_row(registrationForm.firstname) }}
+                {{ form_row(registrationForm.lastname) }}
+                {{ form_row(registrationForm.username) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
+                {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <button type="submit" class="middle-btn">Register</button>
+                {{ form_end(registrationForm) }}
             </div>
     </section>
 {% endblock %}
+
+{# {{ form_row(registrationForm.agreeTerms) }} #}

@@ -1,6 +1,5 @@
 // SECTION DES PAGES AUTRE QUE LA PAGE "STREAM" //
 // SECTION OF PAGES OTHER THAN THE "STREAM" PAGE //
-
 .other-section {
     min-height: 85vh;
     width: 100%;
@@ -17,24 +16,27 @@
     transition: 1s;
     .container {
         width: 50%;
-        height: auto;
+        min-height: 273px;
         background-color: white;
         padding: 50px;
         border-radius: 30px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         background-image: url('../images/background/texture-container7bis.jpg');
         background-size: cover;
         p {
             margin-top: 9px;
-            font-size: 13px;
+            font-size: 17px;
             letter-spacing: 2px;
             text-align: center;
+            font-weight: 600;
             a {
-                color: rgba(0, 0, 0, 0.591);
+                color: rgba(0, 3, 3, 0.591);
                 font-style: italic;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.591);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.356);
+                letter-spacing: 0.5px;
             }
         }
         .vich-file {
@@ -51,10 +53,8 @@
                 
             }
         }
-
         // MODIFICATION DU STYLE DU FORMULAIRE D'ENREGISTREMENT UTILISATEUR //
         // MODIFICATION OF THE STYLE OF THE USER REGISTRATION FORM //
-
         :nth-child(9) {
             >div {
                 display: flex;
@@ -74,7 +74,6 @@
                 label {
                     font-size: 8px;
                 }
-
             }
         }
     }

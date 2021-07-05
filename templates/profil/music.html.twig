@@ -8,44 +8,44 @@
 </section>
 {% for track in tracks %}  
 <section>
-            <div id="container-track" class="hover-fx">
-                <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
-                </div>
-                <div id="infos-track">
-                    <div id="artistandtitle">
-                        <h2>{{ track.artist }}</h2>
-                        <p>{{ track.title }}</p>
-                        <div id="artwork">
-                            <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}">
-                            </audio>
-                        </div>
-                    </div>
-                    <div id="container-btn-track">
-                        <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                        <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
-                        {% if app.user in track.likes %}
-                            <a class="small-btn-white" id="small-btn-bis" id="heart" href="{{path("track_like", {'id':track.id})}}">
-                                <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
-                            </a>
-        
-                            {% else %}
-                            <a class="small-btn-white" id="heart" id="small-btn-bis" href="{{path("track_like", {'id':track.id})}}">
-                               <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
-                            </a>
-                        {% endif %}
-                        {# {{ include('stream/delete.html.twig') }} #}
-                    </div>
+    <div id="container-track" class="hover-fx">
+        <div id="artwork">
+            <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+        </div>
+        <div id="infos-track">
+            <div id="artistandtitle">
+                <h2>{{ track.artist }}</h2>
+                <p>{{ track.title }}</p>
+                <div id="artwork">
+                    <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}">
+                    </audio>
                 </div>
             </div>
-</section>
-    {% else %} 
-    <section class="other-section"> 
-        <div class="container">
-                <h2>No Records found</h2>
-                <p>It's time to share your first track</p>
-                <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
+            <div id="container-btn-track">
+                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
+                <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
+                {% if app.user in track.likes %}
+                    <a class="small-btn-white" id="small-btn-bis" id="heart" href="{{path("track_like", {'id':track.id})}}">
+                        <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
+                    </a>
+        
+                    {% else %}
+                    <a class="small-btn-white" id="heart" id="small-btn-bis" href="{{path("track_like", {'id':track.id})}}">
+                        <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
+                    </a>
+                {% endif %}
+                {# {{ include('stream/delete.html.twig') }} #}
             </div>
         </div>
-    </section>
+    </div>
+</section>
+{% else %} 
+<section class="other-section"> 
+    <div class="container">
+        <h2>No Records found</h2>
+        <p>It's time to share your first track</p>
+        <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
+    </div>
+</section>
     {% endfor %}
 {% endblock %}

@@ -5,26 +5,25 @@
 {% block body %}
 {% if not app.user %}
  <section class="other-section"> 
-        <h1>COMMENTS</h1>
+    <h1>COMMENTS</h1>
         <div id="container-comment">
-                {% for comment in comments %}
-                <div id="comment">
-                    <div id="comment-author">
-                        <h2>{{comment.author}}</h2>
-                        <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
-                    </div>
-                    <p>{{comment.content}}</p>
-                    <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
-                    <div class="update-delete-comment">
-                            {# <a href="{{path('app_stream_commentedit', {'id': track.id}) }}"><i class="fas fa-edit"></i></a> #}
-                            {# {{ include('stream/deletecomment.html.twig') }} #}
-                    </div>
-                    <span></span>
+            {% for comment in comments %}
+            <div id="comment">
+                <div id="comment-author">
+                    <h2>{{comment.author}}</h2>
+                    <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
                 </div>
-                {% endfor %}
-                    <div class="infos-track-details">
-                                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                <p>{{comment.content}}</p>
+                <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
+                <div class="update-delete-comment">
+                </div>
+                <span></span>
             </div>
+            {% endfor %}
+            <div class="infos-track-details">
+                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+            </div>
+        </div>
 </section>
     {% else %}
     <section class="other-section"> 
@@ -33,17 +32,16 @@
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
-                <div id="artistandtitle">
+                    <div id="artistandtitle">
                         <h2>{{ track.artist }}</h2>
                         <p>{{ track.title }}</p>
                         <span>
-                        {{ form_start(form) }}
-                        {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
-                        {{ form_widget(form) }}
-                        {{ form_end(form) }}
+                            {{ form_start(form) }}
+                            {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
+                            {{ form_row(form.comment) }}
+                            {{ form_widget(form) }}
+                            {{ form_end(form) }}
                         </span>
-                </div>
-                    <div id="container-btn-track">
                     </div>
                 </div>
             </div>
@@ -57,7 +55,6 @@
                     <p>{{comment.content}}</p>
                     <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
                     <div class="update-delete-comment">
-                            {# <a href="{{path('app_stream_commentedit', {'id': track.id}) }}"><i class="fas fa-edit"></i></a> #}
                             {% if app.user.id %}
                             {% if app.user.id is same as comment.author.id  %}
                                 {{ include('stream/deletecomment.html.twig') }}
@@ -65,13 +62,12 @@
                             {% else %}
                             {% endif %}
                             {% endif %}
-
                     </div>
                     <span></span>
                 </div>
             {% endfor %}
             <div class="infos-track-details">
-                                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
             </div>
             {% endif %}
     </section>

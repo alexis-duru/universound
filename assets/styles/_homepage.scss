@@ -1,6 +1,5 @@
 // SECTION DE LA PAGE D'ACCUEIL //
 // HOMEPAGE SECTION //
-
 section {
     height: auto;
     width: 100%;
@@ -13,10 +12,8 @@ section {
     background-attachment: fixed;
     transition: 1s;
     flex-direction: column;
-
     // CONTAINER NUMERO 1 //
     // FIRST CONTAINER //
-
     #container-1-homepage {
         width: 100%;
         height: 70vh;
@@ -43,10 +40,8 @@ section {
             color: white;
         }
     }
-
     // CONTAINER NUMERO 2 //
     // SECOND CONTAINER //
-
     #container-2-homepage {
         display: flex;
         width: 100%;
@@ -57,10 +52,8 @@ section {
             justify-content: space-around;
             align-items: center;
             flex-direction: column;
-            
             // CAROUSSEL D'IMAGES //
             // IMAGE CAROUSEL //
-            
             .caroussel {
                 width: 350px;
                 height: 350px;
@@ -110,12 +103,9 @@ section {
                         background-color: white;
                     }
                 }
-
             }
-
             // CAROUSSEL DE TEXTE //
            // TEXT CAROUSEL //
-
             .caroussel-texte {
                 width: 350px;
                 height: auto;
@@ -127,7 +117,7 @@ section {
                 >div {
                     display: flex;
                     height: 100px;
-                    .text {
+                    .carrousel-info {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
@@ -135,9 +125,7 @@ section {
                         background-color: white;
                         p {
                             font-size: 13px;
-                            font-style: italic;
-
-                            
+                            font-style: italic; 
                         }
                         .home-artist-name {
                             text-transform: uppercase;
@@ -190,14 +178,11 @@ section {
                         }
                     }
                 }
-
             }
         }
     } 
-
     // CONTAINER NUMERO 3 //
     // THIRST CONTAINER //
-    
     #container-3-homepage {  
         height: 300px;
         width: 50%;
@@ -233,7 +218,6 @@ section {
             a {
                 opacity: 1;
             }
-            
         }
     }
 }

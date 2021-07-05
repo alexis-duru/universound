@@ -1,109 +1,93 @@
 <header>
-        <div id="header-top">
-            <div id="header-elements">
-                <div class="logo">
-                    <a href="{{path('app_homepage')}}"><img src="{{asset('images/logo/typo.png')}}" class="typo-universound"></img></a>
-                    <img src="{{asset('images/logo/sphere-vide.png')}}" class="logo-universound">
-                </div>
+    <div id="header-top">
+        <div id="header-elements">
+            <div class="logo">
+                <a href="{{path('app_homepage')}}"><img src="{{asset('images/logo/typo.png')}}" class="typo-universound"></img></a>
+                <img src="{{asset('images/logo/sphere-vide.png')}}" class="logo-universound">
+            </div>
                     
-                <div id="social-media">
-                    <a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
-                </div>
+            <div id="social-media">
+                <a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-            {% if not app.user %}
-            <nav>
-                <ul class="liens">
+    </div>
+    {% if not app.user %}
+    <nav>
+        <ul class="liens">
+            <li>
+                <a href="{{path('app_homepage')}}">HOME</a>
+            </li>
+            <li>
+                <a href="{{path('app_stream')}}">STREAM</a>
+            </li>
+            <li>
+                <a href="{{path('app_upload')}}">UPLOAD</a>
+            </li>
+             <li>
+                <a href="{{path('app_login')}}">LOGIN</a><a href="{{path('app_register')}}">REGISTER</a>
+            </li>
+        </ul>
+            <input type="checkbox" id="active">
+                <label for="active" class="menu-btn"><span></span></label>
+                <label for="active" class="close"></label>
+                <div class="wrapper">
+                <ul>
                     <li>
                         <a href="{{path('app_homepage')}}">HOME</a>
                     </li>
-                    <li>
-                        <a href="{{path('app_stream')}}">STREAM</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_upload')}}">UPLOAD</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_login')}}">LOGIN</a><a href="{{path('app_register')}}">REGISTER</a>
-                    </li>
+                        <li>
+                            <a href="{{path('app_stream')}}">STREAM</a>
+                        </li>
+                        <li>
+                            <a href="{{path('app_upload')}}">UPLOAD</a>
+                        </li>
+                        <li>
+                            <a href="{{path('app_login')}}">LOGIN <i class="fas fa-user-circle"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{path('app_register')}}">REGISTER</a>
+                        </li>
                 </ul>
-                <input type="checkbox" id="active">
-                    <label for="active" class="menu-btn"><span></span></label>
-                    <label for="active" class="close"></label>
-                    <div class="wrapper">
-                    <ul>
-                        <li><a href="{{path('app_homepage')}}">HOME</a></li>
-                        <li><a href="{{path('app_stream')}}">STREAM</a></li>
-                        <li><a href="{{path('app_upload')}}">UPLOAD</a></li>
-                        <li><a href="{{path('app_login')}}">LOGIN <i class="fas fa-user-circle"></i> </a></li>
-                        <li><a href="{{path('app_register')}}">REGISTER</a></li>
-                    </ul>
-                {# <div class="content">
-                    <div class="title">
-                Fullscreen Overlay Navigation Bar</div>
-                <p>
-                (Hamburger Menu-2)</p>
-                </div> #}
-            </nav>
-            {% else %}
-            <nav>
-                <ul class="liens">
-                    <li>
-                        <a href="{{path('app_homepage')}}">HOME</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_stream')}}">STREAM</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_upload')}}">UPLOAD</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
-                    </li>
-                </ul>
-                    <input type="checkbox" id="active">
-                    <label for="active" class="menu-btn"><span></span></label>
-                    <label for="active" class="close"></label>
-                    <div class="wrapper">
-                        <ul>
-                            <li><a href="{{path('app_homepage')}}">HOME</a></li>
-                            <li><a href="{{path('app_stream')}}">STREAM</a></li>
-                            <li><a href="{{path('app_upload')}}">UPLOAD</a></li>
-                            <li> <a href="{{path('app_profil')}}"><span id="id-user-mobile">{{ app.user.username }}</span><i class="fas fa-user-circle"></i></a></li>
-                            <li><a href="{{path('app_logout')}}">DISCONNECT</a></li>
-                        </ul>
-                    {# </div> #}
-            </nav>
-            {% endif %}
-    </header>
-
-
-{# <ul class="menu-burger">
-                    <li class="menu-1">
-                    <i id="burger" class="fas fa-bars"></i>
-                        <ul class="sous-menu-burger">
-                            <li class="menu-2">
-                                <a href="{{path('app_homepage')}}">HOME</a>
-                            </li>
-                            <li class="menu-2">
-                                <a href="{{path('app_stream')}}">STREAM</a>
-                            </li>
-                            <li class="menu-2">
-                                <a href="{{path('app_upload')}}">UPLOAD</a>
-                            </li>
-                            <li class="menu-2">
-                                <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
-                            </li>
-                            <li class="menu-2">
-                                <a id="reseaux-sociaux-mobile" href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
-                                <a id="reseaux-sociaux-mobile" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
-                                <a id="reseaux-sociaux-mobile" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li class="menu-2">
-                                <i class="far fa-times-circle"></i>
-                            </li>
-                        </ul>
-                    </li>
-                </ul> #}
+    </nav>
+    {% else %}
+    <nav>
+        <ul class="liens">
+            <li>
+                <a href="{{path('app_homepage')}}">HOME</a>
+            </li>
+            <li>
+                <a href="{{path('app_stream')}}">STREAM</a>
+            </li>
+            <li>
+                <a href="{{path('app_upload')}}">UPLOAD</a>
+            </li>
+            <li>
+                <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a><a href="{{path('app_logout')}}">DISCONNECT</a>
+            </li>
+        </ul>
+            <input type="checkbox" id="active">
+            <label for="active" class="menu-btn"><span></span></label>
+            <label for="active" class="close"></label>
+            <div class="wrapper">
+        <ul>
+            <li>
+                <a href="{{path('app_homepage')}}">HOME</a>
+            </li>
+            <li>
+                <a href="{{path('app_stream')}}">STREAM</a>
+            </li>
+            <li>
+                <a href="{{path('app_upload')}}">UPLOAD</a>
+            </li>
+            <li>
+                <a href="{{path('app_profil')}}"><span id="id-user-mobile">{{ app.user.username }}</span><i class="fas fa-user-circle"></i></a>
+            </li>
+            <li>
+                <a href="{{path('app_logout')}}">DISCONNECT</a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+</header>

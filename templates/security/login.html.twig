@@ -3,7 +3,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <section class="other-section">  
+<section class="other-section">  
     <h1>LOGIN</h1>  
             <div class="container">
                     <form method="post">
@@ -13,8 +13,7 @@
                     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                     <button class="middle-btn" type="submit">LOGIN</button>
-                    <p>No account? <a id="linktoregister" href="{{ path('app_register') }}">Create one</a></p>
-
+                    <p>No account? <a href="{{ path('app_register') }}">Create one</a></p>
 
                     {% if error %}
                     <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -24,16 +23,5 @@
                     {% endif %}
                     </form>
             </div>
-    </section>
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+</section>
 {% endblock %}

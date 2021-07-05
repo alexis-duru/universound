@@ -5,24 +5,22 @@
                 
 {% block body %}
 <section class="other-section"> 
-        <h1>COMMENTS</h1>
-            <div id="container-track" id="container-track-comment">
+    <h1>COMMENTS</h1>
+        <div id="container-track" id="container-track-comment">
                 {# <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div> #}
-                <div id="infos-track">
-                <div id="artistandtitle">
-                        {# <h2>{{ track.artist }}</h2>
-                        <p>{{ track.title }}</p> #}
-                        <span>
-                        {{ form_start(form) }}
-                        {{ form_row(form.content, { 'label': 'Edit your comment' }) }}
-                        {{ form_widget(form, { 'attr': {'class': 'Update'} })}}
-                        {{ form_end(form) }}
-                        </span>
-                </div>
-                    <div id="container-btn-track">
-                    </div>
-                </div>
-            </div>  
+            <div id="infos-track">
+            <div id="artistandtitle">
+                    {# <h2>{{ track.artist }}</h2>
+                    <p>{{ track.title }}</p> #}
+                <span>
+                    {{ form_start(form) }}
+                    {{ form_row(form.content, { 'label': 'Edit your comment' }) }}
+                    {{ form_widget(form, { 'attr': {'class': 'Update'} })}}
+                    {{ form_end(form) }}
+                </span>
+            </div>
+            </div>
+        </div>  
 </section>             
 {% endblock %}

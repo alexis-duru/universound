@@ -1,5 +1,5 @@
 #container-comment {
-    width: 500px;
+    width: 525px;
     height: auto;
     background-color: white;
     padding: 50px;
@@ -9,7 +9,8 @@
     align-items: center;
     margin-bottom: 100px;
     flex-direction: column;
-    background-image: url('../images/background/texture-container7bis.jpg');
+    opacity: 0.85;
+    background-image: url(http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg);
     background-size: cover;
     #comment {
         width: auto;
@@ -42,13 +43,17 @@
         }
 
         .update-delete-comment {
-            width: 100%;
+            width: 130px;
             display: flex;
             justify-content: space-around;
             margin-top: 10px;
+            a { 
+            margin: -5px;
+            }
             i {
                 font-size: 12px;
             }
+
         }
         span {
             display: flex;

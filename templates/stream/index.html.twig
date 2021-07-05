@@ -3,9 +3,9 @@
 {% block title %}{% endblock %}
 
 {% block body %} 
-<section class="header-section">
+<div class="header-section">
     <h1>STREAM</h1>
-</section>
+</div>
 {% for track in tracks %}  
 <section>
     <div id="container-track" class="hover-fx">
@@ -38,11 +38,11 @@
     </div>
 </section>
     {% else %} 
-<section class="other-section"> 
+<div class="global-container"> 
     <div class="container">
             <p>No Records found</p>
             <a class="middle-btn" href="{{ path('app_upload') }}">UPLOAD</a>
     </div>
-</section>
+</div>
 {% endfor %}
 {% endblock %}

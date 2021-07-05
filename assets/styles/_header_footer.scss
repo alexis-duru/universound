@@ -1,7 +1,6 @@
 // HEADER //
 
 header {
-    // background-color: rgb(254, 251, 241);
     background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
     background-size: cover;
     height: 90px;
@@ -93,18 +92,17 @@ header {
                 width: 100%;
                 
                 :nth-child(2) {
-                    background-color: rgba(0, 0, 0, 0.858);
-                    color: white;
                     margin-left: 10px;
                     padding: 1px 8px;
                     border-radius: 4px;
+                    font-weight: bold;
                 }
                 a {
                     width: auto;
                     text-align: center;
                     padding: 2px;
                     font-weight: 600;
-                    letter-spacing: 4px;
+                    letter-spacing: 3px;
 
                     &:hover {
                         border-bottom: 1px solid rgba(0, 0, 0, 0.372);

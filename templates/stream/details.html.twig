@@ -3,20 +3,20 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<section class="other-section"> 
+<div class="global-container"> 
     <h1>DETAILS</h1>
         <div id="container-track">
             <div id="artwork">
                 <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
             </div>
             <div id="infos-track">
-                <div id="artistandtitle">
+                {# <div id="artistandtitle">
                     <h2>{{ track.artist }}</h2>
-                    <p>{{ track.title }}</p>
-                    <div id="artwork">
+                    <p>{{ track.title }}</p> #}
+                    {# <div id="artwork">
                         <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}"></audio>
-                    </div>
-                </div>
+                    </div> #}
+                {# </div> #}
                 <div class="infos-track-details">
                     <p>Label :</p>
                         <span>{{ track.label }}</span>
@@ -44,5 +44,5 @@
                 </div>
             </div>
         </div>
-</section>
+</div>
 {% endblock %}

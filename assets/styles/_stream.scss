@@ -3,34 +3,42 @@
 #container-track {
     width: auto;
     height: auto;
-    background-color: white;
     padding: 50px;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     background-size: cover;
     opacity: 0.85;
     background-image: url('../images/background/texture-container7bis.jpg');
     color: black;
-    h2 {
-        color: black;
-    }
+    // h2 {
+    //     color: black;
+    // }
     span {
+        width: 100%;
         label {
             font-weight: 400;
             color: black;
+            visibility: hidden;
         }
-        input {
-            height: 40px;
+        textarea {
+            height: 150px;
             width: 100%;
             border-radius: 6px;
+            border: 2px solid black;
+            outline: none;
+            background-color: transparent;
+            color: black;
+
+
         }
         button {
-            font-size: 0.8rem;
-            width: 120px;
-            height: 35px;
+            font-size: 0.7rem;
+            width: 130px;
+            height: 30px;
+            padding: 5px;
             align-items: center;
             display: flex;
             justify-content: center;
@@ -40,10 +48,10 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             background-color: rgba(0, 0, 0, 0.886);
-            border-radius: 30px;
+            border-radius: 6px;
             transition: 0.6s;
-            margin-top: 50px;
-            }
+            margin-top: 10px;
+        }
     }
     #artwork {
         width: auto;
@@ -58,18 +66,18 @@
         flex-direction: column;
         #btn-comment {
             display: flex;
-            display: flex;
             justify-content: space-around;
         }
         #artistandtitle {
             display: flex;
             flex-direction: column;
+            width: 100%;
             h2 {
                 color: black;
                 font-weight: 600;
             }
             p {
-                margin-bottom: 30px;
+                // margin-bottom: 30px;
                 font-style: italic;
                 letter-spacing: 0.5px;
             }
@@ -78,14 +86,15 @@
             display: flex;
             width: 400px;
             justify-content: space-around;
-            margin-bottom: 5px;
             &:last-child {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                padding-top: 20px;
             }
             p {
                 font-weight: 600;
+                width: 100%;
             }
             span {
                 font-style: italic;
@@ -102,11 +111,9 @@
         }
         .middle-btn {
             &:last-child {
-                // background-color: white;
-                // color: black;
-                // font-size: 15px;
                 i {
                     margin-right: 7px;
+                    
                 }
             }
             a {
@@ -132,6 +139,20 @@
         justify-content: center;
         align-items: center;
         opacity: 0.75;
+        margin-top: 20px;
         }
     }
+}
+
+.header-section {
+    height: auto;
+    width: 100%;
+    background-image: url('../images/background/universound.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-attachment: fixed;
+    transition: 1s;
 }

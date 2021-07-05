@@ -4,7 +4,7 @@
 
 {% block body %}
 {% if not app.user %}
- <section class="other-section"> 
+ <div class="global-container"> 
     <h1>COMMENTS</h1>
         <div id="container-comment">
             {% for comment in comments %}
@@ -24,17 +24,17 @@
                 <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
             </div>
         </div>
-</section>
+</div>
     {% else %}
-    <section class="other-section"> 
+    <div class="global-container"> 
         <h1>COMMENTS</h1>
             <div id="container-track" id="container-track-comment">
                 <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
                     <div id="artistandtitle">
-                        <h2>{{ track.artist }}</h2>
-                        <p>{{ track.title }}</p>
+                        {# <h2>{{ track.artist }}</h2>
+                        <p>{{ track.title }}</p> #}
                         <span>
                             {{ form_start(form) }}
                             {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
@@ -49,11 +49,16 @@
                 {% for comment in comments %}
                 <div id="comment">
                     <div id="comment-author">
-                        <h2>{{comment.author}}</h2>
-                        <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                        <div>
+                            <h2>{{comment.author}}</h2>
+                            <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                        </div>
+                    
+                        <div>
+                            <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
+                        </div>
                     </div>
                     <p>{{comment.content}}</p>
-                    <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
                     <div class="update-delete-comment">
                             {% if app.user.id %}
                             {% if app.user.id is same as comment.author.id  %}
@@ -70,5 +75,5 @@
                 <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
             </div>
             {% endif %}
-    </section>
+    </div>
 {% endblock %}

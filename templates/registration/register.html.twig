@@ -3,7 +3,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <section class="other-section"> 
+    <div class="global-container"> 
         <h1>Register</h1>  
             <div class="container">
                 {{ form_start(registrationForm) }}
@@ -20,7 +20,7 @@
                 <button type="submit" class="middle-btn">Register</button>
                 {{ form_end(registrationForm) }}
             </div>
-    </section>
+    </div>
 {% endblock %}
 
 {# {{ form_row(registrationForm.agreeTerms) }} #}

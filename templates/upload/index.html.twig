@@ -4,7 +4,7 @@
 
 {% block body %}
 {% if not app.user %}
-<section class="other-section"> 
+<section class="global-container"> 
 <h1>UPLOAD</h1>
         <div class="container">
                 <p>You need to be logged on the app for access in the upload section</p>
@@ -13,7 +13,7 @@
         </div>
 </section>
 {% else %}
-<section class="other-section">  
+<section class="global-container">  
         <h1>UPLOAD</h1>
         <div class="container">
                 {{ form_start(form)}}

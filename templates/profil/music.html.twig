@@ -40,12 +40,12 @@
     </div>
 </section>
 {% else %} 
-<section class="other-section"> 
+<div class="global-container"> 
     <div class="container">
         <h2>No Records found</h2>
         <p>It's time to share your first track</p>
         <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
     </div>
-</section>
+</div>
     {% endfor %}
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<section class="other-section"> 
+<div class="global-container"> 
         <h1>EDIT YOUR PROFIL</h1>
         <div class="edit-btn">
             <a href="{{path('app_profil')}}">PROFIL</a>
@@ -13,14 +13,14 @@
             <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
             {{ form_start(form) }}
             {{ form_row(form.mediaFile, { 'label': 'Choose your avatar' }) }}
-            {# <div class"agree-terms"> #}
+            {# < class"agree-terms"> #}
             {{ form_widget(form)}}
             <div id="btn-form-edit">
                 <a class="middle-btn" href="{{ path('app_profil')}}">BACK</a>
                 <button class="middle-btn">UPDATE</button>
+            </div>
             {{ form_end(form) }}
             {{ include('profil/delete.html.twig') }}
-            </div>
         </div>
-</section>
+</div>
 {% endblock %}

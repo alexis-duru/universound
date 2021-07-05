@@ -178,7 +178,7 @@
     h1 {
         font-size: 30px;
     }
-    #container-2-homepage {
+    #container-middle-section {
         display: flex;
         flex-wrap: wrap;
     }
@@ -238,7 +238,7 @@
     // HOMEPAGE //
     section {
         text-align: center;
-        #container-3-homepage {
+        #container-bottom-section {
             height: auto;
             p {
             font-size: 10px;
@@ -294,7 +294,7 @@
     header>nav>.menu-btn{
         top: -62px;
       }
-    section>#container-2-homepage>#container-lastnews>.caroussel {
+    section>#container-middle-section>.lastnews>.caroussel-image {
         width: 175px;
         height: 175px;
         .images {
@@ -332,7 +332,7 @@
             }
         }
     }
-    section>#container-3-homepage {
+    section>#container-bottom-section {
         width: auto;
         margin: 20px;
         p {

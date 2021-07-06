@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use App\Entity\Track;
-use DateTimeInterface;
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TrackRepository;
+use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 // use PhpParser\Comment;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -90,6 +89,11 @@ class Track
      * @var null|File
      */
     private $audioFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -179,6 +183,18 @@ class Track
         return $this;
     }
 
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
     public function getMedia(): ?string
     {
         return $this->media;
@@ -209,6 +225,15 @@ class Track
     public function setCreatedAtValue()
     {
         $this->createdAt = new \Datetime();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new \DateTime();
     }
 
     /**

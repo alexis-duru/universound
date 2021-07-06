@@ -60,7 +60,7 @@
     }
     #infos-track {
         height: auto;
-        width: 70%;
+        width: auto;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -86,21 +86,32 @@
         .infos-track-details {
             display: flex;
             width: 400px;
-            justify-content: space-around;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            h2 {
+                color: black;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            span {
+                width: 300px;
+                margin-bottom: 10px;
+                word-wrap: break-word; 
+                p {
+                font-style: italic;
+                margin-bottom: 10px;
+                margin-right: 0px;
+                width: 100%;
+                height: auto;
+                word-wrap: break-word;  
+                } 
+            }
             &:last-child {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding-top: 20px;
-            }
-            p {
-                font-weight: 600;
-                width: 100%;
-            }
-            span {
-                font-style: italic;
-                margin-bottom: 10px;
-                margin-right: 0px;
             }
         }
         #container-btn-track {

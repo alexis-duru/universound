@@ -10,27 +10,22 @@
                 <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
             </div>
             <div id="infos-track">
-                {# <div id="artistandtitle">
-                    <h2>{{ track.artist }}</h2>
-                    <p>{{ track.title }}</p> #}
-                    {# <div id="artwork">
-                        <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}"></audio>
-                    </div> #}
-                {# </div> #}
                 <div class="infos-track-details">
-                    <p>Label :</p>
-                        <span>{{ track.label }}</span>
+                    <h2>Label :</h2>
+                    <span>
+                        <p>{{ track.label }}</p>
+                    </span>
                 </div>
                 <div class="infos-track-details">
-                    <p>Genre :</p>
+                    <h2>Genre :</h2>
                         <span>{{ track.genre }}</span>
                 </div>
                 <div class="infos-track-details">
-                    <p>Details :</p>
+                    <h2>Details :</h2>
                         <span>{{ track.details }}</span>
                 </div>
                 <div class="infos-track-details">
-                    <p>Release date : </p>
+                    <h2>Release date : </h2>
                         <span>{{ track.createdAt|date('Y-m') }}</span>
                 </div>
                 <div class="infos-track-details">
@@ -44,5 +39,6 @@
                 </div>
             </div>
         </div>
+    </h1>
 </div>
 {% endblock %}

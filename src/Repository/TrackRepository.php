@@ -19,22 +19,25 @@ class TrackRepository extends ServiceEntityRepository
         parent::__construct($registry, Track::class);
     }
 
+
     // /**
-    //  * @return Track[] Returns an array of Track objects
+    //  * @return Track[]
     //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+    // public function findAllTracksFromTheArtist(int $artist): array
+    // {
+    //     $entityManager = $this->getEntityManager();
+
+    //     $query = $entityManager->createQuery(
+    //         'SELECT t
+    //         FROM App\Entity\Track a
+    //         WHERE T.artistId
+    //         ORDER BY ASC'
+    //     )->setParameter('artist', $artist);
+
+    //     // returns an array of Product objects
+    //     return $query->getResult();
+    // }
+
 
     /*
     public function findOneBySomeField($value): ?Track

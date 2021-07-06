@@ -16,17 +16,20 @@
         $('.vichfilebutton3')[0].click();
     });
 
+    // $("#toggle").click(function(){
+    //     $("div").toggle("slow");
+    // });
+    
+
     // SHADOW WINDOWS STREAM //
 
     // HEART COLOR //
-    $('#i-1').click(function(){
-        $(this).css('color', 'red');
     
-      });
 
-      $('.number-heart').click(function(){
-        $(this).toggleClass('clicked');
-      });
+
+    
+
+    
 
 
 })(jQuery);

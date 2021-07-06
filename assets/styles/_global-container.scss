@@ -42,14 +42,11 @@
             display: flex;
             flex-direction: column;
             height: 0px;
-            
-            
             input {
                 padding: 0px;
                 &:hover {
                     background-color: (#10315535);
-                }
-                
+                }  
             }
         }
         // MODIFICATION DU STYLE DU FORMULAIRE D'ENREGISTREMENT UTILISATEUR //

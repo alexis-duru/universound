@@ -1,5 +1,4 @@
 // HEADER //
-
 header {
     background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
     background-size: cover;
@@ -7,6 +6,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100vw;
+    z-index: 1000;
     // HAUT DE LA BARRE DE NAVIGATION //
     // TOP OF THE NAVIGATION BAR //
    #header-top {
@@ -75,7 +76,6 @@ header {
         list-style: none;
         display: flex;
         color: black;
-        /* border-bottom: 1px solid white; */
         ul {
             display: flex;
             width: 100%;
@@ -105,11 +105,12 @@ header {
                     letter-spacing: 3px;
                     width: 100%;
                     flex-direction: column;
+                    transform: scale(1);
+                    transition: 0.3s ease-in-out;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
                     
-                    // &:hover {
-                    //     border-bottom: 1px solid rgba(0, 0, 0, 0.372);
-                    //     opacity: 0.7;
-                    // }
                     #id-user {
                         text-transform: capitalize;
                         letter-spacing: 0px;
@@ -127,12 +128,12 @@ header {
                 }
                 a::after {
                     content: "";
-                    height: 2px;
-                    width: 100px;
+                    height: 1px;
+                    width: 80px;
                     background-color: rgba(0, 0, 0, 0.564);
                     color: rgba(0, 0, 0, 0.27);
                     transform: scale(0);
-                    transition: transform 0.2s ease-in-out;
+                    transition: transform 0.4s ease-in-out;
                     margin-top: 3px;
                 }
                 a:hover::after {
@@ -145,7 +146,6 @@ header {
         } 
     }
 }
-
 footer {
     height: 9vh;
     width: 100%;

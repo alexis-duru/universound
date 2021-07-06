@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="global-container"> 
-        <h1>EDIT YOUR PROFIL</h1>
+    <h1>EDIT YOUR PROFIL</h1>
         <div class="edit-btn">
             <a href="{{path('app_profil')}}">PROFIL</a>
             <a href="{{path('app_stream')}}">STREAM</a>
@@ -12,7 +12,8 @@
         <div class="container">
             <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
             {{ form_start(form) }}
-            {{ form_row(form.mediaFile, { 'label': 'Choose your avatar' }) }}
+            {{ form_row(form.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
+                <a class="downloadbutton" id="upload3">UPLOAD FILE</a>
             {# < class"agree-terms"> #}
             {{ form_widget(form)}}
             <div id="btn-form-edit">
@@ -22,5 +23,6 @@
             {{ form_end(form) }}
             {{ include('profil/delete.html.twig') }}
         </div>
+    </h1>
 </div>
 {% endblock %}

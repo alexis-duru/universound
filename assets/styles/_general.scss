@@ -264,6 +264,41 @@ section {
     flex-direction: column;
 }
 
+// UPLOAD TRACK ARTWORK / MUSIC //
+.vichfilebutton1 {
+    visibility: hidden;
+}
+.vichfilebutton2 {
+    visibility: hidden;
+}
+
+// UPLOAD PROFIL AVATAR //
+.vichfilebutton3 {
+    visibility: hidden;
+}
+
+.downloadbutton {
+    font-size: 0.6rem;
+    width: 120px;
+    height: 35px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.886);
+    border-radius: 30px;
+    transition: 0.3s;
+    margin: auto;
+    margin-top: 5px;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
 
 
 

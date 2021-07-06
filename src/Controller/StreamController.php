@@ -64,7 +64,7 @@ class StreamController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
                 $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('app_stream');
+                return $this->redirectToRoute('app_stream_details', ['id' => $track->getId()]);
             }
 
             return $this->render('stream/edit.html.twig', [
@@ -142,7 +142,7 @@ class StreamController extends AbstractController
      */
     public function editComment(Request $request, Comment $comment): Response
     {
-        
+        $track = $comment->getTrack();
         $user = $this->security->getUser();
 
         if ($user === $comment->getAuthor()) {
@@ -152,7 +152,7 @@ class StreamController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
                 $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('app_stream');
+                return $this->redirectToRoute('app_stream_comment', ['id' => $track->getId()]);
             }
 
             return $this->render('stream/editcomment.html.twig', [
@@ -167,7 +167,7 @@ class StreamController extends AbstractController
         ]);
     }
 
-    // DELETE COMMENT // 
+    // DELETE COMMENT //
 
     /**
      * @IsGranted("ROLE_USER", statusCode=401, message="You have to be logged-in to access this ressource")
@@ -175,6 +175,7 @@ class StreamController extends AbstractController
      */
     public function deletecomment(Request $request, Comment $comment): Response
     {
+        $track = $comment->getTrack();
         $user = $this->security->getUser();
         if ($user === $comment->getAuthor()) {
             if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
@@ -183,7 +184,7 @@ class StreamController extends AbstractController
                 $entityManager->flush();
             }
 
-            return $this->redirectToRoute('app_stream');
+            return $this->redirectToRoute('app_stream_comment', ['id' => $track->getId()]);
         }
 
         return $this->render('common/error.html.twig', [
@@ -191,23 +192,6 @@ class StreamController extends AbstractController
             'message' => 'Unauthorized acces',
         ]);
     }
-
-    
-   
-
-    
-    
-
-    
-
-
-
-
-
-
-
-
-
 
     /**
      * @Route("/like/{id}", name="track_like")

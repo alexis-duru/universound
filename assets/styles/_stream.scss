@@ -13,9 +13,6 @@
     opacity: 0.85;
     background-image: url('../images/background/texture-container7bis.jpg');
     color: black;
-    // h2 {
-    //     color: black;
-    // }
     span {
         width: 100%;
         label {
@@ -31,6 +28,7 @@
             outline: none;
             background-color: transparent;
             color: black;
+            font-size: 17px;
 
 
         }
@@ -89,6 +87,9 @@
             justify-content: center;
             flex-direction: column;
             text-align: center;
+            >div {
+                display: flex;
+            }
             h2 {
                 color: black;
                 margin-bottom: 10px;

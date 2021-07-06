@@ -183,7 +183,7 @@
         flex-wrap: wrap;
     }
     // STREAM PAGE //
-    #container-track {
+    .container-track {
         width: 80%;
         height: auto;
         flex-direction: column;
@@ -246,7 +246,7 @@
         }
     }
     // STREAM // 
-    #container-track {
+    .container-track {
         width: 220px;
         #infos-track {
             width: auto;
@@ -339,7 +339,7 @@
             font-size: 12px;
         }
     }
-    #container-track {
+    .container-track {
         width: 200px;
     }
     .middle-btn, .middle-btn-delete {

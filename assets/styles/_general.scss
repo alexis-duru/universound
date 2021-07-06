@@ -45,11 +45,17 @@ h3 {
     color: black;
     font-size: 15px;
 }
+
+#i-1-broke {
+    color: red;
+}
+
 #i-2 {
     color: white;
     font-size: 15px;
     margin-left: 10px;
 }
+
 #heart {
     background-color: white;
     color: black;
@@ -88,9 +94,9 @@ input {
     border-radius: 5px;
     transition: 0.5s;
     font-size: 13px;
-    &:hover {
-        background-color: (#10315535);
-    }
+    // &:hover {
+    //     background-color: (#10315535);
+    // }
 }
 .small-btn {
 font-size: 0.7rem;
@@ -149,8 +155,9 @@ transition: 0.6s;
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.886);
     border-radius: 30px;
-    transition: 0.6s;
+    transition: 0.5s;
     margin-top: 50px;
+    cursor: pointer;
     &:hover {
         opacity: 0.7;
     }
@@ -222,13 +229,13 @@ transition: 0.6s;
     padding: 10px;
 }
 
-.hover-fx {
-    transition: 0.7s;
-    transform: scale(0.99);
-    &:hover {
-        transform: scale(1);
-    }
-}
+// .hover-fx {
+//     transition: 0.7s;
+//     transform: scale(0.99);
+//     &:hover {
+//         transform: scale(1);
+//     }
+// }
 .info-message {
     background-color: black;
     height: 50px;
@@ -291,12 +298,19 @@ section {
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.886);
     border-radius: 30px;
-    transition: 0.3s;
     margin: auto;
     margin-top: 5px;
+    transition: 0.3s;
+    cursor: pointer;
     &:hover {
         opacity: 0.7;
     }
+}
+.active {
+
+}
+.passive {
+
 }
 
 

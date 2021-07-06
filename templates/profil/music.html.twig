@@ -8,7 +8,7 @@
 </section>
 {% for track in tracks %}  
 <section>
-    <div id="container-track" class="hover-fx">
+    <div class="container-track" class="hover-fx">
         <div id="artwork">
             <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
         </div>

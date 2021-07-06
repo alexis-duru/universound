@@ -7,8 +7,8 @@
         <h1>Register</h1>  
             <div class="container">
                 {{ form_start(registrationForm) }}
-                <label>CHOOSE YOUR PROFIL PICTURE</label>
-                {{ form_widget(registrationForm.mediaFile) }}
+                <a class="downloadbutton" id="upload3">CHOOSE YOUR AVATAR</a>
+                {{ form_widget(registrationForm.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
                 {{ form_row(registrationForm.firstname) }}
                 {{ form_row(registrationForm.lastname) }}
                 {{ form_row(registrationForm.username) }}

@@ -5,11 +5,12 @@
     width: auto;
     height: auto;
     padding: 50px;
+    padding-top: 0px;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 120px;
     background-size: cover;
     opacity: 0.85;
     background-image: url('../images/background/texture-container7bis.jpg');
@@ -30,7 +31,7 @@
             height: 150px;
             width: 100%;
             // border-radius: 6px;
-            border: 1px solid black;
+            border: 0px;
             outline: none;
             background-color: transparent;
             color: black;
@@ -67,6 +68,10 @@
         width: auto;
         height: auto;
         margin-right: 50px;
+        img {
+            margin-top: 50px;
+        }
+        
     }
     #infos-track {
         height: auto;
@@ -74,6 +79,7 @@
         display: flex;
         justify-content: space-around;
         flex-direction: column;
+        margin-top: 70px;
         #btn-comment {
             display: flex;
             justify-content: space-around;
@@ -97,7 +103,7 @@
             display: flex;
             width: 400px;
             justify-content: center;
-            flex-direction: column;
+            // flex-direction: column;
             text-align: center;
             >div {
                 display: flex;
@@ -108,19 +114,12 @@
                 font-weight: bold;
             }
             span {
-                width: 300px;
+                width: auto;
                 margin-bottom: 10px;
                 word-wrap: break-word; 
                 margin-bottom: 20px;
-                // p {
-                // font-style: italic;
-                // margin-bottom: 10px;
-                // margin-right: 0px;
-                // width: 100%;
-                // height: auto;
-                // word-wrap: break-word;  
-                // margin-top: 10px;
-                // } 
+                justify-content: flex-end;
+                margin-right: 0px;
             }
             &:last-child {
                 display: flex;
@@ -128,6 +127,10 @@
                 align-items: center;
                 padding-top: 20px;
             }
+        }
+        div {
+            display: flex;
+            justify-content: space-around;
         }
         #container-btn-track {
             width: 100%;

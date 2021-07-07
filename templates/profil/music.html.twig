@@ -4,41 +4,52 @@
 
 {% block body %} 
 <div class="header-section">
-    <h1>STREAM</h1>
+    <h1>YOUR MUSIC</h1>
 </div>
-{% for track in tracks %}  
-{% if app.user %}
-{% if app.user.id is same as track.artist.id  %}
 <section>
-    <div class="container-track" class="hover-fx">
-        <div id="artwork">
-            <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+    <div class"container-all-track">
+    <div class="edit-btn">
+                <div>
+                    <a href="{{path('app_profil')}}">PROFIL</a>
+                </div>
+                <div>
+                    <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
+                    <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
+                    {# <a href="{{path('app_profil_favorites')}}">YOUR FAVORITES</a> #}
+                </div>
         </div>
-        <div id="infos-track">
-            <div id="artistandtitle">
-                <h2>{{ track.artist }}</h2>
-                <p>{{ track.title }}</p>
-                <div id="artwork">
-                    <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}">
-                    </audio>
+        {% for track in tracks %}  
+        {% if app.user %}
+        {% if app.user.id is same as track.artist.id  %}
+        <div class="container-track" class="hover-fx">
+            <div id="artwork">
+                <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+            </div>
+            <div id="infos-track">
+                <div id="artistandtitle">
+                    <h2>{{ track.artist }}</h2>
+                    <p>{{ track.title }}</p>
+                    <div id="artwork">
+                        <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}">
+                        </audio>
+                    </div>
+                </div>
+                <div id="container-btn-track">
+                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
+                    <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
+                    {% if app.user in track.likes %}
+                        <a class="small-btn-white" id="small-btn-bis" id="heart" href="{{path("track_like", {'id':track.id})}}">
+                            <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
+                        </a>
+            
+                        {% else %}
+                        <a class="small-btn-white" id="heart" id="small-btn-bis" href="{{path("track_like", {'id':track.id})}}">
+                            <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
-            <div id="container-btn-track">
-                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
-                {% if app.user in track.likes %}
-                    <a class="small-btn-white" id="small-btn-bis" id="heart" href="{{path("track_like", {'id':track.id})}}">
-                        <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>
-                    </a>
-        
-                    {% else %}
-                    <a class="small-btn-white" id="heart" id="small-btn-bis" href="{{path("track_like", {'id':track.id})}}">
-                        <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
-                    </a>
-                {% endif %}
-            </div>
         </div>
-    </div>
 </section>
 {% endif %}
 {% endif %}
@@ -51,4 +62,6 @@
         </div>
     </div>
 {% endfor %}
+</div>
+</section>
 {% endblock %}

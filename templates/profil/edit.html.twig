@@ -4,11 +4,16 @@
 
 {% block body %}
 <div class="global-container"> 
-    <h1>UPDATE PROFIL</h1>
-        <div class="edit-btn">
-            <a href="{{path('app_profil')}}">PROFIL</a>
-            <a href="{{path('app_stream')}}">STREAM</a>
-        </div>  
+    <h1>EDIT YOUR PROFIL</h1>
+    <div class="edit-btn">
+                <div>
+                    <a href="{{path('app_profil')}}">PROFIL</a>
+                </div>
+                <div>
+                    <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
+                    <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
+                </div>
+        </div>
         <div class="container">
             <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
             {{ form_start(form) }}
@@ -23,6 +28,5 @@
             {{ form_end(form) }}
             {{ include('profil/delete.html.twig') }}
         </div>
-    </h1>
 </div>
 {% endblock %}

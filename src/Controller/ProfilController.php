@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Repository\CommentRepository;
 use App\Repository\TrackRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -80,6 +81,18 @@ class ProfilController extends AbstractController
 
         return $this->render('profil/music.html.twig', [
             'tracks' => $tracks,
+        ]);
+    }
+
+    /**
+     * @Route("/profil/comment", name="app_profil_comment")
+     */
+    public function all(CommentRepository $repository): Response
+    {
+        $comments = $repository->findAll();
+
+        return $this->render('profil/comment.html.twig', [
+            'comments' => $comments,
         ]);
     }
 }

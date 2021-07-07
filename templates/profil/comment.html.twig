@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% for comment in comments %} 
+            {% if app.user %}
+                {% if app.user.id is same as comment.author.id  %}
+                    <div class="global-container"> 
+                        <h1>COMMENTS</h1>
+                            <div id="container-comment">
+                                {% for comment in comments %}
+                                <div id="comment">
+                                    <div id="comment-author">
+                                        <div>
+                                            <h2>{{comment.author}}</h2>
+                                            <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                                        </div>
+                                        
+                                        <div>
+                                            <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
+                                        </div>
+                                    </div>
+                                     {# <p>{{track.title}}</p> #}
+                                    <p>{{comment.content}}</p>
+                                    <div class="update-delete-comment">
+                                        {% if app.user.id %}
+                                        {% if app.user.id is same as comment.author.id  %}
+                                            {{ include('stream/deletecomment.html.twig') }}
+                                            <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
+                                        {% else %}
+                                        {% endif %}
+                                        {% endif %}
+                                    </div>
+                                    <span></span>
+                                </div>
+                                {% endfor %}
+                                <div class="infos-track-details">
+                                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                                </div>
+                                {% endif %}
+                            </div>
+                    </div>
+                {% endif %}
+            {# {% endif %} #}
+        {% else %}
+    {% endfor %}
+{% endblock %}
+
+    

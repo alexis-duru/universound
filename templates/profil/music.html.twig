@@ -3,10 +3,12 @@
 {% block title %}{% endblock %}
 
 {% block body %} 
-<section class="header-section">
-<h1>STREAM</h1>
-</section>
+<div class="header-section">
+    <h1>STREAM</h1>
+</div>
 {% for track in tracks %}  
+{% if app.user %}
+{% if app.user.id is same as track.artist.id  %}
 <section>
     <div class="container-track" class="hover-fx">
         <div id="artwork">
@@ -34,18 +36,19 @@
                         <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
                     </a>
                 {% endif %}
-                {# {{ include('stream/delete.html.twig') }} #}
             </div>
         </div>
     </div>
 </section>
+{% endif %}
+{% endif %}
 {% else %} 
-<div class="global-container"> 
-    <div class="container">
-        <h2>No Records found</h2>
-        <p>It's time to share your first track</p>
-        <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
+    <div class="global-container"> 
+        <div class="container">
+            <h2>No Records found</h2>
+            <p>It's time to share your first track</p>
+            <a class="middle-btn" href="{{ path('app_upload') }}">Click Here</a>
+        </div>
     </div>
-</div>
-    {% endfor %}
+{% endfor %}
 {% endblock %}

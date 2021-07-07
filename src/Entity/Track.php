@@ -104,6 +104,7 @@ class Track
     public function __toString()
     {
         return $this->media;
+        // return $this->artist;
     }
 
     public function getId(): ?int

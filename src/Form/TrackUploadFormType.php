@@ -33,7 +33,6 @@ class TrackUploadFormType extends AbstractType
                 'download_uri' => false,
                 'download_label' => '',
                 'asset_helper' => true,
-
             ])
             ->add('audioFile', VichFileType::class, [
                 'required' => false,

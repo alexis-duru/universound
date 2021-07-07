@@ -17,10 +17,9 @@ class CommentCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('author'),
+            TextField::new('author')->hideOnForm(),
             TextField::new('content', 'Comment'),
             DateTimeField::new('createdAt'),
-            // TextField::new('track.id'),
         ];
     }
 }

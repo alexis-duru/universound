@@ -21,7 +21,7 @@ class TrackCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
-            TextField::new('artist'),
+            TextField::new('artist')->hideOnForm(),
             TextField::new('title', 'Track'),
             TextField::new('label'),
             TextField::new('genre'),

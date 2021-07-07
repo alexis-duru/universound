@@ -19,8 +19,10 @@ class TrackRepository extends ServiceEntityRepository
         parent::__construct($registry, Track::class);
     }
 
-    
-    
+    public function findByAll()
+    {
+        return $this->findBy([], ['createdAt' => 'DESC']);
+    }
 
     // /**
     //  * @return Track[] Returns an array of Genre objects

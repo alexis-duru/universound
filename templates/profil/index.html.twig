@@ -7,7 +7,8 @@
     <h1>PROFIL</h1>  
         <div class="edit-btn">
             <a href="{{path('app_profil_edit')}}">UPDATE PROFIL</a>
-            <a href="{{path('app_profil_music')}}">UPDATE MUSIC</a>
+            <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
+            <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
         </div>
         <div class="container">
             <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">

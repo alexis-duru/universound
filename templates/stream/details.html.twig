@@ -12,9 +12,7 @@
             <div id="infos-track">
                 <div class="infos-track-details">
                     <h2>Label :</h2>
-                    <span>
-                        <p>{{ track.label }}</p>
-                    </span>
+                    <span> {{ track.label }}</span>
                 </div>
                 <div class="infos-track-details">
                     <h2>Genre :</h2>
@@ -26,7 +24,7 @@
                 </div>
                 <div class="infos-track-details">
                     <h2>Release date : </h2>
-                        <span>{{ track.createdAt|date('Y-m') }}</span>
+                        <span>{{ track.createdAt|date('Y-m-d') }}</span>
                 </div>
                 <div class="infos-track-details">
                     <div>

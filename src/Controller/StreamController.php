@@ -31,7 +31,7 @@ class StreamController extends AbstractController
     public function index(TrackRepository $trackRepository): Response
     {
         return $this->render('stream/index.html.twig', [
-            'tracks' => $trackRepository->findAll(),
+            'tracks' => $trackRepository->findByAll(),
         ]);
     }
 

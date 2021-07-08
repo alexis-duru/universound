@@ -99,6 +99,10 @@
                 margin-top: 10px;
             }
         }
+        >div {
+            display: flex;
+            align-items: center;
+        }
         .infos-track-details {
             display: flex;
             width: 400px;

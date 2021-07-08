@@ -21,9 +21,9 @@ class UserCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
+            // TextEditorField::new('password'),
             TextField::new('username'),
             TextField::new('email'),
-            TextEditorField::new('password'),
             ImageField::new('media', 'Profil Picture')->setBasePath('/images/media/')
                 ->OnlyOnIndex(),
             TextField::new('mediaFile')->setFormType(VichImageType::class)

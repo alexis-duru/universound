@@ -5,10 +5,11 @@ namespace App\Form;
 use App\Entity\Genre;
 use App\Entity\Track;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class TrackUploadFormType extends AbstractType
 {
@@ -33,6 +34,14 @@ class TrackUploadFormType extends AbstractType
                 'download_uri' => false,
                 'download_label' => '',
                 'asset_helper' => true,
+                'constraints' => [
+                    new File([
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                        ]
+                    ])
+                ]
             ])
             ->add('audioFile', VichFileType::class, [
                 'required' => false,
@@ -41,6 +50,13 @@ class TrackUploadFormType extends AbstractType
                 'download_uri' => false,
                 'download_label' => 'Download Audio',
                 'asset_helper' => true,
+                'constraints' => [
+                    new File([
+                        'mimeTypes' => [
+                            'audio/mpeg',
+                        ]
+                    ])
+                ]
             ])
         ;
     }

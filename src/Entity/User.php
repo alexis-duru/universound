@@ -44,12 +44,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lastname;
 
@@ -110,8 +110,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->id,
             $this->email,
             $this->password,
-            $this->firstname,
-            $this->lastname,
+            // $this->firstname,
+            // $this->lastname,
             $this->username,
             $this->media,
         ]);
@@ -123,8 +123,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->id,
             $this->email,
             $this->password,
-            $this->firstname,
-            $this->lastname,
+            // $this->firstname,
+            // $this->lastname,
             $this->username,
             $this->media) = unserialize($serialized);
     }

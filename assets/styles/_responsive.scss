@@ -267,12 +267,21 @@
     // CONTAINER COMMENT //
     #container-comment {
         width: 200px;
+        p {
+            font-size: 10px;
+            font-weight: bold;
+        }
     }
     .global-container>.container {
         width: 70%;
     }
     .middle-btn, .middle-btn-delete {
         width: 110px;
+    }
+
+    .edit-btn>div {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 

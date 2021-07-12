@@ -6,6 +6,7 @@
 {% if not app.user %}
 <div class="global-container"> 
     <h1>COMMENTS</h1>
+    <div class="container-all-track">
         <div id="container-comment">
             {% for comment in comments %}
             <div id="comment">
@@ -22,11 +23,13 @@
                 <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
             </div>
         </div>
+    </div>
     </h1>
 </div>
 {% else %}
 <div class="global-container"> 
     <h1>COMMENTS</h1>
+    <div class="container-all-track">
         <div class="container-track" id="container-track-comment">
             <div id="artwork">
                 <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
@@ -75,6 +78,7 @@
             {% endif %}
         </div>
         </div>
+    </div>
     </h1>
 </div>
 {% endblock %}

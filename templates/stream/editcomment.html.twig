@@ -5,7 +5,8 @@
                 
 {% block body %}
 <div class="global-container"> 
-<h1>COMMENTS</h1>
+    <div class="container-all-track">
+<h1>UPDATE COMMENTS</h1>
         <div class="container-track" id="container-track-comment">
             <div id="artwork">
                 <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
@@ -21,6 +22,7 @@
                     </span>
                 </div>
             </div>
-        </div>  
+        </div> 
+    </div> 
 </div>             
 {% endblock %}

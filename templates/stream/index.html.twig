@@ -7,7 +7,7 @@
     <h1>STREAM</h1>
 </div>
 <section>
-    <div class"container-all-track">
+    <div class="container-all-track">
 {% for track in tracks %}  
         <div class="container-track" class="active">
             <div id="artwork">
@@ -24,8 +24,8 @@
                 </div>
                 <div id="container-btn-track">
                     <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                    <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                     {% if app.user %}
+                    <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                     {% if app.user in track.likes %}
                         <a class="small-btn-white" id="small-btn-bis" id="heart" href="{{path("track_like", {'id':track.id})}}">
                             <button class="small-btn" id="heart"><i id="i-1-broke" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>

@@ -2,7 +2,7 @@
 // CONTAINER THAT ENGLOBS THE VARIOUS PIECES OF MUSIC //
 
 .container-track {
-    width: auto;
+    width: 100%;
     height: auto;
     padding: 50px;
     padding-top: 0px;
@@ -18,15 +18,16 @@
     color: black;
     transform: scale(1);
     transition: 0.6s;
+
     &:hover {
         transform: scale(1.01);
     }
     span {
         width: 100%;
         label {
-            font-weight: 400;
-            color: black;
-            visibility: hidden;
+        font-weight: 400;
+        color: black;
+        visibility: hidden;
         }
         textarea {
             height: 150px;
@@ -73,16 +74,17 @@
         display: flex;
         img {
             margin-top: 50px;
+            margin-bottom: 35px;
         }
         
     }
     #infos-track {
         height: auto;
-        width: auto;
+        width: 100%;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
-        // margin-top: 70px;
+        align-items: center;
         #btn-comment {
             display: flex;
             justify-content: space-around;
@@ -94,7 +96,7 @@
             h2 {
                 color: black;
                 font-weight: 600;
-                margin-top: 30px;
+                // margin-top: 30px;
             }
             p {
                 // font-style: italic;
@@ -188,4 +190,11 @@
     justify-content: space-around;
     background-attachment: fixed;
     transition: 1s;
+}
+
+.container-all-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

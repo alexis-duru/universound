@@ -5,15 +5,15 @@
 {% block body %}
  <div class="global-container"> 
     <h1>COMMENTS</h1>
-    <div class="edit-btn">
-                <div>
-                    <a href="{{path('app_profil')}}">PROFIL</a>
-                </div>
-                <div>
-                    <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
-                    <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
-                    {# <a href="{{path('app_profil_favorites')}}">YOUR FAVORITES</a> #}
-                </div>
+        <div class="edit-btn">
+            <div>
+                <a href="{{path('app_profil')}}">PROFIL</a>
+            </div>
+            <div>
+                <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
+                <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
+                {# <a href="{{path('app_profil_favorites')}}">YOUR FAVORITES</a> #}
+            </div>
         </div>
         <div id="container-comment">
             <p>LIST OF YOUR COMMENTS</p>
@@ -34,23 +34,23 @@
                                 <p>{{comment.content}}</p>
                                 <div class="update-delete-comment">
                                     {% if app.user.id %}
-                                    {% if app.user.id is same as comment.author.id  %}
-                                        {{ include('stream/deletecomment.html.twig') }}
-                                        <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
-                                    {% else %}
-                                    {% endif %}
+                                        {% if app.user.id is same as comment.author.id  %}
+                                            {{ include('stream/deletecomment.html.twig') }}
+                                            <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
+                                            {% else %}
+                                        {% endif %}
                                     {% endif %}
                                 </div>
                                 <span></span>
                             </div>
                         {% endif %}
                     {% endif %}
-                    {% else %}
-                {% endfor %}
+                {% else %}
+            {% endfor %}
                 <div class="infos-track-details">
                     <a class="small-btn" id="small-btn-bis" href="{{path('app_profil')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
                 </div>
-            </div>
+        </div>
 </div>
 {% endblock %}
 

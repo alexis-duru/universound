@@ -85,6 +85,45 @@ class ProfilController extends AbstractController
         ]);
     }
 
+    // Faire une fonction pour récupérer l'id des tracks pour ensuite l'afficher dans profil music //
+
+    // /**
+    //  * @Route("/profil/{id}", name="app_track_find")
+    //  *
+    //  * @param mixed $id
+    //  */
+    // public function findtracks(Request $request, UserRepository $userRepository, $id): Response
+    // {
+    //     $user = $userRepository->find($id);
+
+    //     return $this->render('user/one.html.twig', [
+    //         'user' => $user,
+    //         'tracks' => $user->gettracks(),
+    //     ]);
+    // }
+
+    
+
+    //     /**
+    //  * @Route("/user/{id}", name="app_likes_find")
+    //  *
+    //  * @param mixed $id
+    //  */
+    // public function findlikes(Request $request, PaginatorInterface $paginator, UserRepository $userRepository, $id): Response
+    // {
+    //     $user = $userRepository->find($id);
+
+    //     return $this->render('user/one.html.twig', [
+    //         'user' => $user,
+    //         'likes' => $paginator->paginate(
+    //             $user->getlikes(),
+    //             $request->query->getInt('page', 1),
+    //             6
+    //         ),
+    //     ]);
+    // }
+
+
     /**
      * @Route("/profil/comment", name="app_profil_comment")
      */

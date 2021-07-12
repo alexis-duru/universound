@@ -40,15 +40,16 @@
             </div>
         </div>
     {% else %} 
-        <section>
-            <div class"container-all-track"> 
-                <div class="container">
-                        <p>No Records found</p>
-                        <a class="middle-btn" href="{{ path('app_upload') }}">UPLOAD</a>
+        <div class="container-track" class="active">
+            <div id="infos-track">
+                <div id="artistandtitle">
+                    <h2>No Records found</h2>
+                    <a class="middle-btn" href="{{ path('app_upload') }}">UPLOAD</a>
                 </div>
             </div>
-        </section>
+        </div>
     {% endfor %}
     </div>
 </section>
 {% endblock %}
+                        

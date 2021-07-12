@@ -34,8 +34,10 @@ class TrackUploadFormType extends AbstractType
                 'download_uri' => false,
                 'download_label' => '',
                 'asset_helper' => true,
+                'invalid_message' => 'Please, upload a .jpeg or .png file only',
                 'constraints' => [
                     new File([
+                        'maxSize' => '2000k',
                         'mimeTypes' => [
                             'image/jpeg',
                             'image/png',
@@ -46,14 +48,17 @@ class TrackUploadFormType extends AbstractType
             ->add('audioFile', VichFileType::class, [
                 'required' => false,
                 'allow_delete' => false,
+                'invalid_message' => 'Please, upload a .mp3 or a .wav file only',
                 'delete_label' => 'Remove Audio',
                 'download_uri' => false,
                 'download_label' => 'Download Audio',
                 'asset_helper' => true,
                 'constraints' => [
                     new File([
+                        'maxSize' => '60000k',
                         'mimeTypes' => [
                             'audio/mpeg',
+                            'audio/x-wav',
                         ]
                     ])
                 ]

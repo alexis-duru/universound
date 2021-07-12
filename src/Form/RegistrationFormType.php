@@ -21,8 +21,6 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email')
-            // ->add('firstname')
-            // ->add('lastname')
             ->add('username')
             ->add('mediaFile', VichFileType::class, [
                 'required' => false,
@@ -33,6 +31,7 @@ class RegistrationFormType extends AbstractType
                 'asset_helper' => true,
                 'constraints' => [
                     new File([
+                        'maxSize' => '2000k',
                         'mimeTypes' => [
                             'image/jpeg',
                             'image/png',
@@ -61,7 +60,10 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            // ->add('agreeTerms', CheckboxType::class, [
+        ;
+    }
+
+    // ->add('agreeTerms', CheckboxType::class, [
             //     'mapped' => false,
             //     'constraints' => [
             //         new IsTrue([
@@ -69,8 +71,6 @@ class RegistrationFormType extends AbstractType
             //         ]),
             //     ],
             // ])
-        ;
-    }
 
     public function configureOptions(OptionsResolver $resolver)
     {

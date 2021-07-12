@@ -7,7 +7,7 @@
     padding: 50px;
     padding-top: 0px;
     border-radius: 20px;
-    display: flex;
+    // display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 120px;
@@ -30,8 +30,8 @@
         textarea {
             height: 150px;
             width: 100%;
-            // border-radius: 6px;
-            border: 0px;
+            border-radius: 6px;
+            border: 1px solid black;
             outline: none;
             background-color: transparent;
             color: black;
@@ -67,7 +67,9 @@
     #artwork {
         width: auto;
         height: auto;
-        margin-right: 50px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
         img {
             margin-top: 50px;
         }
@@ -79,7 +81,7 @@
         display: flex;
         justify-content: space-around;
         flex-direction: column;
-        margin-top: 70px;
+        // margin-top: 70px;
         #btn-comment {
             display: flex;
             justify-content: space-around;
@@ -91,6 +93,7 @@
             h2 {
                 color: black;
                 font-weight: 600;
+                margin-top: 30px;
             }
             p {
                 // font-style: italic;
@@ -102,12 +105,13 @@
         >div {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         .infos-track-details {
             display: flex;
             width: 400px;
             justify-content: center;
-            // flex-direction: column;
+            align-items: center;
             text-align: center;
             >div {
                 display: flex;

@@ -27,13 +27,13 @@
                         <span>{{ track.createdAt|date('Y-m-d') }}</span>
                 </div>
                 <div>
-                        <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
-                        {% if app.user %}
-                        {% if app.user is same as track.artist %}
-                        <a class="small-btn" id="small-btn-bis" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
-                        {% else %}
-                        {% endif %}
-                        {% endif %}
+                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                    {% if app.user %}
+                    {% if app.user is same as track.artist %}
+                    <a class="small-btn" id="small-btn-bis" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
+                    {% else %}
+                    {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>

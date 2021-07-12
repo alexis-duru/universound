@@ -184,7 +184,7 @@
     }
     // STREAM PAGE //
     .container-track {
-        width: 80%;
+        width: auto;
         height: auto;
         flex-direction: column;
         justify-items: center;
@@ -194,7 +194,7 @@
         }
         #infos-track {
             text-align: center;
-            margin-top: 30px;
+            // margin-top: 30px;
             padding-bottom: 30px;
             #artistandtitle {
                 margin-bottom: 30px;

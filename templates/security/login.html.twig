@@ -14,12 +14,11 @@
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                     <button class="middle-btn" type="submit">LOGIN</button>
                     <p>No account? <a href="{{ path('app_register') }}">Create one</a></p>
-
                     {% if error %}
-                    <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        <div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
                     {% if app.user %}
-                    You are logged in as {{ app.user.username }}, <a class="middle-btn" href="{{ path('app_logout') }}">Logout</a>
+                        You are logged in as {{ app.user.username }}, <a class="middle-btn" href="{{ path('app_logout') }}">Logout</a>
                     {% endif %}
                     </form>
             </div>

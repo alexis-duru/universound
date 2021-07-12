@@ -157,6 +157,7 @@ class StreamController extends AbstractController
 
             return $this->render('stream/editcomment.html.twig', [
                 'comment' => $comment,
+                'track' => $track,
                 'form' => $form->createView(),
             ]);
         }

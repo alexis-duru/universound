@@ -16,9 +16,10 @@
         $('.vichfilebutton3')[0].click();
     });
 
-    // $("#toggle").click(function(){
-    //     $("div").toggle("slow");
+    // $('#btn-slide-comment').on('click',function(){
+    //     $('#container-comment').slideToggle();
     // });
+
     
 
     // SHADOW WINDOWS STREAM //

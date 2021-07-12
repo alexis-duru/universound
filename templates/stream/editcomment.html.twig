@@ -5,21 +5,21 @@
                 
 {% block body %}
 <div class="global-container"> 
-    <h1>COMMENTS</h1>
+<h1>COMMENTS</h1>
         <div class="container-track" id="container-track-comment">
-                {# <div id="artwork"><img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
-                </div> #}
-            <div id="infos-track">
-            <div id="artistandtitle">
-                    {# <h2>{{ track.artist }}</h2>
-                    <p>{{ track.title }}</p> #}
-                <span>
-                    {{ form_start(form) }}
-                    {{ form_row(form.content, { 'label': 'Edit your comment' }) }}
-                    {{ form_widget(form, { 'attr': {'class': 'Update'} })}}
-                    {{ form_end(form) }}
-                </span>
+            <div id="artwork">
+                <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
             </div>
+            <div id="infos-track">
+                <div id="artistandtitle">
+                {# <button class="small-btn" id="btn-slide-comment">show all</button> #}
+                    <span>
+                        {{ form_start(form) }}
+                        {{ form_row(form.content, { 'label': 'Edit your comment' }) }}
+                        {{ form_widget(form, { 'attr': {'class': 'Update'} })}}
+                        {{ form_end(form) }}
+                    </span>
+                </div>
             </div>
         </div>  
 </div>             

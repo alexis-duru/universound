@@ -16,9 +16,9 @@
         $('.vichfilebutton3')[0].click();
     });
 
-    // $('#btn-slide-comment').on('click',function(){
-    //     $('#container-comment').slideToggle();
-    // });
+    $('#btn-slide-comment').on('click',function(){
+        $('#container-comment').slideToggle();
+    });
 
     
 

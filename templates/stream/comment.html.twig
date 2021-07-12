@@ -33,7 +33,6 @@
             </div>
             <div id="infos-track">
                 <div id="artistandtitle">
-                {# <button class="small-btn" id="btn-slide-comment">show all</button> #}
                     <span>
                         {{ form_start(form) }}
                         {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
@@ -41,10 +40,13 @@
                         {{ form_widget(form) }}
                         {{ form_end(form) }}
                     </span>
+                    <div>
+                        <a class="small-btn" id="btn-slide-comment">show all</a>
+                        <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="container-comment">
+            <div id="container-comment">
             {% for comment in comments %}
             <div id="comment">
                 <div id="comment-author">
@@ -70,10 +72,8 @@
                 <span></span>
             </div>
             {% endfor %}
-            <div class="infos-track-details">
-                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
-            </div>
             {% endif %}
+        </div>
         </div>
     </h1>
 </div>

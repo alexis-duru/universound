@@ -1,18 +1,19 @@
 #container-comment {
-    width: 525px;
+    width: auto;
     min-height: 12vh;
-    background-color: white;
+    // background-color: white;
     padding: 50px;
-    border-radius: 20px;
+    // border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
     flex-direction: column;
     opacity: 0.85;
-    background-image: url(http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg);
-    background-size: cover;
-    // display: none;
+    // background-image: url(http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg);
+    // background-size: cover;
+    // background-color: white;
+    display: none;
     #comment {
         height: auto;
         width: 100%;
@@ -89,4 +90,9 @@
                 color: rgba(255, 0, 0, 0.358);
             }
     }
+}
+
+#container-track-comment {
+    // margin-bottom: 0px;
+    transform: scale(1);
 }

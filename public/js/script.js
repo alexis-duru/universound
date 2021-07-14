@@ -20,18 +20,7 @@
         $('#container-comment').slideToggle();
     });
 
-    
-
     // SHADOW WINDOWS STREAM //
-
-    // HEART COLOR //
-    
-
-
-    
-
-    
-
 
 })(jQuery);
 

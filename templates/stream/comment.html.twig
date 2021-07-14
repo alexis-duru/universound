@@ -4,81 +4,79 @@
 
 {% block body %}
 {% if not app.user %}
-<div class="global-container"> 
-    <h1>COMMENTS</h1>
-    <div class="container-all-track">
-        <div id="container-comment">
-            {% for comment in comments %}
-            <div id="comment">
-                <div id="comment-author">
-                    <h2>{{comment.author}}</h2>
-                    <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
-                </div>
-                <p>{{comment.content}}</p>
-                <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
-                <span></span>
-            </div>
-            {% endfor %}
-            <div class="infos-track-details">
-                <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
-            </div>
-        </div>
-    </div>
-    </h1>
-</div>
-{% else %}
-<div class="global-container"> 
-    <h1>COMMENTS</h1>
-    <div class="container-all-track">
-        <div class="container-track" id="container-track-comment">
-            <div id="artwork">
-                <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
-            </div>
-            <div id="infos-track">
-                <div id="artistandtitle">
-                    <span>
-                        {{ form_start(form) }}
-                        {{ form_row(form.content, { 'label': 'Write your comment here :' }) }}
-                        {{ form_row(form.comment) }}
-                        {{ form_widget(form) }}
-                        {{ form_end(form) }}
-                    </span>
-                    <div>
-                        <a class="small-btn" id="btn-slide-comment">show all</a>
-                        <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
-                    </div>
-                </div>
-            </div>
+    <div class="global-container"> 
+        <h1>COMMENTS</h1>
+        <div class="container-all-track">
             <div id="container-comment">
-            {% for comment in comments %}
-            <div id="comment">
-                <div id="comment-author">
-                    <div>
+                {% for comment in comments %}
+                <div id="comment">
+                    <div id="comment-author">
                         <h2>{{comment.author}}</h2>
                         <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
                     </div>
-                    
-                    <div>
-                        <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
+                    <p>{{comment.content}}</p>
+                    <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
+                    <span></span>
+                </div>
+                {% endfor %}
+                <div class="infos-track-details">
+                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                </div>
+            </div>
+        </div>
+        </h1>
+    </div>
+{% else %}
+    <div class="global-container"> 
+        <h1>COMMENTS</h1>
+        <div class="container-all-track">
+            <div class="container-track" id="container-track-comment">
+                <div id="artwork">
+                    <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+                </div>
+                <div id="infos-track">
+                    <div id="artistandtitle">
+                        <span>
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            {{ form_end(form) }}
+                        </span>
+                        <div id="container-btn-track">
+                            <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
+                            <a class="small-btn" id="btn-slide-comment">all comments</a>
+                        </div>
                     </div>
                 </div>
-                <p>{{comment.content}}</p>
-                <div class="update-delete-comment">
-                    {% if app.user.id %}
-                    {% if app.user.id is same as comment.author.id  %}
-                        {{ include('stream/deletecomment.html.twig') }}
-                        <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
-                    {% else %}
-                    {% endif %}
-                    {% endif %}
+                <div id="container-comment">
+                {% for comment in comments %}
+                <div id="comment">
+                    <div id="comment-author">
+                        <div>
+                            <h2>{{comment.author}}</h2>
+                            <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                        </div>
+                        
+                        <div>
+                            <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
+                        </div>
+                    </div>
+                    <p>{{comment.content}}</p>
+                    <div class="update-delete-comment">
+                        {% if app.user.id %}
+                        {% if app.user.id is same as comment.author.id  %}
+                            {{ include('stream/deletecomment.html.twig') }}
+                            <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
+                        {% else %}
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                    <span></span>
                 </div>
-                <span></span>
+                {% endfor %}
+                {% endif %}
             </div>
-            {% endfor %}
-            {% endif %}
+            </div>
         </div>
-        </div>
+        </h1>
     </div>
-    </h1>
-</div>
 {% endblock %}

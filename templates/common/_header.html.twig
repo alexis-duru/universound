@@ -33,27 +33,28 @@
             </li>
             <div>
         </ul>
-            <input type="checkbox" id="active">
-                <label for="active" class="menu-btn"><span></span></label>
-                <label for="active" class="close"></label>
-                <div class="wrapper">
-                <ul>
-                    <li>
-                        <a href="{{path('app_homepage')}}">HOME</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_stream')}}">STREAM</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_upload')}}">UPLOAD</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_login')}}">LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="{{path('app_register')}}">REGISTER</a>
-                    </li>
-                </ul>
+        <input type="checkbox" id="active">
+            <label for="active" class="menu-btn"><span></span></label>
+            <label for="active" class="close"></label>
+            <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{path('app_homepage')}}">HOME</a>
+                </li>
+                <li>
+                    <a href="{{path('app_stream')}}">STREAM</a>
+                </li>
+                <li>
+                    <a href="{{path('app_upload')}}">UPLOAD</a>
+                </li>
+                <li>
+                    <a href="{{path('app_login')}}">LOGIN</a>
+                </li>
+                <li>
+                    <a href="{{path('app_register')}}">REGISTER</a>
+                </li>
+            </ul>
+        </input>
     </nav>
     {% else %}
     <nav>
@@ -76,27 +77,28 @@
                 </li>
             </div>
         </ul>
-            <input type="checkbox" id="active">
-            <label for="active" class="menu-btn"><span></span></label>
-            <label for="active" class="close"></label>
-            <div class="wrapper">
-        <ul>
-            <li>
-                <a href="{{path('app_homepage')}}">HOME</a>
-            </li>
-            <li>
-                <a href="{{path('app_stream')}}">STREAM</a>
-            </li>
-            <li>
-                <a href="{{path('app_upload')}}">UPLOAD</a>
-            </li>
-            <li>
-                <a href="{{path('app_profil')}}"><span id="id-user-mobile">{{ app.user.username }}</span></a>
-            </li>
-            <li>
-                <a href="{{path('app_logout')}}">DISCONNECT</a>
-            </li>
-        </ul>
+        <input type="checkbox" id="active">
+        <label for="active" class="menu-btn"><span></span></label>
+        <label for="active" class="close"></label>
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="{{path('app_homepage')}}">HOME</a>
+                </li>
+                <li>
+                    <a href="{{path('app_stream')}}">STREAM</a>
+                </li>
+                <li>
+                    <a href="{{path('app_upload')}}">UPLOAD</a>
+                </li>
+                <li>
+                    <a href="{{path('app_profil')}}"><span id="id-user-mobile">{{ app.user.username }}</span></a>
+                </li>
+                <li>
+                    <a href="{{path('app_logout')}}">DISCONNECT</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     {% endif %}
 </header>

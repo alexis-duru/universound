@@ -19,13 +19,6 @@ class TrackUploadFormType extends AbstractType
             ->add('title')
             ->add('label')
             ->add('genre')
-            // ->add('genre', ChoiceType::class, [
-            //     'choices' => [
-            //         new Genre('Name'),
-            //         new Genre('Name'),
-            //         new Genre('Name'),
-            //         new Genre('Name'),
-            //     ]])
             ->add('details')
             ->add('mediaFile', VichFileType::class, [
                 'required' => false,

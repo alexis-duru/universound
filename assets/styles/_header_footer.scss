@@ -82,15 +82,14 @@ header {
             align-items: center;
             margin-right: 60px;
             :last-child {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             li {
                 display: flex;
                 justify-content: space-around;
                 width: 100%;
-                
                 :nth-child(2) {
                     margin-left: 10px;
                     padding: 1px 8px;
@@ -110,7 +109,6 @@ header {
                     &:hover {
                         transform: scale(1.05);
                     }
-                    
                     #id-user {
                         text-transform: capitalize;
                         letter-spacing: 0px;

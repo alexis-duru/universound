@@ -202,6 +202,7 @@
             #container-btn-track {
                 flex-direction: column;
                 margin: auto;
+                margin-top: 30px;
                 a {
                     margin-top: 15px;
                 }
@@ -251,10 +252,17 @@
         #infos-track {
             width: auto;
             height: auto;
+            >div {
+                flex-direction: column;
+                a {
+                    margin-bottom: 20px;
+                }
+            }
             .infos-track-details {
                 width: auto;
                 margin-bottom: 15px;
                 flex-wrap: wrap;
+                flex-direction: column;
                 span {
                     margin: inherit;
                 }
@@ -273,7 +281,7 @@
         }
     }
     .global-container>.container {
-        width: 70%;
+        width: 60%;
     }
     .middle-btn, .middle-btn-delete {
         width: 110px;
@@ -290,7 +298,7 @@
         top: -60px;
       }
     h2 {
-        font-size: 12px;
+        font-size: 17px;
     }
 }
 

@@ -4,28 +4,28 @@
 
 {% block body %}
 <div class="global-container"> 
-    <h1>EDIT YOUR PROFIL</h1>
-        <div class="edit-btn">
-            <div>
-                <a href="{{path('app_profil')}}">PROFIL</a>
-            </div>
-            <div>
-                <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
-                <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
-            </div>
+<h1>EDIT YOUR PROFIL</h1>
+    <div class="edit-btn">
+        <div>
+            <a href="{{path('app_profil')}}">PROFIL</a>
         </div>
-        <div class="container">
-            <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
-            {{ form_start(form) }}
-            {{ form_row(form.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
-                <a class="downloadbutton" id="upload3">UPLOAD FILE</a>
-            {{ form_widget(form)}}
-            <div id="btn-form-edit">
-                <a class="middle-btn" href="{{ path('app_profil')}}">BACK</a>
-                <button class="middle-btn">UPDATE</button>
-            </div>
-            {{ form_end(form) }}
-            {{ include('profil/delete.html.twig') }}
+        <div>
+            <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
+            <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
         </div>
+    </div>
+    <div class="container">
+        <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
+        {{ form_start(form) }}
+        {{ form_row(form.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
+            <a class="downloadbutton" id="upload3">UPLOAD FILE</a>
+        {{ form_widget(form)}}
+        <div id="btn-form-edit">
+            <a class="middle-btn" href="{{ path('app_profil')}}">BACK</a>
+            <button class="middle-btn">UPDATE</button>
+        </div>
+        {{ form_end(form) }}
+        {{ include('profil/delete.html.twig') }}
+    </div>
 </div>
 {% endblock %}

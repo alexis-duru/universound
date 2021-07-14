@@ -3,21 +3,21 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <div class="global-container"> 
-        <h1>Register</h1>  
-            <div class="container">
-                {{ form_start(registrationForm) }}
-                <a class="downloadbutton" id="upload3">CHOOSE YOUR AVATAR</a>
-                <p>we accept .jpg under 2MB.</p>
-                {{ form_widget(registrationForm.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
-                {{ form_row(registrationForm.username) }}
-                {{ form_row(registrationForm.email) }}
-                {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
-                {% for flashError in app.flashes('verify_email_error') %}
-                    <div class="alert" role="alert">{{ flashError }}</div>
-                {% endfor %}
-                <button type="submit" class="middle-btn">Register</button>
-                {{ form_end(registrationForm) }}
-            </div>
+<div class="global-container"> 
+<h1>Register</h1>  
+    <div class="container">
+        {{ form_start(registrationForm) }}
+        <a class="downloadbutton" id="upload3">CHOOSE YOUR AVATAR</a>
+        <p class="constraint">we accept .jpg under 2MB.</p>
+        {{ form_widget(registrationForm.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
+        {{ form_row(registrationForm.username) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert" role="alert">{{ flashError }}</div>
+        {% endfor %}
+        <button type="submit" class="middle-btn">Register</button>
+        {{ form_end(registrationForm) }}
     </div>
+</div>
 {% endblock %}

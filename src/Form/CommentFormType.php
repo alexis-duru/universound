@@ -15,12 +15,14 @@ class CommentFormType extends AbstractType
     {
         $builder
             ->add('content', TextareaType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => 'Write your comment here',
+                    'placeholder' => 'Your message here',
                 ],
             ])
 
             ->add('comment', SubmitType::class)
+            
 
         ;
     }

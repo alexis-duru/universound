@@ -21,7 +21,7 @@ class TrackUploadFormType extends AbstractType
             ->add('genre')
             ->add('details')
             ->add('mediaFile', VichFileType::class, [
-                'required' => false,
+                'required' => true,
                 'allow_delete' => false,
                 'delete_label' => '',
                 'download_uri' => false,
@@ -39,7 +39,7 @@ class TrackUploadFormType extends AbstractType
                 ]
             ])
             ->add('audioFile', VichFileType::class, [
-                'required' => false,
+                'required' => true,
                 'allow_delete' => false,
                 'invalid_message' => 'Please, upload a .mp3 or a .wav file only',
                 'delete_label' => 'Remove Audio',

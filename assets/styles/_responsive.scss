@@ -46,7 +46,7 @@
                 position: absolute;
                 z-index: 2;
                 right: 9%;
-                top: -61px;
+                top: -64px;
                 height: 50px;
                 width: 50px;
                 text-align: center;
@@ -59,13 +59,13 @@
               .menu-btn span,
               .menu-btn:before,
               .menu-btn:after{
-                  content: "";
-                  position: absolute;
-                  top: calc(45% - 1px);
-                  left: 20%;
-                  width: 80%;
-                  border-bottom: 2px solid #000;
-                  transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+                content: "";
+                position: absolute;
+                top: calc(45% - 1px);
+                left: 20%;
+                width: 80%;
+                border-bottom: 2px solid #000;
+                transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
               }
               .menu-btn:before{
                 transform: translateY(-15px);
@@ -74,22 +74,22 @@
                 transform: translateY(15px);
               }
               .close {
-                  z-index: 1;
-                  width: 100%;
-                  height: 100%;
-                  pointer-events: none;
-                  transition: background .6s;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                transition: background .6s;
               }
               // CLOSE ANIMATION //
               #active:checked + .menu-btn span {
-                  transform: scaleX(0);
+                transform: scaleX(0);
               }
               #active:checked + .menu-btn:before {
                   transform: rotate(45deg);
                 border-color: #fff;
               }
               #active:checked + .menu-btn:after {
-                  transform: rotate(-45deg);
+                transform: rotate(-45deg);
                 border-color: #fff;
               }
               .wrapper ul{
@@ -228,7 +228,7 @@
 @media screen and (max-width:425px) {
     // HEADER // 
     header>nav>.menu-btn{
-        top: -60px;
+        top: -64px;
       }
     header>#header-top>#header-elements>.logo>a>.typo-universound {
         height: 30px;
@@ -295,10 +295,13 @@
 
 @media screen and (max-width:375px) {
     header>nav>.menu-btn{
-        top: -60px;
+        top: -64px;
       }
     h2 {
         font-size: 17px;
+    }
+    footer>#footer>p {
+        font-size: 80%;
     }
 }
 
@@ -310,7 +313,7 @@
         width: 27px;
     }
     header>nav>.menu-btn{
-        top: -62px;
+        top: -64px;
       }
     section>#container-middle-section>.lastnews>.caroussel-image {
         width: 175px;
@@ -350,9 +353,48 @@
             }
         }
     }
+    section>#container-middle-section>.lastnews>.caroussel-texte {
+        width: 175px;
+        >div {
+            height: 165px;
+            >.carrousel-info>.home-artist-name {
+                width: 175px;
+                @keyframes monTexte {
+                    0% {
+                        transform: translateX(0);
+                        background-color: white;
+                    }
+                    
+                    25% {
+                        transform: translateX(-175px);
+                        background-color: white;
+                    }
+                    
+                    50% {
+                        transform: translateX(-350px);
+                        background-color: white;
+                    }
+                    
+                    75% {
+                        transform: translateX(-700);
+                        background-color: white;
+                    }
+                    
+                    100%{
+                        transform: translateX(0);
+                        background-color: white;
+                    }
+                }
+            }
+        }
+        >div>div>p:nth-child(2) {
+             width: 175px;
+        }
+    }
     section>#container-bottom-section {
         width: auto;
         margin: 20px;
+        margin-bottom: 80px;
         p {
             font-size: 12px;
         }

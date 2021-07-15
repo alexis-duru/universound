@@ -109,8 +109,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->id,
             $this->email,
             $this->password,
-            // $this->firstname,
-            // $this->lastname,
             $this->username,
             $this->media,
         ]);
@@ -122,8 +120,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             $this->id,
             $this->email,
             $this->password,
-            // $this->firstname,
-            // $this->lastname,
             $this->username,
             $this->media) = unserialize($serialized);
     }

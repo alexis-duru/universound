@@ -10,8 +10,8 @@
         <a class="downloadbutton" id="upload3">CHOOSE YOUR AVATAR</a>
         <p class="constraint">we accept .jpg under 2MB.</p>
         {{ form_widget(registrationForm.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.username, {'attr': {'placeholder': 'artist name'}}) }}
+        {{ form_row(registrationForm.email, {'attr': {'placeholder': 'example@email.com'}}) }}
         {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert" role="alert">{{ flashError }}</div>

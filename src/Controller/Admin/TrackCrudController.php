@@ -20,17 +20,18 @@ class TrackCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            // IdField::new('id'),
             TextField::new('artist')->hideOnForm(),
             TextField::new('title', 'Track'),
             TextField::new('label'),
             TextField::new('genre'),
             TextField::new('details', 'infos'),
             ImageField::new('media')->setBasePath('/images/media/')
-                ->OnlyOnIndex(),
+            ->OnlyOnIndex(),
             TextField::new('mediaFile')->setFormType(VichImageType::class)
-                ->HideOnIndex(),
+            ->HideOnIndex(),
             DateTimeField::new('createdAt'),
         ];
     }
 }
+
+// IdField::new('id'),

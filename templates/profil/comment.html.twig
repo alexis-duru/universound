@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 
 {% block title %}{% endblock %}
 
 {% block body %}
- <div class="global-container"> 
+<div class="global-container"> 
     <h1>COMMENTS</h1>
     <div class="edit-btn">
         <div>
@@ -12,14 +12,46 @@
         <div>
             <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
             <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a>
-            {# <a href="{{path('app_profil_favorites')}}">YOUR FAVORITES</a> #}
         </div>
     </div>
-    <div id="container-comment">
-        <p>LIST OF YOUR COMMENTS</p>
-        {% for comment in comments %} 
-            {% if app.user %}
+    <div class="user-comments">
+        {% for comment in comments %}
+            {% if app.user.id %}
                 {% if app.user.id is same as comment.author.id  %}
+                    <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
+                    <p>{{comment.content}}</p>
+                        <div class="update-delete-comment">
+                            {% if app.user.id %}
+                                {% if app.user.id is same as comment.author.id  %}
+                                    {{ include('stream/deletecomment.html.twig') }}
+                                    <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <span></span>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} #}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 {# <div id="container-comment-2">
                     <div id="comment">
                         <div id="comment-author">
                             <div>
@@ -30,7 +62,6 @@
                                 <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
                             </div>
                         </div>
-                        {# <a href="{{path('app_stream_details', {'id': track.id})}}" #}
                         <p>{{comment.content}}</p>
                         <div class="update-delete-comment">
                             {% if app.user.id %}
@@ -43,15 +74,11 @@
                         </div>
                         <span></span>
                     </div>
+                </div>
                 {% endif %}
             {% endif %}
-            {% else %}
         {% endfor %}
-        <div class="infos-track-details">
-            <a class="small-btn" id="small-btn-bis" href="{{path('app_profil')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
-        </div>
-    </div>
 </div>
-{% endblock %}
+{% endblock %} #}
 
     

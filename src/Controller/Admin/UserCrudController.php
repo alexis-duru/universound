@@ -20,14 +20,15 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            // IdField::new('id'),
-            // TextEditorField::new('password'),
             TextField::new('username'),
             TextField::new('email'),
             ImageField::new('media', 'Profil Picture')->setBasePath('/images/media/')
-                ->OnlyOnIndex(),
+            ->OnlyOnIndex(),
             TextField::new('mediaFile')->setFormType(VichImageType::class)
-                ->HideOnIndex(),
+            ->HideOnIndex(),
         ];
     }
 }
+
+// IdField::new('id'),
+// TextEditorField::new('password'),

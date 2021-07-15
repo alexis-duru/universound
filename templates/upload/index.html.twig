@@ -23,6 +23,7 @@
                         {{ form_row(form.audioFile, { 'label': 'Audio', 'attr': {'class': 'vichfilebutton2'} })  }}
                         <a class="downloadbutton" id="upload2">UPLOAD FILE</a>
                         <p class="constraint">we accept .MP3 and .WAV under 60MB.</p>
+                        {{ form_row(form.title, {'attr': {'placeholder': 'The name of your sound'}}) }}
                         {{ form_widget(form) }}
                         <input class="middle-btn" type="submit" value="UPLOAD">
                         {{ form_end (form) }}        

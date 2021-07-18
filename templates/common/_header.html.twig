@@ -70,7 +70,7 @@
             </li>
             <div>
                 <li>
-                    <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb_mini')}}" alt="{{ app.user.media }}"></span></a>
+                    <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img class="photoprofil-small" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}"></span></a>
                 </li>
                 <li>
                     <a href="{{path('app_logout')}}">DISCONNECT</a>

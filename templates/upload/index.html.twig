@@ -24,7 +24,10 @@
                         <a class="downloadbutton" id="upload2">UPLOAD FILE</a>
                         <p class="constraint">we accept .MP3 and .WAV under 60MB.</p>
                         {{ form_row(form.title, {'attr': {'placeholder': 'The name of your sound'}}) }}
-                        {{ form_widget(form) }}
+                        {{ form_row(form.genre, {'attr': {'placeholder': 'Style of your sound'}}) }}
+                        {{ form_row(form.label) }}
+                        {{ form_row(form.details) }}
+                        {# {{ form_widget(form) }} #}
                         <input class="middle-btn" type="submit" value="UPLOAD">
                         {{ form_end (form) }}        
                 </div>

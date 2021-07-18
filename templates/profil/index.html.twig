@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="container" id="profil">
-        <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
+        <img class="photoprofil-big" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}">
         <label for="inputEmail">Username</label>
         <span>{{ app.user.username }}</span>
         <label for="inputEmail">Email</label>

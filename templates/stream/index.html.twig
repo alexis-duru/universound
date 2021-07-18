@@ -11,7 +11,7 @@
         {% for track in tracks %}  
             <div class="container-track" class="active">
                 <div id="artwork">
-                    <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+                    <img class="images-stream" src="{{asset('images/media/' ~ track.media)}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
                     <div id="artistandtitle">

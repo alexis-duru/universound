@@ -12,7 +12,7 @@
                 <div id="comment">
                     <div id="comment-author">
                         <h2>{{comment.author}}</h2>
-                        <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                        <img class="photoprofil-small" src="{{ asset('images/media/' ~ comment.author.media) }}" alt="{{ comment.author.media }}">
                     </div>
                     <p>{{comment.content}}</p>
                     <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
@@ -32,18 +32,19 @@
         <div class="container-all-track">
             <div class="container-track" id="container-track-comment">
                 <div id="artwork">
-                    <img src="{{asset('images/media/' ~ track.media) | imagine_filter('my_thumb')}}" alt="{{track.media}}">
+                    <img class="images-stream" src="{{asset('images/media/' ~ track.media)}}" alt="{{track.media}}">
                 </div>
                 <div id="infos-track">
                     <div id="artistandtitle">
                         <span>
                             {{ form_start(form) }}
-                            {{ form_widget(form) }}
+                            {{ form_widget(form.content) }}
+                            {{ form_widget(form.comment, { 'label': 'ADD NEW'}) }}
                             {{ form_end(form) }}
                         </span>
                         <div id="container-btn-track">
-                            <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back<i id="i-2"class="fas fa-long-arrow-alt-left"></i></a>
-                            <a class="small-btn" id="btn-slide-comment">all comments</a>
+                            <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back</a>
+                            <a class="small-btn" id="btn-slide-comment">READ ALL</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +54,7 @@
                     <div id="comment-author">
                         <div>
                             <h2>{{comment.author}}</h2>
-                            <img id="photoprofil" src="{{ asset('images/media/' ~ comment.author.media) | imagine_filter('my_thumb_mini')}}" alt="{{ comment.author.media }}">
+                            <img class="photoprofil-small" src="{{ asset('images/media/' ~ comment.author.media) }}" alt="{{ comment.author.media }}">
                         </div>
                         
                         <div>

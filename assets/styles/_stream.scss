@@ -66,6 +66,11 @@
         justify-content: center;
         align-items: center;
         display: flex;
+        .images-stream {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
         img {
             margin-top: 50px;
             margin-bottom: 35px;

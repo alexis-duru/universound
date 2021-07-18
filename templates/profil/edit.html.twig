@@ -11,11 +11,10 @@
         </div>
         <div>
             <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
-            {# <a href="{{path('app_profil_comment')}}">YOUR COMMENTS</a> #}
         </div>
     </div>
     <div class="container">
-        <img id="photoprofil" src="{{ asset('images/media/' ~ app.user.media) | imagine_filter('my_thumb')}}" alt="{{ app.user.media }}">
+        <img class="photoprofil-big" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}">
         {{ form_start(form) }}
         {{ form_row(form.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
             <a class="downloadbutton" id="upload3">UPLOAD FILE</a>

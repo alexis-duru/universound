@@ -70,6 +70,10 @@ input {
     outline: none;
     width: 220px;
     font-size: 13px;
+    &:focus {
+        background-color: #15446d;
+        color: white;
+    }
 }
 
 button {

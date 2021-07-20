@@ -21,20 +21,20 @@
             {% if app.user %}
                 {% if app.user.id is same as track.artist.id  %}
                     <div class="container-track" class="hover-fx">
-                        <div id="artwork">
+                        <div class="artwork">
                             <img class="images-stream" src="{{asset('images/media/' ~ track.media) }}" alt="{{track.media}}">
                         </div>
-                        <div id="infos-track">
-                            <div id="artistandtitle">
+                        <div class="infos-track">
+                            <div class="artistandtitle">
                                 <h2>{{ track.artist }}</h2>
                                 <p>{{ track.title }}</p>
-                                <div id="artwork">
+                                <div class="artwork">
                                     <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}"></audio>
                                 </div>
                             </div>
-                            <div id="container-btn-track">
+                            <div class="container-btn-track">
                                 <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
-                                <a class="small-btn" id="small-btn-bis" id="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
+                                <a class="small-btn" id="small-btn-bis" class="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                                 {% if app.user in track.likes %}
                                     <a class="small-btn-white" id="small-btn-bis" id="heart" href="{{path("track_like", {'id':track.id})}}">
                                         <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart-broken"></i>{{ track.likes|length }}</button>

@@ -189,6 +189,7 @@ section {
         background-size: cover;
         border: 1px solid white;
         text-align: center;
+        opacity: 0.8;
         p {
             opacity: 1;
             letter-spacing: 1px;
@@ -207,6 +208,9 @@ section {
             background-color: rgba(0, 0, 0, 0);
             a {
                 opacity: 1;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }

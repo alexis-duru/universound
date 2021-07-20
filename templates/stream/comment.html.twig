@@ -7,15 +7,15 @@
     <div class="global-container"> 
         <h1>COMMENTS</h1>
         <div class="container-all-track">
-            <div id="container-comment">
+            <div class="container-comment">
                 {% for comment in comments %}
-                <div id="comment">
-                    <div id="comment-author">
+                <div class="comment">
+                    <div class="comment-author">
                         <h2>{{comment.author}}</h2>
                         <img class="photoprofil-small" src="{{ asset('images/media/' ~ comment.author.media) }}" alt="{{ comment.author.media }}">
                     </div>
                     <p>{{comment.content}}</p>
-                    <p id="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
+                    <p class="comment-date">{{comment.createdAt|date('Y-m-d H:i:s')}}</p>
                     <span></span>
                 </div>
                 {% endfor %}
@@ -30,35 +30,35 @@
     <div class="global-container"> 
         <h1>COMMENTS</h1>
         <div class="container-all-track">
-            <div class="container-track" id="container-track-comment">
-                <div id="artwork">
+            <div class="container-track" class="container-track-comment">
+                <div class="artwork">
                     <img class="images-stream" src="{{asset('images/media/' ~ track.media)}}" alt="{{track.media}}">
                 </div>
-                <div id="infos-track">
-                    <div id="artistandtitle">
+                <div class="infos-track">
+                    <div class="artistandtitle">
                         <span>
                             {{ form_start(form) }}
                             {{ form_widget(form.content) }}
                             {{ form_widget(form.comment, { 'label': 'ADD NEW'}) }}
                             {{ form_end(form) }}
                         </span>
-                        <div id="container-btn-track">
+                        <div class="container-btn-track">
                             <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back</a>
                             <a class="small-btn" id="btn-slide-comment">READ ALL</a>
                         </div>
                     </div>
                 </div>
-                <div id="container-comment">
+                <div class="container-comment">
                 {% for comment in comments %}
-                <div id="comment">
-                    <div id="comment-author">
+                <div class="comment">
+                    <div class="comment-author">
                         <div>
                             <h2>{{comment.author}}</h2>
                             <img class="photoprofil-small" src="{{ asset('images/media/' ~ comment.author.media) }}" alt="{{ comment.author.media }}">
                         </div>
                         
                         <div>
-                            <p id="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
+                            <p class="comment-date">{{comment.createdAt|date('Y-m-d')}}</p>
                         </div>
                     </div>
                     <p>{{comment.content}}</p>

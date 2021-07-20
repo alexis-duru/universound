@@ -150,4 +150,11 @@ footer {
     align-items: center;
     background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
     background-size: cover;
+    #footer {
+        p {
+            a:hover {
+                opacity: 0.7;
+            }
+        }
+    }
 }

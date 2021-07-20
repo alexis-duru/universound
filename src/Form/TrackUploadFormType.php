@@ -10,6 +10,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class TrackUploadFormType extends AbstractType
@@ -18,7 +19,9 @@ class TrackUploadFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('label')
+            ->add('label', TextType::class, [
+                'required' => false,
+            ])
             ->add('genre')
             ->add('details')
             ->add('mediaFile', VichFileType::class, [

@@ -1,0 +1,1 @@
+mysql://240023_soundapp:Wriggles41@mysql-alexisduru.alwaysdata.net/alexisduru_soundapp?serverVersion=mariadb-10.5.8

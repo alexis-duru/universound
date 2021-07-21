@@ -258,7 +258,7 @@
     }
     header>#header-top>#header-elements>.logo>.logo-universound {
         width: 35px;
-        display: none;
+        // display: none;
     }
     // HOMEPAGE //
     section {
@@ -360,6 +360,7 @@
     }
     header>#header-top>#header-elements>.logo>.logo-universound {
         width: 27px;
+        display: none;
     }
     header>nav>.menu-btn{
         top: -85px;

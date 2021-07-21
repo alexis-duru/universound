@@ -4,15 +4,15 @@
     min-height: 91vh;
     width: 100%;
     background-image: url('../images/background/universound.jpg');
-    box-sizing: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
+    box-sizing: border-box !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
     padding-bottom: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background-attachment: fixed;
+    background-attachment: fixed !important;
     transition: 1s;
     padding-top: 100px;
     .container {

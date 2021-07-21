@@ -4,6 +4,12 @@
     }
 }
 
+@media screen and (min-width:1024px) {
+    header {
+        height: 107px;
+    }
+}
+
 @media screen and (max-width:768px) {
     // HEADER - NAV //
     header {
@@ -202,7 +208,7 @@
         .infos-track {
             text-align: center;
             // margin-top: 30px;
-            // padding-bottom: 30px;
+           git co
             .artistandtitle {
                 margin-bottom: 30px;
             }
@@ -353,7 +359,7 @@
 
 @media screen and (max-width:360px) {
     header>nav>.menu-btn{
-        top: -75px;
+        top: -80px;
     }
 }
 

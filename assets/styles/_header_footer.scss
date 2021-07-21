@@ -1,6 +1,6 @@
 // HEADER //
 header {
-    background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
+    background-image: url('../images/background/texture-container7bis.jpg');
     background-size: cover;
     height: 90px;
     display: flex;
@@ -144,11 +144,11 @@ header {
 footer {
     height: 9vh;
     width: 100%;
-    background-color: white;
+    // background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('http://localhost:8080/build/images/texture-container7bis.ab0d2058.jpg');
+    background-image: url('../images/background/texture-container7bis.jpg');
     background-size: cover;
     #footer {
         p {

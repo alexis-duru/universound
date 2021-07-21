@@ -14,6 +14,7 @@
                 .logo {
                     .logo-universound {
                         width: 40px;
+                        display: none;
                     }
                 .typo-universound {
                     height: 40px;
@@ -253,9 +254,11 @@
       }
     header>#header-top>#header-elements>.logo>a>.typo-universound {
         height: 30px;
+        display: none;
     }
     header>#header-top>#header-elements>.logo>.logo-universound {
         width: 35px;
+        display: none;
     }
     // HOMEPAGE //
     section {
@@ -332,7 +335,7 @@
         margin-left: 15px;
     }
     header>nav>.menu-btn{
-        top: -70px;
+        top: -75px;
     }
     header nav .wrapper ul {
         left: 159px;
@@ -359,7 +362,7 @@
         width: 27px;
     }
     header>nav>.menu-btn{
-        top: -64px;
+        top: -85px;
     }
     header nav .wrapper ul {
         left: 140px;

@@ -202,7 +202,7 @@
         .infos-track {
             text-align: center;
             // margin-top: 30px;
-            padding-bottom: 30px;
+            // padding-bottom: 30px;
             .artistandtitle {
                 margin-bottom: 30px;
             }
@@ -295,6 +295,9 @@
                 }
             }
         }
+    }
+    .container-track .infos-track .container-btn-track a {
+        margin-top: 0px;
     }
     // CONTAINER COMMENT //
     .container-comment {

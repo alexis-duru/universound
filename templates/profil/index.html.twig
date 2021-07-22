@@ -4,10 +4,10 @@
 
 {% block body %}
 <div class="global-container"> 
-<h1>PROFIL</h1>  
+<h1>PROFILE</h1>  
     <div class="edit-btn">
         <div>
-            <a href="{{path('app_profil_edit')}}">UPDATE PROFIL</a>
+            <a href="{{path('app_profil_edit')}}">UPDATE PROFILE</a>
         </div>
         <div>
             <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
@@ -16,11 +16,16 @@
         </div>
     </div>
     <div class="container" id="profil">
+        {% if app.user.media %}
         <img class="photoprofil-big" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}">
+        {% else %}
+        <img class="photoprofil-big" src="{{ asset('images/media/profildefault.jpg')}}">
+        {% endif %}
         <label for="inputEmail">Username</label>
         <span>{{ app.user.username }}</span>
         <label for="inputEmail">Email</label>
         <span>{{ app.user.email }}</span>
+        <a class="small-btn" href="{{path('app_logout')}}">LOGOUT</a>
         {% if is_granted('ROLE_ADMIN') %}
             <a class="small-btn" href="{{path('universounddashboard')}}">ADMINISTRATOR ACCESS</a>
         {% endif %}

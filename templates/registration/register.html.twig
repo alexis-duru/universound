@@ -7,7 +7,7 @@
 <h1>Register</h1>  
     <div class="container">
         {{ form_start(registrationForm) }}
-        <a class="downloadbutton" id="upload3">CHOOSE YOUR AVATAR</a>
+        <a class="downloadbutton" id="upload3">PHOTO</a>
         <p class="constraint">we accept .jpg under 2MB.</p>
         {{ form_widget(registrationForm.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
         {{ form_row(registrationForm.username, {'attr': {'placeholder': 'artist name'}}) }}

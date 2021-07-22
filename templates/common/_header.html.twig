@@ -24,14 +24,12 @@
             <li>
                 <a href="{{path('app_upload')}}">UPLOAD</a>
             </li>
-            <div>
             <li>
                 <a href="{{path('app_login')}}">LOGIN</a>
             </li>
             <li>
                 <a href="{{path('app_register')}}">REGISTER</a>
             </li>
-            <div>
         </ul>
         <input type="checkbox" id="active">
             <label for="active" class="menu-btn"><span></span></label>
@@ -68,14 +66,20 @@
             <li>
                 <a href="{{path('app_upload')}}">UPLOAD</a>
             </li>
-            <div>
-                <li>
-                    <a href="{{path('app_profil')}}"><span id="id-user">{{ app.user.username }}<img class="photoprofil-small" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}"></span></a>
-                </li>
-                <li>
-                    <a href="{{path('app_logout')}}">DISCONNECT</a>
-                </li>
-            </div>
+            <li>
+                <a href="{{path('app_profil')}}">
+                    <span id="id-user">{{ app.user.username }}
+                    {% if app.user.media %}
+                    <img class="photoprofil-small" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}">
+                    {% else %}
+                     <img class="photoprofil-small" src="{{ asset('images/media/profildefault.jpg')}}">
+                     {% endif %}
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{path('app_logout')}}">LOGOUT</a>
+            </li>
         </ul>
         <input type="checkbox" id="active">
         <label for="active" class="menu-btn"><span></span></label>
@@ -95,7 +99,7 @@
                     <a href="{{path('app_profil')}}"><span id="id-user-mobile">{{ app.user.username }}</span></a>
                 </li>
                 <li>
-                    <a href="{{path('app_logout')}}">DISCONNECT</a>
+                    <a href="{{path('app_logout')}}">LOGOUT</a>
                 </li>
             </ul>
         </div>

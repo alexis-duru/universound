@@ -81,11 +81,12 @@ header {
             display: flex;
             width: 100%;
             align-items: center;
-            margin-right: 60px;
+            // margin-right: 60px;
             :last-child {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                width: 100%;
             }
             li {
                 display: flex;
@@ -111,8 +112,13 @@ header {
                         transform: scale(1.05);
                     }
                     #id-user {
-                        text-transform: capitalize;
+                        text-transform: uppercase;
                         letter-spacing: 0px;
+                        height: 20px;
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
                     }
                     #id-user-mobile {
                         text-transform: uppercase;
@@ -131,6 +137,7 @@ header {
                     transition: transform 0.4s ease-in-out;
                     margin-top: 3px;
                 }
+
                 a:hover::after {
                     transform: scale(1);
                 }
@@ -144,7 +151,6 @@ header {
 footer {
     height: 9vh;
     width: 100%;
-    // background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;

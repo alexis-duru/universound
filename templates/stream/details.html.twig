@@ -39,6 +39,10 @@
                         <p>{{ track.createdAt|date('Y-m-d') }}</p>
                     </div>
                 </div>
+                <div class="infos-track-details">
+                    <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}" controlsList="nodownload" class="audiotrack">
+                    </audio>
+                </div>
                 <div>
                     <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back</a>
                     {% if app.user %}

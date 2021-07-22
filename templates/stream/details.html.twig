@@ -13,23 +13,31 @@
             <div class="infos-track">
                 <div class="infos-track-details">
                     <h2>Title</h2>
-                    <span> {{ track.title }}</span>
+                    <div>
+                        <p>{{ track.title }}</p>
+                    </div>
                 </div>
                 <div class="infos-track-details">
                     <h2>Genre</h2>
-                        <span>{{ track.genre }}</span>
+                    <div>
+                        <p>{{ track.genre }}</p>
+                    </div>
                 </div>
-                <div class="infos-track-details">
+                {# <div class="infos-track-details">
                     <h2>Label</h2>
                     <span> {{ track.label }}</span>
-                </div>
+                </div> #}
                 <div class="infos-track-details">
                     <h2>Details</h2>
-                        <span>{{ track.details }}</span>
+                    <div>
+                        <p>{{ track.details }}</p>
+                    </div>
                 </div>
                 <div class="infos-track-details">
                     <h2>Release date</h2>
-                        <span>{{ track.createdAt|date('Y-m-d') }}</span>
+                    <div>
+                        <p>{{ track.createdAt|date('Y-m-d') }}</p>
+                    </div>
                 </div>
                 <div>
                     <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back</a>

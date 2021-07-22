@@ -11,8 +11,9 @@
         <p class="constraint">we accept .jpg under 2MB.</p>
         {{ form_widget(registrationForm.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
         {{ form_row(registrationForm.username, {'attr': {'placeholder': 'artist name'}}) }}
+        {{ form_errors(registrationForm) }}
         {{ form_row(registrationForm.email, {'attr': {'placeholder': 'example@email.com'}}) }}
-        {{ form_row(registrationForm.plainPassword, { label: 'Password'}) }}
+        {{ form_row(registrationForm.plainPassword, { 'label': 'Password'}) }}
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert" role="alert">{{ flashError }}</div>
         {% endfor %}

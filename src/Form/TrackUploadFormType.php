@@ -19,9 +19,9 @@ class TrackUploadFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('label', TextType::class, [
-                'required' => false,
-            ])
+            // ->add('label', TextType::class, [
+            //     'required' => false,
+            // ])
             ->add('genre')
             ->add('details')
             ->add('mediaFile', VichFileType::class, [

@@ -7,8 +7,9 @@
         <section class="global-container"> 
         <h1>UPLOAD</h1>
                 <div class="container">
-                        <p>You need to be logged on the app for access in the upload section</p>
+                        <i class="fas fa-lock" id="cadenas"></i>
                         <a class="middle-btn" href="{{path('app_login')}}">LOGIN</a>
+                        <p>You need to be logged in to access the upload section</p>
                         <p>No account? <a id="linktoregister" href="{{ path('app_register') }}">Create one</a></p>
                 </div>
         </section>
@@ -25,8 +26,8 @@
                         <p class="constraint">we accept .MP3 and .WAV under 60MB.</p>
                         {{ form_row(form.title, {'attr': {'placeholder': 'The name of your sound'}}) }}
                         {{ form_row(form.genre, {'attr': {'placeholder': 'Style of your sound'}}) }}
-                        {{ form_row(form.label) }}
-                        {{ form_row(form.details) }}
+                        {# {{ form_row(form.label) }} #}
+                        {{ form_row(form.details, {'attr': {'placeholder': 'More details about your project'}}) }}
                         {{ form_widget(form) }}
                         <input class="middle-btn" type="submit" value="UPLOAD">
                         {{ form_end (form) }}        

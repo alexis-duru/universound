@@ -15,6 +15,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  * @Vich\Uploadable
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serializable
@@ -53,7 +54,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $username;
 

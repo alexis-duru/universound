@@ -14,7 +14,7 @@
     margin-bottom: 120px;
     background-size: cover !important;
     opacity: 0.8 !important;
-    background-image: url('../images/background/texture-container7bis.jpg') !important;
+    background-image: url('../images/background/texture-container7bis.jpg');
     color: black;
     transform: scale(1);
     transition: 0.6s;
@@ -27,12 +27,16 @@
             height: 150px;
             width: 281px;
             border-radius: 6px;
-            border: 1px solid black;
+            border: 0px;
             outline: none;
             background-color: transparent;
-            color: black;
+            color: white;
             font-size: 17px;
             transition: 0.6s;
+            background-image: url('../images/background/universound.jpg');
+            background-size: cover;
+
+
             &:hover {
                 background-color: rgba(0, 0, 0, 0.173);
             }
@@ -116,11 +120,21 @@
         .infos-track-details {
             display: flex;
             width: 400px;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             >div {
                 display: flex;
+                p {
+                    color: black;
+                    letter-spacing: 3px;
+                    font-size: 13px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    word-wrap: break-word;
+                    max-width: 300px;
+                }
             }
             h2 {
                 color: black;

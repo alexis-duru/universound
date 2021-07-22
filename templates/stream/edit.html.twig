@@ -11,7 +11,6 @@
         {{ form_row(form.audioFile, { 'label': 'Audio', 'attr': {'class': 'vichfilebutton2'} })  }}
         <a class="downloadbutton" id="upload2">UPLOAD FILE</a>
        <p class="constraint">Don't forget to re-upload your track (.wav and .mp3 <= 60mo)</p>
-        {# <p class="constraint">we accept .MP3 and .WAV under 60MB</p> #}
         {{ form_widget(form) }}
         <div class="btn-form-edit">
              <a class="middle-btn" href="{{ path('app_stream')}}">BACK</a>

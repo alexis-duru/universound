@@ -29,7 +29,7 @@
                                 <h2>{{ track.artist }}</h2>
                                 <p>{{ track.title }}</p>
                                 <div class="artwork">
-                                    <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}"></audio>
+                                    <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}" controlsList="nodownload" class="audiotrack"></audio>
                                 </div>
                             </div>
                             <div class="container-btn-track">

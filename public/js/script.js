@@ -24,6 +24,8 @@
         $('.container-comment').slideToggle();
     });
 
+
+
     // SHADOW WINDOWS STREAM //
 
     // SCROLL FX //
@@ -52,6 +54,8 @@
     // });
 
 })(jQuery);
+
+// METHODE PLAY / PAUSE //
 
 document.addEventListener('play', function(e){
     var audios = document.getElementsByTagName('audio');

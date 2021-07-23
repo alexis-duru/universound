@@ -74,8 +74,8 @@ class ProfilController extends AbstractController
     }
 
     /**
-     * @Route("/profil/music", name="app_profil_music")
-     */
+    * @Route("/profil/music", name="app_profil_music")
+    */
     public function show(TrackRepository $repository): Response
     {
         $tracks = $repository->findAll();
@@ -84,6 +84,21 @@ class ProfilController extends AbstractController
             'tracks' => $tracks,
         ]);
     }
+
+    /**
+    * @Route("/profil/comment", name="app_profil_comment")
+    */
+    public function all(CommentRepository $repository): Response
+    {
+        $comments = $repository->findAll();
+
+        return $this->render('profil/comment.html.twig', [
+            'comments' => $comments,
+        ]);
+    }
+
+    
+}
 
     // Faire une fonction pour récupérer l'id des tracks pour ensuite l'afficher dans profil music //
 
@@ -123,16 +138,3 @@ class ProfilController extends AbstractController
     //     ]);
     // }
 
-
-    /**
-     * @Route("/profil/comment", name="app_profil_comment")
-     */
-    public function all(CommentRepository $repository): Response
-    {
-        $comments = $repository->findAll();
-
-        return $this->render('profil/comment.html.twig', [
-            'comments' => $comments,
-        ]);
-    }
-}

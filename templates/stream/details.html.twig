@@ -44,7 +44,7 @@
                     </audio>
                 </div>
                 <div>
-                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">back</a>
+                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">STREAM</a>
                     {% if app.user %}
                     {% if app.user is same as track.artist %}
                     <a class="small-btn" id="small-btn-bis" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>

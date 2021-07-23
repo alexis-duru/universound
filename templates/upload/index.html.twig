@@ -5,7 +5,7 @@
 {% block body %}
 {% if not app.user %}
         <section class="global-container"> 
-        <h1>UPLOAD</h1>
+                <h1>UPLOAD</h1>
                 <div class="container">
                         <i class="fas fa-lock" id="cadenas"></i>
                         <a class="middle-btn" href="{{path('app_login')}}">LOGIN</a>
@@ -15,7 +15,7 @@
         </section>
 {% else %}
         <section class="global-container">  
-        <h1>UPLOAD</h1>
+                <h1>UPLOAD</h1>
                 <div class="container">
                         {{ form_start(form)}}
                         {{ form_row(form.mediaFile, { 'label': 'Artwork', 'attr': {'class': 'vichfilebutton1'} })  }}

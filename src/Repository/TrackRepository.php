@@ -24,6 +24,11 @@ class TrackRepository extends ServiceEntityRepository
         return $this->findBy([], ['createdAt' => 'DESC']);
     }
 
+    public function findByLikes()
+    {
+        return $this->findBy([], ['' => 'DESC']);
+    }
+
     // /**
     //  * @return Track[] Returns an array of Genre objects
     //  */

@@ -4,7 +4,7 @@
 
 {% block body %} 
 <div class="header-section">
-    <h1>YOUR MUSIC</h1>
+    <h1>YOUR PLAYLIST</h1>
 </div>
 <section>
     <div class="container-all-track">
@@ -13,13 +13,13 @@
                 <a href="{{path('app_profil')}}">PROFILE</a>
             </div>
             <div>
-                <a href="{{path('app_profil_playlist')}}">YOUR PLAYLIST</a>
-                    {# <a href="{{path('app_profil_favorites')}}">YOUR FAVORITES</a> #}
+                <a href="{{path('app_profil_music')}}">YOUR MUSIC</a>
             </div>
         </div>
         {% for track in tracks %}  
             {% if app.user %}
-                {% if app.user.id is same as track.artist.id  %}
+                {# {% if 1 == 1 %} #}
+                {% if app.user in track.likes  %}
                     <div class="container-track" class="hover-fx">
                         <div class="artwork">
                             <img class="images-stream" src="{{asset('images/media/' ~ track.media) }}" alt="{{track.media}}">
@@ -49,7 +49,6 @@
                     </div>
                 {% endif %}
             {% endif %}
-            {% else %} 
         {% endfor %}
     </div>
 </section>

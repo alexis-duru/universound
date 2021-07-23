@@ -2,16 +2,17 @@
 
 namespace App\Controller;
 
-use App\Entity\Comment;
 use App\Entity\User;
+use App\Entity\Comment;
 use App\Form\RegistrationFormType;
-use App\Repository\CommentRepository;
+use App\Repository\UserRepository;
 use App\Repository\TrackRepository;
+use App\Repository\CommentRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProfilController extends AbstractController
 {
@@ -97,44 +98,19 @@ class ProfilController extends AbstractController
         ]);
     }
 
-    
+     /**
+     * @Route("/profil/playlist", name="app_profil_playlist")
+     *
+     */
+    public function findByLikes(Request $request, UserRepository $userRepository): Response
+    {
+        $user = $this->getUser();
+
+        return $this->render('profil/playlist.html.twig', [
+            'user' => $user,
+            'tracks' => $user->getLikes(),
+        ]);
+    }
 }
 
-    // Faire une fonction pour récupérer l'id des tracks pour ensuite l'afficher dans profil music //
-
-    // /**
-    //  * @Route("/profil/{id}", name="app_track_find")
-    //  *
-    //  * @param mixed $id
-    //  */
-    // public function findtracks(Request $request, UserRepository $userRepository, $id): Response
-    // {
-    //     $user = $userRepository->find($id);
-
-    //     return $this->render('user/one.html.twig', [
-    //         'user' => $user,
-    //         'tracks' => $user->gettracks(),
-    //     ]);
-    // }
-
-    
-
-    //     /**
-    //  * @Route("/user/{id}", name="app_likes_find")
-    //  *
-    //  * @param mixed $id
-    //  */
-    // public function findlikes(Request $request, PaginatorInterface $paginator, UserRepository $userRepository, $id): Response
-    // {
-    //     $user = $userRepository->find($id);
-
-    //     return $this->render('user/one.html.twig', [
-    //         'user' => $user,
-    //         'likes' => $paginator->paginate(
-    //             $user->getlikes(),
-    //             $request->query->getInt('page', 1),
-    //             6
-    //         ),
-    //     ]);
-    // }
 

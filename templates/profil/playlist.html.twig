@@ -32,7 +32,7 @@
                                     <audio controls src="{{asset('audio/media/' ~ track.audio)}}" alt="{{track.audio}}"></audio>
                                 </div>
                             </div>
-                            <div class="container-btn-track">
+                            {# <div class="container-btn-track">
                                 <a class="small-btn" id="small-btn-bis" href="{{path('app_stream_details', {'id': track.id})}}">details</a>
                                 <a class="small-btn" id="small-btn-bis" class="btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                                 {% if app.user in track.likes %}
@@ -44,7 +44,7 @@
                                         <button class="small-btn" id="heart"><i id="i-1" class="fas fa-heart"></i>{{ track.likes|length }}</button>
                                     </a>
                                 {% endif %}
-                            </div>
+                            </div> #}
                         </div>
                     </div>
                 {% endif %}

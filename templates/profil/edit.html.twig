@@ -14,7 +14,11 @@
         </div>
     </div>
     <div class="container">
+        {% if app.user.media %}
         <img class="photoprofil-big" src="{{ asset('images/media/' ~ app.user.media)}}" alt="{{ app.user.media }}">
+        {% else %}
+        <img class="photoprofil-big" src="{{ asset('images/media/profildefault.jpg')}}">
+        {% endif %}
         {{ form_start(form) }}
         {{ form_row(form.mediaFile, { 'label': 'Choose your avatar',  'attr': {'class': 'vichfilebutton3'} }) }}
             <a class="downloadbutton" id="upload3">UPLOAD FILE</a>

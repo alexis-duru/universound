@@ -44,26 +44,41 @@ h3 {
 }
 
 // font awesome //
-#i-1 {
+.fas {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.far {
     color: black;
     font-size: 15px;
+    font-weight: bold;
 }
 
-#i-1-broke {
-    color: red;
+.fa-edit {
+    color: black;
 }
 
-#i-2 {
-    color: white;
-    font-size: 15px;
-    margin-left: 10px;
+.black-trash {
+    color: black;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
-#heart {
+// .i-2 {
+//     color: white;
+//     font-size: 15px;
+//     margin-left: 10px;
+// }
+
+.heart {
     background-color: white;
     color: black;
     font-size: 15px;
 }
+
+
 
 #cadenas {
     font-size: 30px;

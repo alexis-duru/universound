@@ -23,10 +23,6 @@
                         <p>{{ track.genre }}</p>
                     </div>
                 </div>
-                {# <div class="infos-track-details">
-                    <h2>Label</h2>
-                    <span> {{ track.label }}</span>
-                </div> #}
                 <div class="infos-track-details">
                     <h2>Details</h2>
                     <div>
@@ -44,10 +40,10 @@
                     </audio>
                 </div>
                 <div>
-                    <a class="small-btn" id="small-btn-bis" href="{{path('app_stream')}}">STREAM</a>
+                    <a class="small-btn" href="{{path('app_stream')}}">STREAM</a>
                     {% if app.user %}
                     {% if app.user is same as track.artist %}
-                    <a class="small-btn" id="small-btn-bis" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
+                    <a class="small-btn" href="{{ path('app_stream_edit', {'id': track.id}) }}">edit</a>
                     {% else %}
                     {% endif %}
                     {% endif %}

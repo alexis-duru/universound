@@ -208,20 +208,15 @@
         }
         .infos-track {
             text-align: center;
-            // margin-top: 30px;
-            // .artistandtitle {
-            //     // margin-bottom: 30px;
-            // }
             .container-btn-track {
                 flex-direction: column;
                 margin: auto;
-                // margin-top: 30px;
                 a {
                     margin-top: 15px;
                 }
-                button {
-                    height: 15px;
-                }
+                // button {
+                //     height: 15px;
+                // }
             }
         }
     }

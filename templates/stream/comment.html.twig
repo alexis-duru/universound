@@ -67,7 +67,7 @@
                         {% if app.user.id is same as comment.author.id  %}
                             {{ include('stream/deletecomment.html.twig') }}
                             <a href="{{path('app_stream_editcomment', {'id': comment.id}) }}"><i class="fas fa-edit"></i></a>
-                        {% else %}
+                        {# {% else %} #}
                         {% endif %}
                         {% endif %}
                     </div>

@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
-use App\Entity\Comment;
 use App\Entity\Track;
+use App\Entity\Comment;
 use App\Form\CommentFormType;
 use App\Form\TrackUploadFormType;
 use App\Repository\TrackRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class StreamController extends AbstractController
 {
@@ -197,21 +198,30 @@ class StreamController extends AbstractController
     /**
      * @Route("/like/{id}", name="track_like")
      */
-    public function like(Track $track): Response
+    public function like(Track $track, Request $request): Response
     {
-        //* Si je n'ai pas encore liké le post, alors je rajoute un like
-        //* Sinon j'enlève le like.
-        //* Sachant que liker n'est pas une entité, il suffira de modifier l'array like du post pour rajouter l'user.
-        if ($track->getLikes()->contains($this->getUser())) {
-            $track->removeLike($this->getUser());
+        if ($request ->get('ajax')) {
+            if ($track->getLikes()->contains($this->getUser())) {
+                $track->removeLike($this->getUser());
+                $this->getDoctrine()->getManager()->flush();
+    
+                return $this->json([
+                    'liked' => false,
+                    'code' => 200,
+                    'likes' => count($track->getLikes()),
+                ]);
+    
+                // return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
+            }
+            $track->addLike($this->getUser());
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
+    
+            return $this->json([
+                'liked' => true,
+                'code' => 200,
+                'likes' => count($track->getLikes()),
+            ]);
         }
-
-        $track->addLike($this->getUser());
-        $this->getDoctrine()->getManager()->flush();
-
-        return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
+        // return $this->redirectToroute('app_stream', ['id' => $track->getId()]);
     }
 }

@@ -1,8 +1,60 @@
 
 // AJAX LIKE //
 
-// console.log("ok");
+console.log("ok");
 
+function onClickBtnLike(e){
+        
+    const removeMe = document.getElementById('removeMe');
+    
+    e.preventDefault();
+    var likeCount = this.lastChild.previousElementSibling;
+    const likeBtn = this.getAttribute('value');
+    const likeUrl = this.href;
+    const likeSelector = this;
+    var likeHeart = this.firstChild.nextElementSibling;
+    console.log(likeHeart);
+    
+    console.log(likeCount);
+    console.log(this);
+    
+    console.log(likeBtn);
+    console.log(likeUrl);
+
+    fetch(likeUrl + "?ajax=1", {
+        headers: {
+            "X-Requested-With": "XMLHttpRequest"
+        }
+    }).then(response => 
+        response.json()
+        ).then(data => {
+            if(likeCount){
+                likeCount.textContent.replace(data.likes);
+            }
+            
+        console.log(data);
+            if(data.liked){
+                likeHeart.classList.replace('far','fas');
+                
+            }else{
+                likeHeart.classList.replace('fas','far');
+                
+                
+            }
+        if(removeMe){
+            likeSelector.closest('#removeMe').remove();
+        }
+        if(likeCount){
+            likeCount.textContent = data.likes
+        }
+      
+    }).catch(e => alert(e));
+}
+
+
+document.querySelectorAll('a.small-btn-white').forEach(function (link){
+    link.addEventListener("click", onClickBtnLike); 
+})
 
 
 // let likeClick = (e) => {
@@ -13,10 +65,8 @@
 //         let countBtn = e.target.firstChild;
 //         let link = e.target.getAttribute('href');
 //     }
-//     // const countBtn = document.querySelector("button.small-btn");
 //     const icon = countBtn.firstChild;
 //     const count = icon.nextElementSibling;
-//     // console.log(e.target.closest('button'))
 //     e.preventDefault();
     
     

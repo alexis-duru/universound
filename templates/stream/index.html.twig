@@ -27,12 +27,12 @@
                         {% if app.user %}
                         <a class="small-btn btn-comment-length" href="{{path('app_stream_comment', {'id': track.id})}}">comments : {{track.comments|length}}</a>
                         {% if app.user in track.likes %}
-                            <a class="small-btn-white heart" href="{{path("track_like", {'id':track.id})}}">
+                            <a value="{{track.id}}" class="small-btn-white heart" href="{{path("track_like", {'id':track.id})}}">
                                 <i class="fas fa-heart"></i>
                                 <p class="length">{{ track.likes|length }}</p>
                             </a>
                         {% else %}
-                            <a class="small-btn-white heart" href="{{path("track_like", {'id':track.id})}}">
+                            <a value="{{track.id}}" class="small-btn-white heart" href="{{path("track_like", {'id':track.id})}}">
                                 <i class="far fa-heart"></i>
                                 <p class="length">{{ track.likes|length }}</p>
                             </a>

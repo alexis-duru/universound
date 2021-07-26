@@ -66,25 +66,24 @@ h3 {
     margin-left: 5px;
 }
 
-// .i-2 {
-//     color: white;
-//     font-size: 15px;
-//     margin-left: 10px;
-// }
-
 .heart {
     background-color: white;
     color: black;
     font-size: 15px;
 }
 
-
-
 #cadenas {
     font-size: 30px;
     animation: flash;
     animation-duration: 6s;
     animation-iteration-count: infinite;
+}
+
+.length {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 5px;
+
 }
 
 input {

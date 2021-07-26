@@ -90,7 +90,7 @@
 //     }).catch(e => alert(e));
 // }
 
-document.querySelectorAll('a.likeBtn').forEach(function (link){
-    link.addEventListener("click", onClickBtnLike); 
-})
+// document.querySelectorAll('a.likeBtn').forEach(function (link){
+//     link.addEventListener("click", onClickBtnLike); 
+// })
 

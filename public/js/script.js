@@ -23,6 +23,8 @@
     $('#btn-slide-comment').on('click',function(){
         $('.container-comment').slideToggle();
     });
+    
+})(jQuery);
 
 
 
@@ -44,17 +46,6 @@
     //     $(this).siblings().css("opacity","0.75","slow")
     // });
 
-
-    // ----------------------------------------------- //
-
-    // var $audio =$('.audiotrack');
-
-    // $(audio).on('click', function() {
-    //     $('.small-btn').hide();
-    // });
-
-})(jQuery);
-
 // METHODE PLAY / PAUSE //
 
 document.addEventListener('play', function(e){
@@ -65,52 +56,5 @@ document.addEventListener('play', function(e){
         }
     }
 }, true);
-
-// AJAX LIKE //
-
-// console.log("ok");
-    
-// function onClickBtnLike(e){
-    
-//     const likeCount = document.querySelector(".likes-count");
-//     const removeMe = document.getElementById('removeMe');
-    
-//     e.preventDefault();
-//     const likeBtn = this.getAttribute('value');
-//     const likeUrl = this.href;
-//     const likeSelector = this;
-    
-
-//     console.log(likeBtn);
-//     console.log(likeUrl);
-
-//     fetch(likeUrl + "?ajax=1", {
-//         headers: {
-//             "X-Requested-With": "XMLHttpRequest"
-//         }
-//     }).then(response => 
-//         response.json()
-//     ).then(data => {
-        
-//         console.log(data.liked)
-//         likeSelector.classList.toggle("red")
-//         if(data.liked){
-//             likeSelector.firstChild.classList.replace('far','fas');
-//         }else{
-//             likeSelector.firstChild.classList.replace('fas','far');
-//         }
-//         if(likeCount){
-//             likeCount.textContent = data.likes + " x  "
-//         }
-//         if(removeMe){
-//             likeSelector.closest('#removeMe').remove();
-//         }
-      
-//     }).catch(e => alert(e));
-// }
-
-// document.querySelectorAll('a.likeBtn').forEach(function (link){
-//     link.addEventListener("click", onClickBtnLike); 
-// })
 
 

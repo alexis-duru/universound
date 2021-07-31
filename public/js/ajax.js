@@ -1,7 +1,7 @@
 
 // AJAX LIKE //
 
-console.log("ok");
+// console.log("ok");
 
 function onClickBtnLike(e){
         
@@ -13,13 +13,13 @@ function onClickBtnLike(e){
     const likeUrl = this.href;
     const likeSelector = this;
     var likeHeart = this.firstChild.nextElementSibling;
-    console.log(likeHeart);
+    // console.log(likeHeart);
     
-    console.log(likeCount);
-    console.log(this);
+    // console.log(likeCount);
+    // console.log(this);
     
-    console.log(likeBtn);
-    console.log(likeUrl);
+    // console.log(likeBtn);
+    // console.log(likeUrl);
 
     fetch(likeUrl + "?ajax=1", {
         headers: {
@@ -32,7 +32,7 @@ function onClickBtnLike(e){
                 likeCount.textContent.replace(data.likes);
             }
             
-        console.log(data);
+        // console.log(data);
             if(data.liked){
                 likeHeart.classList.replace('far','fas');
                 

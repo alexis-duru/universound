@@ -35,13 +35,13 @@ header {
                     width: 40px;
                     // height: 50px;
                     border: 0px;
-                    transform: rotateY(45deg);  
-                    animation: rotateAnimation 3s linear infinite;
+                    // transform: rotateY(45deg);  
+                    // animation: rotateAnimation 3s linear infinite;
                     border-radius: 100px;
-                    @keyframes rotateAnimation {
-                        from {transform: rotateY(0deg);}
-                        to {transform: rotateY(360deg);}
-                    }
+                    // @keyframes rotateAnimation {
+                    //     from {transform: rotateY(0deg);}
+                    //     to {transform: rotateY(360deg);}
+                    // }
                 }
                 .typo-universound {
                 height: 3vh;
